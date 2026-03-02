@@ -21,177 +21,210 @@ interface ProjectData {
   impact: string;
   sections: ProjectSection[];
   images: string[];
+  executive: {
+    problem: string;
+    insight: string;
+    impact: string;
+  };
 }
 
 const projectData: Record<string, ProjectData> = {
   "powerbi-dashboard": {
     label: "Power BI Dashboard",
     title: "Document Status & Workflow Monitoring",
+
     intro:
-      "While the Enterprise Document Management System (EDMS) serves as the system of record, it lacks the analytical layer needed for strategic oversight. I developed a dual-context Power BI dashboard that transforms static weekly data extracts into a dynamic intelligence platform, providing tailored, real-time visibility for both internal teams and external partners.",
+      "While the Enterprise Document Management System (EDMS) serves as the system of record, it lacks the analytical layer needed for strategic oversight. I developed a dual-context Power BI dashboard that transforms static weekly data extracts into a dynamic intelligence platform.",
+
+    // 🔥 NEW — EXECUTIVE INSIGHT
+    executive: {
+      problem:
+        "Lack of analytical visibility across document workflows and stakeholder performance.",
+      insight:
+        "The dashboard reveals bottlenecks and comparative metrics across disciplines, engineering teams, and suppliers.",
+      impact:
+        "Enabled proactive performance management by turning raw document data into actionable, decision-ready intelligence.",
+    },
     impact:
-      "Delivered a centralized source of truth that elevates raw document data into strategic performance metrics, empowering project leadership to move from reactive status-checking to proactive, data-driven management.",
+      "Delivered a centralized source of truth that elevates raw document data into strategic performance metrics, empowering leadership to move from reactive tracking to proactive management.",
+
+    // 👉 images stay but will be rendered AFTER executive in UI
     images: [engL, supD],
+
     sections: [
       {
         label: "Context",
         layerColor: "bg-layer-doc",
         title: "Environment & Background",
         content: [
-          "Large-scale engineering project with multiple stakeholders, including internal teams, clients, third parties, and key suppliers.",
-          "The EDMS (e.g., Aconex) provided the necessary transactional data, through weekly data extracts.",
-          "Each stakeholder group required a  view of the data to manage their specific responsibilities and performance.",
-          "Leadership needed a way to effectively monitor and compare the performance of both internal disciplines and external suppliers without deep-diving into the EDMS.",
+          "Large-scale engineering project with multiple stakeholders including internal teams, clients, and suppliers.",
+          "EDMS (e.g., Aconex) provided transactional data via weekly extracts.",
+          "Different stakeholders required tailored views of performance.",
+          "Leadership lacked a consolidated way to compare performance across disciplines and suppliers.",
         ],
       },
+
       {
         label: "Problem Statement",
         layerColor: "bg-layer-doc",
         title: "The Analytical Gap",
         content: [
-          "The EDMS is a system of record, not a system of analysis. It could not answer 'why' or 'how well' questions.",
-          "No consolidated, analytical view of document health across the entire project ecosystem.",
-          "Inability to easily compare performance between internal disciplines, suppliers, etc...",
-          "Difficult to quickly isolate and assess the impact of workflow bottlenecks on specific stakeholder groups.",
+          "The EDMS is a system of record, not a system of analysis.",
+          "No consolidated analytical view of document health.",
+          "Difficult to compare internal vs external performance.",
+          "Limited ability to isolate workflow bottlenecks.",
         ],
-        insight:
-          "The core issue was not a lack of data, but a lack of accessible, role-specific intelligence. The EDMS provided the 'what,' but I built the solution to deliver the 'so what' for each audience.",
       },
+
+      // 🔥 MERGED SECTION
       {
-        label: "Document Intelligence",
+        label: "Analytical Framework",
         layerColor: "bg-layer-doc",
-        title: "Data Modeling & Metric Engineering",
+        title: "Data Modeling & KPI Engineering",
         content: [
-          "Designed and built a robust data model in Power BI that ingests the standardized weekly data extract from the EDMS.",
-          "Developed two distinct, yet consistent, dashboard interfaces: one tailored for internal engineering teams and another for external supplier management, each surfacing the most relevant KPIs for its audience.",
-          "Engineered key performance indicators (KPIs) using DAX, such as cycle time, overdue days, and status aging, which do not exist in the source data.",
-          "Structured the model to support self-service exploration, enabling users to drill down from high-level KPIs to individual document details.",
+          "Built a structured Power BI data model based on standardized weekly EDMS extracts.",
+          "Designed dual dashboard views tailored for internal teams and suppliers.",
+          "Engineered KPIs using DAX such as cycle time, overdue days, and status aging.",
+          "Enabled drill-down from executive KPIs to document-level detail.",
+          "Integrated status distribution, discipline performance, and workload monitoring into a unified analytical layer.",
         ],
       },
-      {
-        label: "Reporting",
-        layerColor: "bg-layer-report",
-        title: "What Is Being Monitored",
-        content: [
-          "Executive KPIs: High-level metrics that dynamically adjust based on the selected context (e.g., 'Received from Suppliers' vs. 'Issued by Internal Teams').",
-          "Status Distribution: Visual breakdowns of document statuses (e.g., 'For Review,' 'Approved') to provide an at-a-glance health check.",
-          "Discipline/Supplier Performance: Comparative charts showing document volume, completion rates, and overdue counts across different groups.",
-          "Workflow Ownership: A detailed view of reviewer workloads, highlighting the number of items assigned and the average aging of their queue.",
-          "Advanced Filter: Enables analysts to quickly isolate specific suppliers, document types, or date ranges for targeted investigations across all pages.",
-        ],
-      },
+
+      // 🔥 NEW FOCUSED SECTION
       {
         label: "Performance",
         layerColor: "bg-layer-perf",
-        title: "How Performance Is Analyzed",
+        title: "Key Insights",
         content: [
-          "Enables direct comparison of document throughput and overdue rates between internal disciplines to identify capacity imbalances.",
-          "Provides a clear view of supplier performance by comparing on-time submission rates and review turnaround times.",
-          "Allows users to drill down into any discipline or supplier to see which reviewers or document types are contributing most to delays.",
-          "Facilitates analysis of workflow stages to identify if bottlenecks are concentrated in internal review, client review, or supplier submission phases.",
+          "Workflow bottlenecks can be isolated by comparing stage-level performance across stakeholders.",
+          "Uneven workload distribution across disciplines directly impacts cycle time.",
+          "Supplier performance variability becomes immediately visible through comparative KPIs.",
+          "Review stages often represent the primary source of delays rather than submission stages.",
         ],
         insight:
-          "The dashboard's analytical power lies in its ability to frame performance. By allowing users to instantly switch contexts and compare groups, it transforms raw status data into clear, actionable intelligence about where and why performance issues exist.",
+          "The dashboard transforms static status data into comparative intelligence, allowing users to instantly identify where performance gaps originate and why they occur.",
       },
+
       {
         label: "Advisory",
         layerColor: "bg-layer-advisory",
-        title: "How It Drives Strategic Decisions",
+        title: "Business Impact",
         content: [
-          "Equips project managers with the evidence needed to initiate data-driven discussions about resource allocation with discipline leads.",
-          "Provides an objective basis for performance reviews with external suppliers and consultants.",
-          "Supports leadership in making strategic decisions by highlighting systemic issues rather than isolated incidents.",
-          "Enables the creation of targeted action plans, such as focusing on a specific workflow stage or underperforming group.",
+          "Supports data-driven resource allocation decisions across disciplines.",
+          "Provides an objective basis for supplier performance evaluation.",
+          "Highlights systemic issues rather than isolated delays.",
+          "Enables targeted action plans focused on high-impact bottlenecks.",
         ],
       },
     ],
   },
+
+  // ===========================
+  // ===========================
+
   "document-analytics": {
     label: "React.js Web App",
     title: "Document Lifecycle & Timeline Analysis",
+
     intro:
-      "While dashboards excel at showing *what* is delayed, they often can't explain *why*. I developed a diagnostic web application to perform a forensic-level analysis of the document journey. Built specifically for supplier documents, this tool provides the objective, visual evidence needed to pinpoint the exact source of delays and resolve accountability disputes.",
+      "While dashboards show what is delayed, they often fail to explain why. I developed a diagnostic web application that performs a forensic-level analysis of document workflows, transforming raw lifecycle data into clear, visual narratives.",
+
+    // 🔥 NEW — EXECUTIVE INSIGHT
+    executive: {
+      problem:
+        "Delays existed but root causes and accountability were unclear and difficult to communicate.",
+      insight:
+        "Timeline-based analysis reveals exactly where delays occur, eliminating ambiguity between submission and review responsibilities.",
+      impact:
+        "Enabled faster root-cause identification and supported objective, evidence-based performance discussions.",
+    },
+
     impact:
-      "Equips project teams with an investigative tool that transforms complex document histories into easily understandable stories, providing undeniable evidence to support performance discussions and process improvements.",
+      "Transforms complex document histories into intuitive visual stories, reducing analysis time and improving communication across stakeholders.",
+
     images: [sub, rev, timeline],
+
     sections: [
       {
         label: "Context",
         layerColor: "bg-layer-doc",
         title: "Environment & Background",
         content: [
-          "Project relied on multiple key suppliers, whose document delivery performance directly impacted the critical path.",
-          "The EDMS provided raw data on document and workflow statuses, but its tabular format made it difficult to see the big picture or diagnose specific issues.",
-          "Disputes over delay responsibility were common, as it was time-consuming to manually trace a document's journey through different statuses.",
-          "Project leadership needed a faster, more intuitive way to understand and communicate the root cause of delays.",
+          "Project relied heavily on supplier document delivery impacting critical path timelines.",
+          "EDMS provided raw status data but lacked visualization capabilities.",
+          "Manual tracing of document workflows was time-consuming and inefficient.",
+          "Frequent disputes over delay responsibility required clearer analytical evidence.",
         ],
       },
+
       {
         label: "Problem Statement",
         layerColor: "bg-layer-doc",
-        title: "The Communication & Usability Gap",
+        title: "The Interpretation Gap",
         content: [
-          "The raw data on delay separation existed in the EDMS, but it was not presented in a way that was easy to visualize or communicate to stakeholders.",
-          "Analyzing submission and review patterns over time required manual data extraction and charting, which was inefficient and prone to error.",
-          "Lacked a dedicated interface that could synthesize multiple data points (status, dates, counts) into a single, coherent diagnostic view.",
-          "No mechanism to automatically generate a plain-language summary of performance for quick briefings.",
+          "Delay-related data existed but was not easily interpretable.",
+          "Trend analysis required manual extraction and processing.",
+          "No unified interface for combining multiple analytical dimensions.",
+          "No automated way to generate concise performance summaries.",
         ],
-        insight:
-          "The core problem was one of interpretation. The data was there, but it was locked away in a format that required significant time and effort to understand. The solution needed to bridge the gap between raw data and actionable insight.",
       },
+
+      // 🔥 MERGED
       {
-        label: "Document Intelligence",
+        label: "Analytical Framework",
         layerColor: "bg-layer-doc",
-        title: "Structured Analysis & Automated Insights",
+        title: "Application Design & Data Structuring",
         content: [
-          "Architected the application into three distinct, purpose-built pages: **Submissions**, **Reviews**, and **Timeline**, to guide the user through a logical diagnostic workflow.",
-          "Engineered the data to power dynamic, interactive visualizations like timeline bar charts and trend line charts, making complex patterns immediately visible.",
-          "Developed an automated insights engine that analyzes the data on the Submissions and Reviews pages, generating a dynamic, plain-language summary of key performance indicators and issues.",
-          "Processed both document-level and workflow-level statuses to provide a complete, multi-layered view of the document lifecycle.",
+          "Structured the application into three analytical modules: Submissions, Reviews, and Timeline.",
+          "Built interactive visualizations including line charts, heatmaps, and timeline bar charts.",
+          "Engineered an automated insights engine generating plain-language summaries.",
+          "Combined document-level and workflow-level data for a multi-layered analysis.",
         ],
       },
-      {
-        label: "Reporting",
-        layerColor: "bg-layer-report",
-        title: "What Is Being Monitored",
-        content: [
-          "**Submissions Page:** Features interactive line charts showing submission trends over time, paired with an automated insights panel that provides summaries and complemented by heatmap, also donut charts breaking down submission performances",
-          "**Reviews Page:** Visualizes review workload and performance, with an insights panel that flags issues, the line chart also is complemented by a heatmap and bar chart of overdues ",
-          "**Timeline Page:** The core diagnostic tool, showing the step-by-step journey of any selected document with an interactive timeline bar chart, making it easy to see where delays occurred.",
-          "Advanced Search & Filter: Enables analysts to quickly isolate specific suppliers, document types, or date ranges for targeted investigations across all pages.",
-        ],
-      },
+
+      // 🔥 FOCUSED INSIGHTS
       {
         label: "Performance",
         layerColor: "bg-layer-perf",
-        title: "How Performance Is Diagnosed",
+        title: "Key Insights",
         content: [
-          "The visual timeline makes it instantly clear if a delay occurred before or after submission, settling accountability disputes with a single glance.",
-          "The Submissions and Reviews pages allow users to spot trends and outliers, such as a supplier who consistently submits at the last minute, creating predictable bottlenecks.",
-          "The automated insights panel provides an immediate, expert-level summary, saving hours of manual analysis and highlighting the most critical issues first.",
-          "The three-page structure ensures that users can approach the problem from different angles—high-level trends, specific reviewer performance, or deep-dive forensics.",
+          "Timeline visualization clearly distinguishes between submission delays and review delays.",
+          "Recurring late submissions create predictable downstream bottlenecks.",
+          "Review workload imbalances contribute significantly to cycle time delays.",
+          "Trend analysis reveals systemic patterns rather than isolated issues.",
         ],
         insight:
-          "The application's power lies in its design. By separating analytical concerns and providing automated summaries, it makes complex performance analysis accessible to everyone, not just data experts. It transforms data investigation from a chore into an intuitive, visual experience.",
+          "By combining visual timelines with automated summaries, the application transforms complex workflow data into immediate, actionable insight accessible to both technical and non-technical users.",
       },
+
       {
         label: "Advisory",
         layerColor: "bg-layer-advisory",
-        title: "How It Informs Advisory",
+        title: "Business Impact",
         content: [
-          "The automated insights panel provides ready-to-use text for reports and presentations, making it easy to communicate performance issues to leadership.",
-          "The clear visual evidence from the Timeline page provides an objective basis for performance improvement plans with suppliers.",
-          "Trend analysis from the Submissions and Reviews pages helps justify process changes, such as implementing staggered deadlines or reallocating review resources.",
-          "Serves as the factual foundation for workshops, helping teams focus on fixing the most impactful systemic issues identified by the tool.",
+          "Provides objective evidence for supplier performance discussions.",
+          "Reduces time required for root-cause analysis.",
+          "Supports process improvement initiatives with clear data-backed insights.",
+          "Enables more effective communication with leadership through ready-to-use summaries.",
         ],
       },
     ],
   },
+
   "jupyter-analysis": {
     label: "Jupyter Notebook (Python)",
     title: "Proactive Workflow & Escalation System",
     intro:
       "While dashboards and diagnostic apps empower users to *find* problems, I built an automated system to *push* critical issues directly to the people who can solve them. This Python-based service transforms document management from a reactive 'pull' model to a proactive 'push' model, ensuring no critical task falls through the cracks.",
+    executive: {
+      problem:
+        "Workflow delays and exceptions were only identified reactively, leading to missed deadlines and unclear accountability.",
+      insight:
+        "The proactive workflow and escalation system automatically flags bottlenecks and overdue tasks, providing real-time visibility into process exceptions.",
+      impact:
+        "Enabled teams to address issues before they escalate, improving on-time performance, clarifying accountability, and supporting proactive decision-making.",
+    },
+
     impact:
       "Drastically reduced the time-to-awareness for overdue and high-priority documents, accelerating review cycles and increasing individual accountability by delivering actionable intelligence directly into users' daily workflows.",
 
@@ -300,9 +333,9 @@ export default function ProjectPage() {
   }
 
   const projectMap: Record<string, string> = {
-    "document-analytics": "powerbi-dashboard",
-    "powerbi-dashboard": "jupyter-analysis",
-    "jupyter-analysis": "document-analytics",
+    "powerbi-dashboard": "document-analytics",
+    "document-analytics": "jupyter-analysis",
+    "jupyter-analysis": "powerbi-dashboard",
   };
 
   const otherProjectId = projectMap[projectId];
@@ -333,6 +366,41 @@ export default function ProjectPage() {
         >
           {project.intro}
         </p>
+      </section>
+
+      {/* Executive Summary - Horizontal Flow */}
+      <section className="max-w-4xl mx-auto px-6 pb-16 pt-8 animate-fade-up">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-stretch gap-6">
+          {/* 1. Problem */}
+          <div className="flex-1 bg-muted/20 border border-border rounded-lg p-6 flex flex-col">
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+              Problem
+            </p>
+            <p className="text-sm text-foreground/85 leading-relaxed flex-1">
+              {project.executive.problem}
+            </p>
+          </div>
+
+          {/* 2. Insight */}
+          <div className="flex-1 bg-accent/10 border border-accent rounded-lg p-6 flex flex-col md:scale-[1.035]">
+            <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-2">
+              Insight
+            </p>
+            <p className="text-sm font-medium text-foreground leading-relaxed flex-1">
+              {project.executive.insight}
+            </p>
+          </div>
+
+          {/* 3. Impact */}
+          <div className="flex-1 bg-muted/20 border border-border rounded-lg p-6 flex flex-col">
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+              Impact
+            </p>
+            <p className="text-sm text-foreground/85 leading-relaxed flex-1">
+              {project.executive.impact}
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Sections */}
