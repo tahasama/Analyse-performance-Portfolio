@@ -215,89 +215,48 @@ const projectData: Record<string, ProjectData> = {
     label: "Jupyter Notebook (Python)",
     title: "Proactive Workflow & Escalation System",
     intro:
-      "While dashboards and diagnostic apps empower users to *find* problems, I built an automated system to *push* critical issues directly to the people who can solve them. This Python-based service transforms document management from a reactive 'pull' model to a proactive 'push' model, ensuring no critical task falls through the cracks.",
+      "This section measures how time is spent in the document workflow using median durations to avoid distortion from outliers. It highlights where delays originate and enables management to focus on the real bottleneck in the process.",
     executive: {
       problem:
-        "Workflow delays and exceptions were only identified reactively, leading to missed deadlines and unclear accountability.",
+        "Management often only sees workflow delays reactively, making it difficult to pinpoint whether suppliers or internal reviewers are causing the majority of delays.",
       insight:
-        "The proactive workflow and escalation system automatically flags bottlenecks and overdue tasks, providing real-time visibility into process exceptions.",
+        "By analyzing the median durations of supplier submissions and review times, we can quantify the relative contribution of each stage to the total cycle time.",
       impact:
-        "Enabled teams to address issues before they escalate, improving on-time performance, clarifying accountability, and supporting proactive decision-making.",
+        "Provides clear, actionable insight into workflow inefficiencies, allowing teams to prioritize interventions and improve overall process speed and accountability.",
     },
-
     impact:
-      "Drastically reduced the time-to-awareness for overdue and high-priority documents, accelerating review cycles and increasing individual accountability by delivering actionable intelligence directly into users' daily workflows.",
-
+      "Delivered a concise, visual representation of workflow bottlenecks: median supplier delay, median review duration, total cycle time, and the percentage contribution of review to total process time. This enables rapid decision-making and focused actions during meetings.",
     images: [""],
     sections: [
       {
-        label: "Context",
-        layerColor: "bg-layer-doc",
-        title: "Environment & Background",
-        content: [
-          "Document reviewers and discipline leads are often managing multiple projects and priorities, making it difficult to constantly monitor an EDMS or dashboard.",
-          "The primary communication tools for project teams are email and chat platforms (e.g., Microsoft Teams).",
-          "Critical delays were often discovered only during weekly meetings, meaning days were lost before action could be taken.",
-          "There was a need for a 'hands-free' system that could monitor performance and alert stakeholders without requiring them to log in and check a report.",
-        ],
-      },
-      {
-        label: "Problem Statement",
-        layerColor: "bg-layer-doc",
-        title: "The Awareness & Accountability Gap",
-        content: [
-          "No mechanism existed to proactively alert individuals or managers to urgent or overdue items in real-time.",
-          "Responsibility for delays was difficult to enforce, as there was no automated record of notification.",
-          "Reviewers were unaware of newly assigned high-priority documents until they manually checked the system.",
-          "Management lacked a simple, automated way to get a daily or weekly summary of their team's pressing issues.",
-        ],
-        insight:
-          "The core problem was one of latency. The data was available, but the signal was too weak and too slow to drive immediate action. The solution needed to amplify the signal and deliver it with zero friction.",
-      },
-      {
-        label: "Automation Intelligence",
-        layerColor: "bg-layer-doc",
-        title: "Rule-Based Processing & Targeted Delivery",
-        content: [
-          "I developed a scheduled Python script that ingests the same weekly data extract, processing it with the Pandas library.",
-          "Engineered a sophisticated rules engine that scans the data for specific trigger conditions, such as documents overdue > 5 days, items stuck in a status for > 10 days, or high-priority documents assigned to a user.",
-          "Built a modular notification system that formats clean, human-readable alerts and delivers them via email or a chat platform API.",
-          "Designed different alert templates for different audiences, ensuring the message is relevant and actionable for the recipient.",
-        ],
-      },
-      {
-        label: "Reporting",
-        layerColor: "bg-layer-report",
-        title: "What Is Being Monitored & Alerted",
-        content: [
-          "**Individual Escalation Alerts:** Automated emails sent directly to a reviewer, listing their overdue documents and highlighting high-priority items.",
-          "**Management Summary Alerts:** A daily or weekly digest sent to discipline leads, summarizing their team's total overdue count, average aging, and top problem areas.",
-          "**Supplier Watchlist Alerts:** Notifications to supplier managers when a key supplier's performance metrics (e.g., average delay) cross a predefined threshold.",
-          "**System Health Alerts:** Alerts for administrators if the data extract fails or if an unusually high number of documents are flagged, indicating a potential systemic issue.",
-        ],
-      },
-      {
-        label: "Performance",
+        label: "Core Metrics",
         layerColor: "bg-layer-perf",
-        title: "How Performance Is Accelerated",
+        title: "Median Duration Analysis",
         content: [
-          "Reduces 'time to awareness' from days (when someone checks a dashboard) to hours (when the alert is sent), directly accelerating the start of the review process.",
-          "Increases individual accountability by creating a clear, time-stamped digital paper trail of notifications for each overdue item.",
-          "Helps managers balance team workloads by providing visibility into which team members are consistently overloaded with overdue tasks.",
-          "Improves overall document cycle time by ensuring that bottlenecks are flagged and addressed as soon as they occur, not at the end of the week.",
+          "**Supplier Delay (Median d):** Median time between planned submission and actual submission.",
+          "**Review Duration (Median d):** Median time between actual submission and review completion.",
+          "**Total Lead Time (Median d):** Median time from planned submission to review completion.",
+          "**Review % of Total:** Proportion of total cycle time spent in review.",
         ],
-        insight:
-          "The system's power lies in its seamless integration into existing workflows. It works silently in the background, only surfacing when a critical threshold is crossed, delivering intelligence directly into the tools (email, chat) that people already use and monitor constantly.",
       },
       {
-        label: "Advisory",
-        layerColor: "bg-layer-advisory",
-        title: "How It Drives Immediate Action",
+        label: "Visuals",
+        layerColor: "bg-layer-report",
+        title: "Chart & Insight Layout",
         content: [
-          "Enables real-time operational decisions, such as a manager immediately reassigning a task from an overloaded reviewer to someone with capacity.",
-          "Provides the trigger for immediate outreach to a supplier about a late submission, preventing further downstream delays.",
-          "Creates a data-backed foundation for performance conversations, as patterns of missed alerts can be discussed in reviews.",
-          "Informs process improvement by identifying which rules trigger the most alerts, highlighting the most common and costly workflow failures.",
+          "Left: **Clustered Bar Chart** showing Supplier, Review, and Total durations in median days.",
+          "Right (top): **KPI Card** showing Review % of Total.",
+          "Right (bottom): **Dynamic Insight Text** stating: 'Review accounts for 78% of total cycle time'.",
+        ],
+      },
+      {
+        label: "Executive Takeaways",
+        layerColor: "bg-layer-advisory",
+        title: "Why This Matters",
+        content: [
+          "Clearly identifies whether suppliers or internal review are the primary source of delays.",
+          "Transforms raw timing data into a single actionable insight for management.",
+          "Supports immediate decisions to reallocate workload or address bottlenecks without waiting for weekly meetings.",
         ],
       },
     ],
@@ -345,7 +304,7 @@ export default function ProjectPage() {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b border-border">
-        <div className="max-w-4xl mx-auto px-6 py-6 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between">
           <Link
             to="/"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -356,7 +315,7 @@ export default function ProjectPage() {
         </div>
       </header>
       {/* Title */}
-      <section className="max-w-4xl mx-auto px-6 pt-16 pb-12">
+      <section className="max-w-4xl mx-auto pl-6 py-10">
         <h1 className="font-serif text-3xl md:text-5xl text-foreground mb-6 animate-fade-up">
           {project.title}
         </h1>
