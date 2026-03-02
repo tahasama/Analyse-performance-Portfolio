@@ -4,6 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base {
   :root {
     --background: 210 20% 98%;
@@ -53,7 +55,9 @@
     --layer-report: 190 55% 45%;
     --layer-perf: 38 85% 55%;
     --layer-advisory: 160 50% 42%;
+    
   }
+
 
   .dark {
     --background: 220 30% 8%;
@@ -115,6 +119,7 @@
   }
 
   .layer-badge {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider;
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[0.65rem] font-semibold uppercase tracking-wider;
   }
 }
+

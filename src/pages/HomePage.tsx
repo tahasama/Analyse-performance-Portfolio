@@ -1,33 +1,43 @@
-import { Link } from "react-router-dom";
+import { Link, ScrollRestoration } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const projects = [
   {
-    id: "document-analytics",
-    label: "React Web App",
-    title: "Document Submission & Review Analytics",
-    description:
-      "Lifecycle tracking of engineering documents with heatmaps, delay analysis, and completion rate monitoring to surface workflow bottlenecks.",
-    insights: [
-      "Identified 34% review delays concentrated in structural discipline",
-      "Mapped submission-to-approval lifecycle across 12 workflow stages",
-      "Reduced average review turnaround by flagging stalled documents",
-    ],
-    layers: ["Document Intelligence", "Reporting", "Performance", "Advisory"],
-  },
-  {
     id: "powerbi-dashboard",
     label: "Power BI Dashboard",
-    title: "Discipline-Level Performance Reporting",
+    title: "Document Status & Workflow Monitoring",
     description:
-      "KPI monitoring and workflow tracking across disciplines, enabling data-driven decisions on resource allocation and process improvement.",
+      "Dual dashboard tracking document status, review progress, and workflow ownership across disciplines for both engineering and supplier contexts.",
     insights: [
-      "Tracked discipline-level output against planned milestones",
-      "Revealed workload imbalance across review teams",
-      "Enabled weekly performance reporting for PMO leadership",
+      "Provides a unified view of KPIs, status distribution, and workflow ownership for immediate situational awareness.",
+      "Enables direct follow-up on overdue, pending, and critical documents by assigning clear ownership.",
     ],
-    layers: ["Document Intelligence", "Reporting", "Performance", "Advisory"],
+    layers: ["Reporting", "Performance"],
+  },
+  {
+    id: "document-analytics",
+    label: "React.js Web App",
+    title: "Document Lifecycle & Timeline Analysis",
+    description:
+      "Lifecycle analysis of supplier documents from submission to approval statuses, centered on timeline visualization, flow tracking, delay understanding.",
+    insights: [
+      "Timeline per document shows full lifecycle from planned to final",
+      "Combines flow, status, and review data to diagnose bottlenecks and delay causes",
+    ],
+    layers: ["Document Intelligence", "Reporting", "Performance"],
+  },
+  {
+    id: "jupyter-analysis",
+    label: "Jupyter Notebook (Python)",
+    title: "Document Flow & Delay Intelligence",
+    description:
+      "Analytical model that breaks down document cycle time to understand how workflow stages contribute to overall delays.",
+    insights: [
+      "Quantifies the delay contribution of each workflow stage (submission, review, etc.) to pinpoint primary bottlenecks.",
+      "Establishes a statistical framework for moving from reactive reporting to proactive risk flagging.",
+    ],
+    layers: ["Performance", "Advisory"],
   },
 ];
 
@@ -53,19 +63,19 @@ const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => (
 
     <div className="space-y-2 mb-6">
       {project.insights.map((insight, i) => (
-        <div key={i} className="flex items-start gap-2 text-sm text-foreground/80">
+        <div
+          key={i}
+          className="flex items-start gap-2 text-sm text-foreground/80"
+        >
           <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent flex-shrink-0" />
           <span>{insight}</span>
         </div>
       ))}
     </div>
 
-    <div className="flex flex-wrap gap-2 mb-6">
+    <div className="flex flex-wrap gap-2 mb-6 project-layers">
       {project.layers.map((layer) => (
-        <span
-          key={layer}
-          className={`layer-badge ${layerColors[layer] || ""}`}
-        >
+        <span key={layer} className={`layer-badge ${layerColors[layer] || ""}`}>
           {layer}
         </span>
       ))}
@@ -88,7 +98,10 @@ export default function HomePage() {
             backgroundImage: `url(${heroBg})`,
           }}
         />
-        <div className="absolute inset-0" style={{ background: "var(--hero-gradient)" }} />
+        <div
+          className="absolute inset-0"
+          style={{ background: "var(--hero-gradient)" }}
+        />
         <div className="relative z-10 max-w-4xl mx-auto px-6 py-32 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground/60 mb-4 animate-fade-in">
             Portfolio
@@ -96,7 +109,10 @@ export default function HomePage() {
           <h1 className="font-serif text-4xl md:text-6xl text-primary-foreground mb-6 animate-fade-up">
             Reporting &amp; Performance Analyst
           </h1>
-          <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto leading-relaxed animate-fade-up" style={{ animationDelay: "0.15s" }}>
+          <p
+            className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto leading-relaxed animate-fade-up"
+            style={{ animationDelay: "0.15s" }}
+          >
             Specialized in analyzing and improving document-driven workflows
             through reporting and performance insights.
           </p>
@@ -107,23 +123,26 @@ export default function HomePage() {
       <section className="border-b border-border">
         <div className="max-w-5xl mx-auto px-6 py-8">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-0">
-            {["Document Intelligence", "Reporting", "Performance", "Advisory"].map(
-              (stage, i) => (
-                <div key={stage} className="flex items-center">
-                  <div className="flex items-center gap-2">
-                    <span className="flex items-center justify-center h-8 w-8 rounded-full bg-primary text-primary-foreground text-xs font-bold">
-                      {i + 1}
-                    </span>
-                    <span className="text-sm font-medium text-foreground">
-                      {stage}
-                    </span>
-                  </div>
-                  {i < 3 && (
-                    <ArrowRight className="hidden sm:block h-4 w-4 text-muted-foreground mx-6" />
-                  )}
+            {[
+              "Document Intelligence",
+              "Reporting",
+              "Performance",
+              "Advisory",
+            ].map((stage, i) => (
+              <div key={stage} className="flex items-center">
+                <div className="flex items-center gap-2">
+                  <span className="flex items-center justify-center h-8 w-8 rounded-full bg-primary text-primary-foreground text-xs font-bold">
+                    {i + 1}
+                  </span>
+                  <span className="text-sm font-medium text-foreground">
+                    {stage}
+                  </span>
                 </div>
-              )
-            )}
+                {i < 3 && (
+                  <ArrowRight className="hidden sm:block h-4 w-4 text-muted-foreground mx-6" />
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -157,15 +176,30 @@ export default function HomePage() {
             {[
               {
                 title: "Data Analysis",
-                items: ["Data structuring & cleansing", "Trend identification", "Root cause analysis", "Statistical reasoning"],
+                items: [
+                  "Data structuring & cleansing",
+                  "Trend identification",
+                  "Root cause analysis",
+                  "Statistical reasoning",
+                ],
               },
               {
                 title: "Reporting",
-                items: ["Dashboard design", "KPI frameworks", "Automated reporting", "Stakeholder communication"],
+                items: [
+                  "Dashboard design",
+                  "KPI frameworks",
+                  "Automated reporting",
+                  "Stakeholder communication",
+                ],
               },
               {
                 title: "Performance Monitoring",
-                items: ["Delay analysis", "Throughput tracking", "Bottleneck detection", "SLA compliance"],
+                items: [
+                  "Delay analysis",
+                  "Throughput tracking",
+                  "Bottleneck detection",
+                  "SLA compliance",
+                ],
               },
               {
                 title: "Tools",
