@@ -1,10 +1,20 @@
 import { useParams, Link, ScrollRestoration } from "react-router-dom";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, X } from "lucide-react";
 import engL from "@/assets/eng.png";
 import supD from "@/assets/supp.png";
 import sub from "@/assets/sub1.png";
 import rev from "@/assets/rev1.png";
 import timeline from "@/assets/timeline1.png";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Card, CardContent } from "@/components/ui/card";
+import Autoplay from "embla-carousel-autoplay";
+import { useEffect, useRef, useState } from "react";
 
 interface ProjectSection {
   label: string;
@@ -120,7 +130,6 @@ const projectData: Record<string, ProjectData> = {
   },
 
   // ===========================
-  // ===========================
 
   "document-analytics": {
     label: "React.js Web App",
@@ -211,52 +220,74 @@ const projectData: Record<string, ProjectData> = {
     ],
   },
 
+  // ===========================
+
   "jupyter-analysis": {
     label: "Jupyter Notebook (Python)",
-    title: "Proactive Workflow & Escalation System",
+    title: "Document Flow & Delay Intelligence",
     intro:
-      "This section measures how time is spent in the document workflow using median durations to avoid distortion from outliers. It highlights where delays originate and enables management to focus on the real bottleneck in the process.",
+      "This notebook analyzes the full lifecycle of engineering document submissions and reviews. It combines workflow data and supplier submission data to measure performance, identify bottlenecks, and generate actionable insights for improving document flow efficiency. The analysis can also serve as the basis for a more interactive presentation or dashboard if desired.",
     executive: {
       problem:
-        "Management often only sees workflow delays reactively, making it difficult to pinpoint whether suppliers or internal reviewers are causing the majority of delays.",
+        "Engineering and Management often lack a consolidated view of document flow performance. Delays may originate from suppliers, reviewers, discipline-specific issues, or growing backlog pressure, but the root causes are rarely quantified clearly.",
       insight:
-        "By analyzing the median durations of supplier submissions and review times, we can quantify the relative contribution of each stage to the total cycle time.",
+        "By combining submission schedules, workflow timestamps, and reviewer activity, the analysis quantifies on-time performance, review efficiency, cycle times, backlog growth, and discipline risk areas.",
       impact:
-        "Provides clear, actionable insight into workflow inefficiencies, allowing teams to prioritize interventions and improve overall process speed and accountability.",
+        "Transforms raw data into a structured performance analysis with visual trends, risk indicators, and action recommendations, enabling teams to quickly understand operational issues and prioritize corrective actions.",
     },
     impact:
-      "Delivered a concise, visual representation of workflow bottlenecks: median supplier delay, median review duration, total cycle time, and the percentage contribution of review to total process time. This enables rapid decision-making and focused actions during meetings.",
+      "Delivered a structured performance assessment of the document workflow including supplier on-time performance, review SLA compliance, cycle time analysis, backlog tracking, discipline risk detection, reviewer throughput metrics, and a dynamic action plan highlighting operational priorities. This analysis can also be further translated into interactive dashboards or presentations for broader stakeholder engagement.",
     images: [""],
     sections: [
       {
         label: "Core Metrics",
         layerColor: "bg-layer-perf",
-        title: "Median Duration Analysis",
+        title: "Workflow Performance KPIs",
         content: [
-          "**Supplier Delay (Median d):** Median time between planned submission and actual submission.",
-          "**Review Duration (Median d):** Median time between actual submission and review completion.",
-          "**Total Lead Time (Median d):** Median time from planned submission to review completion.",
-          "**Review % of Total:** Proportion of total cycle time spent in review.",
+          "Supplier On-Time Submission %: Percentage of documents submitted on or before planned submission dates.",
+          "Review On-Time (SLA) %: Percentage of documents approved before the workflow due date.",
+          "Median Cycle Time: Typical number of days from planned submission to final approval.",
+          "Backlog Pressure %: Share of documents currently overdue or exceeding SLA.",
         ],
       },
       {
-        label: "Visuals",
+        label: "Process Analysis",
         layerColor: "bg-layer-report",
-        title: "Chart & Insight Layout",
+        title: "Workflow Bottleneck & Trend Analysis",
         content: [
-          "Left: **Clustered Bar Chart** showing Supplier, Review, and Total durations in median days.",
-          "Right (top): **KPI Card** showing Review % of Total.",
-          "Right (bottom): **Dynamic Insight Text** stating: 'Review accounts for 78% of total cycle time'.",
+          "**Time Contribution Analysis:** Measures how much of total cycle time comes from supplier delays versus internal review duration.",
+          "**Submission vs Approval Trend:** Weekly comparison of documents submitted, approved, and cumulative backlog.",
+          "**Supplier Performance Table:** Highlights suppliers with frequent delays, average delay days, and on-time rates.",
         ],
       },
       {
-        label: "Executive Takeaways",
+        label: "Operational Risk Insights",
         layerColor: "bg-layer-advisory",
-        title: "Why This Matters",
+        title: "Risk & Efficiency Diagnostics",
         content: [
-          "Clearly identifies whether suppliers or internal review are the primary source of delays.",
-          "Transforms raw timing data into a single actionable insight for management.",
-          "Supports immediate decisions to reallocate workload or address bottlenecks without waiting for weekly meetings.",
+          "**Discipline Risk Analysis:** Identifies engineering disciplines with the highest SLA breach rates.",
+          "**Reviewer Performance Metrics:** Measures reviewer throughput, average review duration, and on-time approval rates.",
+          "**Review Duration Distribution:** Shows how documents are distributed across fast, normal, slow, and very slow review categories.",
+        ],
+      },
+      {
+        label: "Decision Support",
+        layerColor: "bg-layer-advisory",
+        title: "Dynamic Action Plan",
+        content: [
+          "Automatically detects workflow bottlenecks such as supplier delays, review capacity constraints, or backlog pressure.",
+          "Highlights high-risk disciplines or reviewers with unusually low throughput.",
+          "Generates prioritized operational recommendations to guide corrective actions and workflow improvements.",
+        ],
+      },
+      {
+        label: "Further Steps",
+        layerColor: "bg-layer-report",
+        title: "Interactive Presentation Potential",
+        content: [
+          "The notebook results can be extended into interactive visual summaries or dashboards for leadership or team reviews.",
+          "Key metrics, tables, and action recommendations can be presented in a polished, stakeholder-ready format.",
+          "This step allows teams to explore trends dynamically while maintaining the rigor of the notebook analysis.",
         ],
       },
     ],
@@ -275,6 +306,27 @@ const layerLabelColors: Record<string, string> = {
 export default function ProjectPage() {
   const { projectId } = useParams<{ projectId: string }>();
   const project = projectData[projectId || ""];
+  const [activeImage, setActiveImage] = useState<string | null>(null);
+  const [api, setApi] = useState<any>();
+  const [current, setCurrent] = useState(0);
+
+  const autoplay = useRef<any>(
+    Autoplay({
+      delay: 4000,
+      stopOnInteraction: false,
+      stopOnMouseEnter: true,
+    }),
+  );
+
+  useEffect(() => {
+    if (!api) return;
+
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
 
   if (!project) {
     return (
@@ -297,8 +349,10 @@ export default function ProjectPage() {
     "jupyter-analysis": "powerbi-dashboard",
   };
 
-  const otherProjectId = projectMap[projectId];
-  const otherProject = projectData[otherProjectId];
+  const otherProjectId = projectId ? projectMap[projectId] : "";
+  const otherProject = otherProjectId
+    ? projectData[otherProjectId]
+    : projectData["powerbi-dashboard"];
 
   return (
     <div className="min-h-screen bg-background">
@@ -364,22 +418,63 @@ export default function ProjectPage() {
 
       {/* Sections */}
       <div className="max-w-4xl mx-auto px-6 pb-20 space-y-16">
-        <section>
-          {project.images.map((img, i) => (
-            <img
-              key={i}
-              src={img}
-              alt={`Project visual ${i + 1}`}
-              className="my-6 rounded-lg border border-border"
-            />
-          ))}
-        </section>
-        {project.sections.map((section, i) => (
-          <section
-            key={i}
-            className="animate-fade-up"
-            style={{ animationDelay: `${0.05 * i}s` }}
+        <section
+          role="region"
+          aria-label="Project screenshots"
+          tabIndex={0}
+          className="animate-fade-up"
+          style={{ animationDelay: "0.05s" }}
+        >
+          <Carousel
+            className="w-full max-w-[12rem] sm:max-w-[50rem] mx-auto "
+            plugins={[autoplay.current]}
+            setApi={setApi}
           >
+            <CarouselContent>
+              {project.images.map((image, index) => (
+                <CarouselItem key={index}>
+                  <div className="p-1">
+                    <Card className="overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-300">
+                      <CardContent className="p-0">
+                        {image ? (
+                          <img
+                            src={image}
+                            alt={`Analytics dashboard screenshot ${index + 1}`}
+                            onClick={() => setActiveImage(image)}
+                            className="w-full h-[420px] object-cover cursor-zoom-in"
+                          />
+                        ) : (
+                          <span className="text-4xl font-semibold">
+                            {index + 1}
+                          </span>
+                        )}
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+          <div className="flex justify-center gap-2 mt-4 relative">
+            {project.images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => api?.scrollTo(index)}
+                className={`h-2 w-2 rounded-full transition-all ${
+                  current === index
+                    ? "bg-accent scale-125"
+                    : "bg-muted-foreground/40"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </section>
+
+        {project.sections.map((section, i) => (
+          <section key={i}>
             <p
               className={`text-xs font-semibold uppercase tracking-[0.2em] mb-2 ${
                 layerLabelColors[section.label] || "text-accent"
@@ -439,6 +534,27 @@ export default function ProjectPage() {
           </Link>
         </section>
       </div>
+
+      {activeImage && (
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+          onClick={() => setActiveImage(null)}
+        >
+          <div className="absolute top-2 right-2 p-2 m-2">
+            <button
+              className="text-muted-foreground hover:text-foreground "
+              aria-label="Close"
+            >
+              <X className="h-5 w-5 ring-2 ring-muted-foreground rounded-full" />
+            </button>
+          </div>
+          <img
+            src={activeImage}
+            alt="Expanded view"
+            className="max-h-[90vh] max-w-[90vw] object-contain"
+          />
+        </div>
+      )}
       {/* Footer */}
       <footer className="border-t border-border py-10 text-center text-sm text-muted-foreground">
         <Link to="/" className="hover:text-foreground transition-colors">

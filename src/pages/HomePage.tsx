@@ -32,10 +32,10 @@ const projects = [
     label: "Jupyter Notebook (Python)",
     title: "Document Flow & Delay Intelligence",
     description:
-      "Analytical model that breaks down document cycle time to understand how workflow stages contribute to overall delays.",
+      "Analytical workflow evaluating document cycle time and workflow performance to identify delay origins and stage contributions.",
     insights: [
-      "Quantifies the delay contribution of each workflow stage (submission, review, etc.) to pinpoint primary bottlenecks.",
-      "Establishes a statistical framework for moving from reactive reporting to proactive risk flagging.",
+      "Breaks down the document lifecycle into measurable stages to reveal where time is actually spent.",
+      "Transforms workflow data into clear performance insights that support faster operational decisions.",
     ],
     layers: ["Performance", "Advisory"],
   },
