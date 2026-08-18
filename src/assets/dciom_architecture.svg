@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1380 920" width="100%" height="100%" style="background-color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+
+  <defs>
+    <!-- Shadow Filters -->
+    <filter id="drop-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.06"/>
+    </filter>
+    <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.04"/>
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-feedback" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#0891b2"/>
+    </marker>
+  </defs>
+
+  <!-- ================= HEADER SECTION ================= -->
+  <g id="header">
+    <text x="650" y="38" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a">DCIOM Governance Architecture</text>
+    <text x="650" y="58" text-anchor="middle" font-size="17" font-weight="500" fill="#64748b">Conceptual architecture, operating model, and governance boundaries</text>
+  </g>
+
+  <!-- ================= FRAMEWORK GOVERNANCE OVERLAY ================= -->
+  <g id="framework-governance" filter="url(#drop-shadow)">
+    <rect x="80" y="80" width="1150" height="54" rx="8" fill="#1e293b"/>
+    <text x="650" y="113" text-anchor="middle" font-size="19" font-weight="700" fill="#f8fafc" letter-spacing="0.5">Document Control Intelligence &amp; Operations Management (DCIOM)</text>
+  </g>
+
+  <!-- ================= PILLAR 1: DOCUMENT MANAGEMENT ================= -->
+  <g id="pillar-doc-management" filter="url(#drop-shadow)">
+    <!-- Container -->
+    <rect x="130" y="165" width="230" height="460" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+
+    <!-- Title Block -->
+    <text x="245" y="198" text-anchor="middle" font-size="19" font-weight="700" fill="#334155">Document Management</text>
+    <text x="245" y="216" text-anchor="middle" font-size="18" font-weight="700" fill="#334155">Pillar</text>
+
+    <!-- Subtitle / Scope -->
+    <rect x="150" y="230" width="190" height="42" rx="6" fill="#e2e8f0"/>
+    <text x="245" y="247" text-anchor="middle" font-size="14" font-weight="700" fill="#475569">Outside DCIOM Scope</text>
+    <text x="245" y="261" text-anchor="middle" font-size="14" font-weight="500" fill="#64748b">Governed by Organization</text>
+
+    <!-- EDMS Box -->
+    <g id="edms-box" filter="url(#card-shadow)">
+      <rect x="150" y="380" width="190" height="180" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="245" y="465" text-anchor="middle" font-size="19" font-weight="700" fill="#0f172a">EDMS /</text>
+      <text x="245" y="485" text-anchor="middle" font-size="19" font-weight="700" fill="#0f172a">ACONEX</text>
+    </g>
+  </g>
+
+  <!-- ================= PILLAR 2: REPORTING PILLAR ================= -->
+  <g id="pillar-reporting" filter="url(#drop-shadow)">
+    <!-- Container -->
+    <rect x="530" y="165" width="250" height="460" rx="10" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+
+    <!-- Title Block -->
+    <text x="655" y="205" text-anchor="middle" font-size="20" font-weight="700" fill="#166534">Reporting Pillar</text>
+
+    <!-- Component 1 -->
+    <g id="c1" filter="url(#card-shadow)">
+      <rect x="545" y="230" width="220" height="105" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1"/>
+      <text x="655" y="270" text-anchor="middle" font-size="18" font-weight="700" fill="#14532d">Status Report</text>
+      <text x="655" y="293" text-anchor="middle" font-size="15" font-weight="500" fill="#4b5563">Current operational state</text>
+    </g>
+
+    <!-- Component 2 -->
+    <g id="c2" filter="url(#card-shadow)">
+      <rect x="545" y="355" width="220" height="105" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1"/>
+      <text x="655" y="395" text-anchor="middle" font-size="18" font-weight="700" fill="#14532d">Performance Report</text>
+      <text x="655" y="418" text-anchor="middle" font-size="15" font-weight="500" fill="#4b5563">KPI measurement &amp; thresholds</text>
+    </g>
+
+    <!-- Component 3 -->
+    <g id="c3" filter="url(#card-shadow)">
+      <rect x="545" y="480" width="220" height="105" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1"/>
+      <text x="655" y="520" text-anchor="middle" font-size="18" font-weight="700" fill="#14532d">Findings &amp; Advisory</text>
+      <text x="655" y="543" text-anchor="middle" font-size="15" font-weight="500" fill="#4b5563">Constraint diagnosis</text>
+    </g>
+  </g>
+
+  <!-- ================= PILLAR 3: DECISION PILLAR (recolored: indigo, out of the Health Score Green/Amber/Red vocabulary) ================= -->
+  <g id="pillar-decision" filter="url(#drop-shadow)">
+    <!-- Container -->
+    <rect x="930" y="165" width="250" height="460" rx="10" fill="#eef2ff" stroke="#c7d2fe" stroke-width="1.5"/>
+
+    <!-- Title Block -->
+    <text x="1055" y="205" text-anchor="middle" font-size="20" font-weight="700" fill="#3730a3">Decision Pillar</text>
+
+    <!-- Component 4 -->
+    <g id="c4" filter="url(#card-shadow)">
+      <rect x="945" y="230" width="220" height="105" rx="8" fill="#ffffff" stroke="#a5b4fc" stroke-width="1"/>
+      <text x="1055" y="270" text-anchor="middle" font-size="18" font-weight="700" fill="#312e81">Process &amp; Action</text>
+      <text x="1055" y="293" text-anchor="middle" font-size="15" font-weight="500" fill="#4b5563">Action governance</text>
+    </g>
+
+    <!-- Component 5 -->
+    <g id="c5" filter="url(#card-shadow)">
+      <rect x="945" y="355" width="220" height="105" rx="8" fill="#ffffff" stroke="#a5b4fc" stroke-width="1"/>
+      <text x="1055" y="395" text-anchor="middle" font-size="18" font-weight="700" fill="#312e81">Strategy &amp; Impact</text>
+      <text x="1055" y="418" text-anchor="middle" font-size="15" font-weight="500" fill="#4b5563">Scenario evaluation</text>
+    </g>
+
+    <!-- Component 6 -->
+    <g id="c6" filter="url(#card-shadow)">
+      <rect x="945" y="480" width="220" height="105" rx="8" fill="#ffffff" stroke="#a5b4fc" stroke-width="1"/>
+      <text x="1055" y="520" text-anchor="middle" font-size="18" font-weight="700" fill="#312e81">Tracking</text>
+      <text x="1055" y="543" text-anchor="middle" font-size="15" font-weight="500" fill="#4b5563">Commitment verification</text>
+    </g>
+  </g>
+
+  <!-- ================= HANDSHAKES & CONNECTORS ================= -->
+
+  <!-- H1: Source Handshake — FIX: now anchored from EDMS up to Status Report (C1), per its own §4.7 definition, not the Performance Report row -->
+  <g id="handshake-h1">
+    <path d="M 340 470 L 445 470 L 445 282 L 528 282" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+    <rect x="365" y="364" width="160" height="30" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="445" y="383" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af">H1 – Source Handshake</text>
+  </g>
+
+  <!-- H2: Finding Handshake — FIX: now anchored to Findings & Advisory (C3), not the middle row -->
+  <g id="handshake-h2">
+    <path d="M 767 532 L 850 532 L 850 282 L 928 282" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+    <rect x="787" y="395" width="135" height="50" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="855" y="414" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af">H2</text>
+    <text x="855" y="432  " text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af">Finding Handshake</text>
+  </g>
+
+  <!-- H3: Closure & Baseline Handshake — FIX: now branches to both Document Management and Reporting, same weight/dash on each leg -->
+  <g id="handshake-h3">
+    <!-- Source drop from Decision -->
+    <path d="M 1055 625 L 1055 690" fill="none" stroke="#0891b2" stroke-width="2" stroke-dasharray="6 4"/>
+    <!-- Spine -->
+    <path d="M 1055 690 L 245 690" fill="none" stroke="#0891b2" stroke-width="2" stroke-dasharray="6 4"/>
+    <!-- Branch 1: into Document Management (closure artifacts) -->
+    <path d="M 245 690 L 245 627" fill="none" stroke="#0891b2" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrow-feedback)"/>
+    <!-- Branch 2: into Reporting (baseline updates) -->
+    <path d="M 655 690 L 655 627" fill="none" stroke="#0891b2" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrow-feedback)"/>
+
+    <!-- Per-branch captions, sitting on their own branch -->
+    <rect x="188" y="642" width="114" height="24" rx="5" fill="#ffffff" stroke="#0891b2" stroke-width="1"/>
+    <text x="245" y="658" text-anchor="middle" font-size="12" font-weight="700" fill="#0e7490">Closure artifacts</text>
+
+    <rect x="598" y="641" width="114" height="24" rx="5" fill="#ffffff" stroke="#0891b2" stroke-width="1"/>
+    <text x="655" y="657" text-anchor="middle" font-size="12" font-weight="700" fill="#0e7490">Baseline updates</text>
+
+    <!-- Overall handshake label, on the spine, clear of both branches -->
+    <rect x="735" y="676" width="250" height="30" rx="6" fill="#ffffff" stroke="#0891b2" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="860" y="695" text-anchor="middle" font-size="14" font-weight="700" fill="#0e7490"> H3 – Closure &amp; Baseline Handshake</text>
+  </g>
+
+  <!-- ================= FOUNDATIONAL PRINCIPLES BASE STRIP ================= -->
+  <g id="foundational-principles" filter="url(#drop-shadow)">
+    <rect x="80" y="735" width="1150" height="52" rx="8" fill="#0f172a"/>
+    <text x="650" y="757" text-anchor="middle" font-size="18" font-weight="700" fill="#f8fafc" letter-spacing="1.5">P1  •  P2  •  P3  •  P4  •  P5  •  P6</text>
+    <text x="650" y="774" text-anchor="middle" font-size="14" font-weight="400" fill="#94a3b8">Foundational Principles (apply across all pillars and components)</text>
+  </g>
+
+</svg>

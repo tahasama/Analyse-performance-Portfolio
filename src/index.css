@@ -1,90 +1,145 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  /* Permanent dark systems base -- no user toggle. .mode-reporting and
+     .theme-editorial below are scoped light overrides applied to specific
+     sections/pages, not alternate global themes.
+
+     Palette is the exact approved token set (tokensA/tokensB): dark
+     bgPage #14161c / bgCard #191b22 / border #2a2d38 / textPrimary #f4f5f7 /
+     textSecondary #8f9bb3 / accent #d99a3e / live #4fd1a5. */
   :root {
-    --background: 210 20% 98%;
-    --foreground: 220 30% 12%;
+    --background: 225 17% 9%;
+    --foreground: 220 16% 96%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 30% 12%;
+    --card: 227 15% 12%;
+    --card-foreground: 220 16% 96%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 30% 12%;
+    --popover: 227 15% 12%;
+    --popover-foreground: 220 16% 96%;
 
-    --primary: 220 40% 18%;
-    --primary-foreground: 40 30% 95%;
+    --primary: 220 16% 96%;
+    --primary-foreground: 225 17% 9%;
 
-    --secondary: 215 25% 94%;
-    --secondary-foreground: 220 30% 18%;
+    --secondary: 227 14% 16%;
+    --secondary-foreground: 220 16% 90%;
 
-    --muted: 215 20% 93%;
-    --muted-foreground: 215 15% 50%;
+    --muted: 227 14% 16%;
+    --muted-foreground: 220 19% 56%;
 
-    --accent: 38 85% 55%;
-    --accent-foreground: 220 40% 12%;
+    --accent: 36 67% 55%;
+    --accent-foreground: 225 17% 9%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 5 55% 48%;
+    --destructive-foreground: 220 16% 96%;
 
-    --border: 215 20% 88%;
-    --input: 215 20% 88%;
-    --ring: 38 85% 55%;
+    --border: 227 14% 19%;
+    --input: 227 14% 19%;
+    --ring: 36 67% 55%;
 
-    --radius: 0.5rem;
+    --radius: 0.375rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 225 17% 8%;
+    --sidebar-foreground: 220 16% 90%;
+    --sidebar-primary: 36 67% 55%;
+    --sidebar-primary-foreground: 225 17% 9%;
+    --sidebar-accent: 227 14% 16%;
+    --sidebar-accent-foreground: 220 16% 90%;
+    --sidebar-border: 227 14% 19%;
+    --sidebar-ring: 36 67% 55%;
 
-    /* Custom tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(220 40% 18%), hsl(220 35% 28%));
-    --insight-bg: 38 85% 97%;
-    --insight-border: 38 60% 80%;
-    --layer-doc: 210 60% 50%;
-    --layer-report: 190 55% 45%;
-    --layer-perf: 38 85% 55%;
-    --layer-advisory: 160 50% 42%;
+    /* One cool data/analytics accent -- charts and trajectory moments only. */
+    --data: 205 70% 58%;
+
+    /* Semantic status colors. --status-healthy is the exact "live" teal
+       (#4fd1a5) from the token set. */
+    --status-critical: 5 55% 52%;
+    --status-attention: 22 75% 55%;
+    --status-healthy: 160 59% 56%;
   }
 
-  .dark {
-    --background: 220 30% 8%;
-    --foreground: 210 20% 95%;
-    --card: 220 28% 12%;
-    --card-foreground: 210 20% 95%;
-    --popover: 220 28% 12%;
-    --popover-foreground: 210 20% 95%;
-    --primary: 40 30% 95%;
-    --primary-foreground: 220 40% 18%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 38 85% 55%;
-    --accent-foreground: 220 40% 12%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 38 85% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-    --insight-bg: 38 40% 12%;
-    --insight-border: 38 40% 30%;
+  /* Reporting group (C1-C3) -- exact paper palette from tokensA:
+     bgPage #e9e5da / bgCard #faf8f1 / bgPanel #f2eee3 / textPrimary #1c1a16 /
+     textSecondary #5b5850 / textMuted #9a9584 / border #e0dbcb /
+     accent #a4362b. Applied via `.mode-reporting` on ProjectPageShell for
+     the reporting group, and on Home's matching band. */
+  .mode-reporting {
+    --background: 44 25% 88%;
+    --foreground: 40 12% 10%;
+
+    --card: 47 47% 96%;
+    --card-foreground: 40 12% 10%;
+
+    --popover: 47 47% 96%;
+    --popover-foreground: 40 12% 10%;
+
+    --primary: 40 12% 10%;
+    --primary-foreground: 44 37% 92%;
+
+    --secondary: 44 37% 92%;
+    --secondary-foreground: 44 6% 34%;
+
+    --muted: 44 37% 92%;
+    --muted-foreground: 46 10% 46%;
+
+    --accent: 5 58% 41%;
+    --accent-foreground: 44 37% 96%;
+
+    --destructive: 5 58% 41%;
+    --destructive-foreground: 44 37% 96%;
+
+    --border: 46 25% 84%;
+    --input: 46 25% 84%;
+    --ring: 5 58% 41%;
+
+    --data: 205 55% 40%;
+
+    --status-critical: 5 58% 41%;
+    --status-attention: 30 55% 35%;
+    --status-healthy: 150 35% 30%;
+  }
+
+  /* Architecture (lower half) + Research -- same exact paper palette as
+     .mode-reporting (no separate reference exists for a third light mode,
+     so it reuses the one approved light palette rather than inventing another). */
+  .theme-editorial {
+    --background: 44 25% 88%;
+    --foreground: 40 12% 10%;
+
+    --card: 47 47% 96%;
+    --card-foreground: 40 12% 10%;
+
+    --popover: 47 47% 96%;
+    --popover-foreground: 40 12% 10%;
+
+    --primary: 40 12% 10%;
+    --primary-foreground: 44 37% 92%;
+
+    --secondary: 44 37% 92%;
+    --secondary-foreground: 44 6% 34%;
+
+    --muted: 44 37% 92%;
+    --muted-foreground: 46 10% 46%;
+
+    --accent: 5 58% 41%;
+    --accent-foreground: 44 37% 96%;
+
+    --destructive: 5 58% 41%;
+    --destructive-foreground: 44 37% 96%;
+
+    --border: 46 25% 84%;
+    --input: 46 25% 84%;
+    --ring: 5 58% 41%;
+
+    --data: 205 55% 40%;
+
+    --status-critical: 5 58% 41%;
+    --status-attention: 30 55% 35%;
+    --status-healthy: 150 35% 30%;
   }
 }
 
@@ -95,26 +150,56 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', sans-serif;
   }
 
   h1, h2, h3 {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Source Serif 4', Georgia, "Iowan Old Style", "Times New Roman", serif;
   }
 }
 
 @layer components {
+  /* Light/paper sections run on the serif body font throughout (headings
+     AND body copy) -- the dark/panel base keeps the sans (Inter) body
+     default from the `body` rule above. Matches tokensA.fontBody vs.
+     tokensB.fontBody exactly. */
+  .mode-reporting,
+  .theme-editorial {
+    font-family: 'Source Serif 4', Georgia, "Iowan Old Style", "Times New Roman", serif;
+  }
+
+  /* Small tracked-uppercase eyebrow labels are mono everywhere in the
+     reference mockups (file-sub, dash-code, lead-in, panel-label, comp-code) --
+     mono is reserved for this system/meta register, never body text. */
   .section-label {
-    @apply text-xs font-semibold uppercase tracking-[0.2em] text-accent;
+    @apply font-mono text-xs font-semibold uppercase tracking-[0.2em] text-accent;
   }
 
-  .insight-card {
-    @apply border-l-4 p-4 rounded-r-md;
+  .callout {
+    @apply rounded-md border-l-[3px] px-4 py-3;
     border-left-color: hsl(var(--accent));
-    background-color: hsl(var(--insight-bg));
+    background-color: hsl(var(--accent) / 0.07);
   }
 
-  .layer-badge {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider;
+  .status-badge {
+    @apply inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-semibold uppercase tracking-wide;
+  }
+
+  /* Light photo mat behind evidence screenshots so dashboard captures stay
+     legible and framed regardless of the surrounding theme. */
+  .surface-light {
+    background-color: hsl(40 20% 97%);
+  }
+
+  .display-editorial {
+    font-family: 'Source Serif 4', Georgia, "Iowan Old Style", "Times New Roman", serif;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .display-systems {
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
   }
 }

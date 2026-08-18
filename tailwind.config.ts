@@ -14,8 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        serif: ["DM Serif Display", "serif"],
+        sans: ["Inter", "system-ui", "-apple-system", "Segoe UI", "Arial", "sans-serif"],
+        serif: ["Source Serif 4", "Georgia", "Iowan Old Style", "Times New Roman", "serif"],
+        mono: ["IBM Plex Mono", "ui-monospace", "SFMono-Regular", "Consolas", "Liberation Mono", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -61,15 +62,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        insight: {
-          bg: "hsl(var(--insight-bg))",
-          border: "hsl(var(--insight-border))",
-        },
-        layer: {
-          doc: "hsl(var(--layer-doc))",
-          report: "hsl(var(--layer-report))",
-          perf: "hsl(var(--layer-perf))",
-          advisory: "hsl(var(--layer-advisory))",
+        data: "hsl(var(--data))",
+        status: {
+          critical: "hsl(var(--status-critical))",
+          attention: "hsl(var(--status-attention))",
+          healthy: "hsl(var(--status-healthy))",
         },
       },
       borderRadius: {
