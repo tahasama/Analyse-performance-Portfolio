@@ -36,7 +36,7 @@ export const experience: ExperienceContent = {
   positioningStatement:
     "A hands-on Document Control professional combining EDMS operations, reporting and analytics, practical systems development, and independently authored governance research.",
   summary:
-    "5+ years in document control across multi-project building construction, wastewater treatment, and thermal power environments, based in Morocco. Hands-on with Aconex/EDMS operations, Power BI/DAX reporting, and building practical tools where no formal system existed.",
+    "5+ years in document control across multi-project building construction, wastewater treatment, and thermal power environments, based in Morocco. Hands-on with Aconex/EDMS operations, Power BI/DAX reporting, and developing practical tools where no formal system was available.",
   roles: [
     {
       role: "Document Controller",
@@ -47,7 +47,7 @@ export const experience: ExperienceContent = {
         "Ensured document integrity, version control, metadata governance, and timely information flow across multidisciplinary engineering teams.",
         "Designed and maintained Power BI solutions supporting project governance, supplier performance, document review status, and management reporting.",
         "Provided user training and guidance on workflows, transmittals, metadata standards, and Aconex practices.",
-        "Ensured compliance with document-control procedures through structured management and classification.",
+        "Supported compliance with document-control procedures through structured document management and classification.",
       ],
     },
     {
@@ -56,7 +56,7 @@ export const experience: ExperienceContent = {
       period: "02/2022 – 05/2023",
       bullets: [
         "Developed a custom document-management web application from scratch where no formal EDMS was available.",
-        "Application supported document storage, version control, metadata management, and reporting.",
+        "The application supported document storage, version control, metadata management, and reporting.",
         "Implemented document-control standards, naming conventions, metadata structures, and filing systems.",
         "Performed quality checks for documentation accuracy, completeness, and consistency.",
       ],
@@ -66,8 +66,8 @@ export const experience: ExperienceContent = {
       organization: "Freelance / Self-employed",
       period: "02/2018 – 01/2022",
       bullets: [
+        "Developed Power BI dashboards for SMEs and translated operational data into KPI reporting and interactive dashboards.",
         "Designed and delivered websites and small applications for local businesses.",
-        "Developed Power BI dashboards for SMEs.",
         "Converted operational data into KPI reports and interactive dashboards.",
       ],
     },
@@ -96,10 +96,10 @@ export const experience: ExperienceContent = {
     },
     {
       title: "Core Competencies",
-      items: ["Information Governance", "Workflow Management", "Process Improvement", "Custom App Development"],
+      items: ["Information Governance", "Workflow Management", "Process Improvement", "Practical Systems Development"],
     },
     {
-      title: "Technical Skills",
+      title: "Reporting & Analytics",
       items: ["Power BI", "DAX", "KPI Reporting", "Dashboard Development"],
     },
     {
@@ -108,7 +108,7 @@ export const experience: ExperienceContent = {
     },
   ],
   contact: {
-    email: "maatof.taha@gmail.com",
+    email: "taha.maatof@gmail.com",
     linkedin: "https://www.linkedin.com/in/taha-maatof/", 
     // -- paste the real URL here once provided; the
     // Contact section on ExperiencePage.tsx already renders a matching button automatically.

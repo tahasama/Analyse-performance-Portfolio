@@ -182,13 +182,13 @@ export const projects: ProjectContent[] = [
     whatIBuilt:
       "A monthly layer scoring submission and review activity — on-schedule rate, backlog, SLA breaches, first-time acceptance, revision rate — into one composite Health Score, attributable down to discipline, contractor, and reviewer.",
     whatItDelivers: [
-      "A composite Health Score (0–100) combining five performance dimensions into one comparable signal",
+      "A composite Health Score (0–100) combining six performance dimensions into one comparable signal",
       "On-schedule and backlog percentages for both submissions and reviews",
       "A breakdown of where cycle time is actually being lost — supplier delay vs. review duration",
       "Per-discipline SLA breach rates, per-reviewer performance, and submission quality/rework rates",
     ],
     whyItMatters:
-      "This is the cycle's official performance record — the number every other layer reacts to. The first image is the composite view. The second image is the detail breakdown, showing where supplier, discipline, and reviewer performance are driving the result.",
+      "Within the designed system, this is the cycle's formal performance record — the number every other layer reacts to. The first image is the composite view. The second image is the detail breakdown, showing where supplier, discipline, and reviewer performance are driving the result.",
     images: [
       {
         src: c2_1,
@@ -224,16 +224,16 @@ export const projects: ProjectContent[] = [
     title: "Findings & Advisory",
     typeCadenceLabel: "DIAGNOSIS — Monthly",
     roleOneLiner:
-      "Diagnoses performance failures by type — capacity, execution, or control — and routes ranked findings to the owner.",
+      "Diagnoses performance failures by type — capacity, execution, or control — and routes ranked findings to the function positioned to respond.",
     artifactName: "Findings & Advisory",
     theProblem:
       "Performance data showed what was failing, not why or what to do next. The same drop could have several causes, with no consistent way to tell a capacity shortage, an execution failure, and a control breakdown apart.",
     whatIBuilt:
-      "A monthly layer that turns performance data into ranked, severity-coded findings, classifies each against a constraint type — Capacity, Execution, or Control — and routes a recommended action to the function accountable for it.",
+      "A monthly layer that turns performance data into ranked, severity-coded findings, classifies each against a constraint type — Capacity, Execution, or Control — and routes each finding to the function positioned to respond.",
     whatItDelivers: [
       "Ranked findings, severity-coded (critical / attention / healthy), with a concise explanation for each",
       "Constraint classification — Capacity, Execution, or Control — for every finding not already on track",
-      "A recommended action and named routing (e.g. Discipline Leads, Department Managers) per classified finding",
+      "A defined routing to the function positioned to respond, such as Discipline Leads or Department Managers.",
       "A single headline statement naming the dominant constraint type for the period",
     ],
     whyItMatters:
@@ -455,7 +455,7 @@ export const projects: ProjectContent[] = [
       },
       worksheetFields: ["Metric", "Status", "Last Month", "This Month", "Delta", "Question", "Response", "Owner"],
       worksheetNote:
-        "Completed live during the meeting, not assembled afterward — the next cycle's data reconciles each row automatically.",
+        "Completed live during the meeting, not assembled afterward — the next cycle's data reconciles each row against the prior commitment.",
     },
   },
 ];

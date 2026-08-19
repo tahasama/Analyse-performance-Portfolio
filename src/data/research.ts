@@ -27,11 +27,11 @@ export interface DbokReference {
 export const dbok: DbokReference = {
   name: "Documentation Body of Knowledge (DBoK)",
   positioningStatement:
-    "An independently authored architectural reference mapping the wider documentation and information-governance landscape — from enterprise governance down to document control — as a structured map of disciplines, frameworks, concepts, artifacts, technologies, standards, and roles, not a single-discipline manual.",
+    "An independently authored architectural reference mapping the wider documentation and information-governance landscape — rom enterprise governance through document control and performance governance — as a structured map of disciplines, frameworks, concepts, artifacts, technologies, standards, and roles, not a single-discipline manual.",
   orientation: [
     {
       label: "Why",
-      text: "The map connecting every documentation discipline — so none has to be understood alone.",
+      text: "The map connecting the documentation disciplines — showing why they exist, where they sit, and when to reach for one over another.",
     },
     {
       label: "For Who",
@@ -39,7 +39,7 @@ export const dbok: DbokReference = {
     },
     {
       label: "Where It Fits",
-      text: "ISO 19650/15489 own implementation detail — this explains why it matters and where it fits.",
+      text: "SO 19650, ISO 15489 and the relevant certifications remain the implementation authorities; this book explains why that detail matters and where it fits.",
     },
   ],
   knowledgeTypes: [
@@ -61,11 +61,11 @@ export const dbok: DbokReference = {
     },
     {
       name: "Artifact",
-      description: "A tangible output a discipline actually produces — e.g. a register, a transmittal, a report.",
+      description: "A specific document or record type, with its own fixed form and lifecycle — e.g. a register, transmittal, or report.",
     },
     {
       name: "Technology",
-      description: "A tool or system category that implements a discipline's practice — e.g. EDMS, CDE.",
+      description: "A software category that executes a discipline's policy rather than setting it — e.g. EDMS, CDE.",
     },
     {
       name: "Standard",
@@ -106,7 +106,7 @@ export const dbok: DbokReference = {
     {
       number: "0",
       title: "Architectural Patterns",
-      gloss: "Five recurring distinctions used throughout the book, applied consistently across every chapter below.",
+      gloss: "Five recurring distinctions used throughout the architecture.",
     },
     {
       number: "1",
@@ -136,12 +136,12 @@ export const dbok: DbokReference = {
     {
       number: "6",
       title: "Document Control",
-      gloss: "Supplier management, review management, submittals, transmittals, deliverables, MDR, RFI, NCR, CAR, operational reporting — the author's own operational domain.",
+      gloss: "Supplier management, review management, submittals, transmittals, deliverables, MDR, RFI, NCR, CAR, operational reporting.",
     },
     {
       number: "7",
       title: "Performance Governance",
-      gloss: "Verifying whether governance is actually working — where DCIOM itself is formally situated, alongside the Three Handshakes and the six components.",
+      gloss: "Verifying whether governance is actually working — where DCIOM itself is formally situated, including the Three Handshakes, six components, and Accountability & Escalation.",
     },
     {
       number: "8",

@@ -59,14 +59,14 @@ export interface DciomArchitecture {
 export const dciomArchitecture: DciomArchitecture = {
   fullName: "Document Control Intelligence & Operations Management",
   positioningStatement:
-    "An independently designed documentation-specific performance-governance framework — not an industry standard, not certified, not externally adopted. It turns existing document-control data into measured performance, diagnosis, and decision support, and is formally specified as a version-controlled internal standard rather than left as an informal set of habits.",
+    "An independently designed documentation-specific performance-governance framework — not an industry standard, not certified, not externally adopted. It turns existing document-control data into measured performance, diagnosis, and decision support, and and formally specified in a version-controlled Framework Standard rather than left as an informal set of practices.",
 
   pillars: [
     {
       id: "document-management",
       name: "Document Management",
       description:
-        "The governed source system documents actually live in and move through.",
+        "The governed document-management layer where documents are captured, stored, controlled, and moved.",
       scopeNote: "Outside DCIOM scope — governed by the organization, not by this framework.",
       components: [
         {
@@ -106,7 +106,7 @@ export const dciomArchitecture: DciomArchitecture = {
         {
           id: "c4-process-action",
           label: "Process & Action System",
-          description: "Act stage — evaluated movement, not activity.",
+          description: "Act stage — what the movement justifies, not what was attempted.",
         },
         {
           id: "c5-strategy-impact",
@@ -129,7 +129,7 @@ export const dciomArchitecture: DciomArchitecture = {
       from: "EDMS / Aconex",
       to: ["C1 · Status Report"],
       description:
-        "Operational data enters the framework from the governed source system into the Status Report — the one point where raw document-control data becomes framework input.",
+        "Operational data enters the framework from the governed source system into the Status Report — the formal boundary where governed source data enters the framework's Reporting layer.",
     },
     {
       id: "h2",
@@ -145,7 +145,7 @@ export const dciomArchitecture: DciomArchitecture = {
       from: "Decision",
       to: ["Document Management", "Reporting"],
       description:
-        "Decisions branch back down into both the source system, as closure artifacts, and the reporting baseline, as updated figures — closing the loop instead of ending it.",
+        "Closure verification and governance-approved threshold updates cross back into the EDMS and Components 1–3, closing the loop rather than ending it.",
     },
   ],
 
@@ -153,7 +153,7 @@ export const dciomArchitecture: DciomArchitecture = {
     {
       id: "P1",
       name: "Single Source of Truth",
-      definition: "All performance data is derived exclusively from the EDMS. No parallel tracking is recognized.",
+      definition: "Performance measurement is derived from the governed EDMS source; parallel manual tracking is not treated as a DCIOM source.",
       portfolioMeaning: "The system measures from the governed source rather than manually reconstructed numbers.",
     },
     {
@@ -196,7 +196,7 @@ export const dciomArchitecture: DciomArchitecture = {
     { section: "2", title: "System Foundations", gloss: "The six principles and rules the framework operates on." },
     { section: "3", title: "Governance Model", gloss: "Who owns decisions, and how escalation operates." },
     { section: "4", title: "Governance Instruments", gloss: "The six components and three handshakes — the operational core." },
-    { section: "5", title: "Health Score Governance", gloss: "How the composite Health Score is built, and why it can't be manually overridden." },
+    { section: "5", title: "Health Score Governance", gloss: "The composite Health Score, its governance rules, and non-adjustability." },
     { section: "6", title: "Roles & Governance Accountability", gloss: "Standing responsibilities attached to each role." },
     { section: "7", title: "Data Governance", gloss: "Requirements for the data the framework depends on." },
     { section: "8", title: "Data Architecture", gloss: "How measurements are derived from governed source data." },
@@ -208,9 +208,6 @@ export const dciomArchitecture: DciomArchitecture = {
     { section: "C", title: "DCIOM in the Standards Landscape", gloss: "Where DCIOM sits relative to established external frameworks." },
   ],
 
-  // The 14 standardOutline entries consolidated into thematic bands for
-  // public display -- proves the standard is formally specified without
-  // reproducing its full table of contents.
   standardThemes: [
     {
       label: "Authority & Scope",
@@ -229,7 +226,7 @@ export const dciomArchitecture: DciomArchitecture = {
     },
     {
       label: "Health Score & Performance Model",
-      description: "How the composite Health Score is built, and why it can't be manually overridden.",
+      description: "The composite Health Score, its governance rules, and non-adjustability.",
       sections: ["5"],
     },
     {

@@ -25,10 +25,10 @@ export const horizon: FrameworkView = {
   name: "HORIZON",
   subtitle: "What the framework offers",
   stages: toStages([
-    ["Document Intelligence", "Turning raw document-control activity into structured, usable signal."],
-    ["Reporting", "Making current operational state visible on a fixed cadence."],
-    ["Performance", "Converting state into comparable, measured performance."],
-    ["Advisory", "Classifying failures and routing recommended action to an owner."],
-    ["Strategy", "Modeling trajectory and the intervention required to change it."],
+    ["Document Intelligence", "Turning document-control data into structured, usable intelligence."],
+    ["Reporting", "Making current operational state visible and measurable."],
+    ["Performance", "Converting operational state into comparable, measured performance."],
+    ["Advisory", "Turning measured failures into classified diagnosis and routed response."],
+    ["Strategy", "Modeling trajectory and intervention scenarios to support forward decisions."],
   ]),
 };
