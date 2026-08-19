@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/sheet";
 
 const navItems = [
+  { to: "/", label: "Home" },
   { to: "/architecture", label: "Architecture" },
   { to: "/research", label: "Research" },
   { to: "/experience", label: "Experience" },
@@ -30,6 +31,7 @@ export default function Header() {
             <NavLink
               key={item.to}
               to={item.to}
+              end={item.to === "/"}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               activeClassName="text-foreground"
             >
@@ -59,6 +61,7 @@ export default function Header() {
                 <SheetClose asChild key={item.to}>
                   <NavLink
                     to={item.to}
+                    end={item.to === "/"}
                     className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
                     activeClassName="text-foreground"
                   >

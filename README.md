@@ -1,73 +1,80 @@
-# Welcome to your Lovable project
+# Maatof Taha — Portfolio
 
-## Project info
+A personal portfolio site, a Document Control professional who builds
+performance-reporting systems. It showcases six live/deployment-ready systems (status
+reporting, performance measurement, diagnosis, quarterly review, projection, and
+commitment tracking), the DCIOM governance architecture behind them, a documentation
+research reference (DBoK), and a full experience/skills page.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Pages
 
-## How can I edit this code?
+- **Home** — the six systems introduced as one performance flow, split into two
+  groups: three Reporting systems (Status & Visibility, Flow & Performance,
+  Findings & Advisory) that observe, measure, and diagnose; and three Decision
+  systems (Process & Action, Strategy & Impact, Commitment & Tracking) that act
+  on that diagnosis, project trajectory, and verify commitments.
+- **Six project pages** (`/project/:id`) — one per system, each with the
+  problem it solves, what was built, what it delivers, real evidence
+  screenshots, and why it matters.
+- **Architecture** (`/architecture`) — DCIOM (Document Control Intelligence &
+  Operations Management), the independently designed governance framework the
+  six systems sit inside: its three pillars, three handshakes between them,
+  six operating principles, and the formal internal standard that specifies
+  it (shown at a "what was designed and why" level — exact formulas,
+  thresholds, and scoring logic stay in the controlled specification).
+- **Research** (`/research`) — DBoK (Documentation Body of Knowledge), an
+  independently authored reference mapping the wider documentation and
+  information-governance landscape, shown through its chapter structure,
+  recurring knowledge types, and architectural patterns.
+- **Experience** (`/experience`) — role history, education, skills grouped by
+  category, and contact information.
 
-There are several ways of editing your application.
+## Tech stack
 
-**Use Lovable**
+- [Vite](https://vitejs.dev/) + [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [shadcn/ui](https://ui.shadcn.com/) + [Tailwind CSS](https://tailwindcss.com/)
+- [React Router](https://reactrouter.com/) for routing
+- [Vitest](https://vitest.dev/) + Testing Library for tests
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Project structure
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+  pages/            Route-level pages (Home, Architecture, Experience, Research, per-project pages)
+  components/
+    layout/         Header, Footer, page shell
+    diagrams/       Architecture/DBoK diagrams, pillar/handshake/principle grids
+    project/        Shared project-page building blocks (evidence gallery, breadcrumb, ...)
+    ui/             shadcn/ui primitives
+  data/             Content as typed data (projects, architecture, experience, research)
+  assets/           Screenshots and other static evidence images
 ```
 
-**Edit a file directly in GitHub**
+Page content lives in `src/data/*.ts` rather than being hardcoded in JSX — edit those
+files to change copy, and the pages that consume them update automatically.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Getting started
 
-**Use GitHub Codespaces**
+Requires Node.js and npm ([install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)).
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```sh
+# Install dependencies
+npm i
 
-## What technologies are used for this project?
+# Start the dev server with hot reload
+npm run dev
 
-This project is built with:
+# Type-check + build for production
+npm run build
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+# Preview a production build locally
+npm run preview
 
-## How can I deploy this project?
+# Run tests
+npm run test
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Deployment
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+The site deploys as a static SPA (see `vercel.json` for the rewrite rule that routes
+all paths to `index.html` so client-side routing works on refresh/deep links).
