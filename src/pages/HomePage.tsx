@@ -151,7 +151,7 @@ export default function HomePage() {
   return (
     <div>
       {/* Dark intro */}
-      <header className="pt-20 pb-16 md:pt-24 md:pb-24">
+      <header className="pt-20 pb-12 md:pt-24 md:pb-20">
         <div className="max-w-5xl mx-auto px-6">
           <p className="section-label mb-4 animate-fade-in">
             Portfolio · Document Control
@@ -166,17 +166,17 @@ export default function HomePage() {
             &ldquo;I design performance systems for Document Control.&rdquo;
           </p>
           <p
-            className="text-muted-foreground max-w-2xl leading-relaxed mb-16 animate-fade-up"
+            className="text-muted-foreground max-w-2xl leading-relaxed mb-32 animate-fade-up"
             style={{ animationDelay: "0.15s" }}
           >
             {experience.positioningStatement}
           </p>
 
           <div
-            className="border-t border-border pt-8 animate-fade-up"
+            className="border-t border-border pt-10 animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <p className="section-label mb-5">
+            <p className="section-label mb-8">
               That work breaks down into six systems, one performance flow
             </p>
             <div className="flex justify-center items-center">

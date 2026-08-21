@@ -2,6 +2,12 @@ export interface ExperienceEntry {
   role: string;
   organization: string;
   period: string;
+  /** Sector and scale of the work, e.g. "Thermal Power Plant, 1386 MW".
+   * This is what evidences the range the summary claims, so it renders
+   * alongside the organization rather than being folded into a bullet. */
+  context?: string;
+  /** Country only, no city -- the original resume redacts city names. */
+  country?: string;
   bullets: string[];
 }
 
@@ -40,45 +46,50 @@ export const experience: ExperienceContent = {
   roles: [
     {
       role: "Document Controller",
-      organization: "Company S.A.",
+      organization: "JESA S.A (JV OCP & Worley)",
       period: "05/2023 – Present",
+      context:
+        "Multi-Project Building Construction (Education, Residential & Public Facilities)",
+      country: "Morocco",
       bullets: [
-        "Managed the document-control function within Aconex.",
-        "Ensured document integrity, version control, metadata governance, and timely information flow across multidisciplinary engineering teams.",
-        "Designed and maintained Power BI solutions supporting project governance, supplier performance, document review status, and management reporting.",
-        "Provided user training and guidance on workflows, transmittals, metadata standards, and Aconex practices.",
-        "Supported compliance with document-control procedures through structured document management and classification.",
+        "Managed document control within Aconex, ensuring document integrity, version control, metadata governance, and timely information flow across multidisciplinary engineering teams.",
+        "Designed and maintained Power BI dashboards supporting project governance, supplier performance, document review status, and management reporting.",
+        "Provided user training and guidance on workflows, transmittals, metadata standards, and Aconex best practices.",
+        "Ensured compliance with document control procedures through structured management and classification.",
       ],
     },
     {
       role: "Document Controller",
-      organization: "Company2",
+      organization: "Societe Nouvelle des Conduites d'Eau (SNCE)",
       period: "02/2022 – 05/2023",
+      context: "Wastewater Treatment Plant (~10,000 m3/day)",
+      country: "Morocco",
       bullets: [
-        "Developed a custom document-management web application from scratch where no formal EDMS was available.",
-        "The application supported document storage, version control, metadata management, and reporting.",
-        "Implemented document-control standards, naming conventions, metadata structures, and filing systems.",
-        "Performed quality checks for documentation accuracy, completeness, and consistency.",
+        "Developed a custom web-based document management application from scratch, in the absence of a formal EDMS, supporting document storage, user access, version control, metadata management, and reporting.",
+        "Implemented document control standards, naming conventions, metadata structures, and filing systems to improve document consistency and retrieval efficiency.",
+        "Performed rigorous quality checks to ensure documentation accuracy, completeness, and consistency.",
       ],
     },
     {
       role: "Solutions Developer",
-      organization: "Freelance / Self-employed",
+      organization: "Freelance",
       period: "02/2018 – 01/2022",
+      context: "Small Business Digital Solutions",
+      country: "Morocco (Remote)",
       bullets: [
-        "Developed Power BI dashboards for SMEs and translated operational data into KPI reporting and interactive dashboards.",
-        "Designed and delivered websites and small applications for local businesses.",
-        "Converted operational data into KPI reports and interactive dashboards.",
+        "Built web-based document and inventory management systems for small businesses, applying structured data organization and version control principles.",
+        "Developed Power BI dashboards for small and medium-sized businesses, transforming operational data into KPI reports and interactive dashboards.",
       ],
     },
     {
       role: "Document Controller",
-      organization: "Company3",
+      organization: "Daewoo Engineering & Construction Co.,Ltd",
       period: "01/2017 – 01/2018",
+      context: "Thermal Power Plant, 1386 MW (Piping Department)",
+      country: "Morocco",
       bullets: [
-        "Managed the full lifecycle of project documentation: registration, updates, final archiving.",
-        "Ensured compliance with project standards, client requirements, and contractual requirements.",
-        "Controlled and delivered final documentation packages to clients.",
+        "Managed the full lifecycle of project documentation, from registration and updates to final archiving.",
+        "Controlled and delivered final documentation packages, ensuring compliance with project standards, client requirements, and contractual obligations.",
       ],
     },
   ],
