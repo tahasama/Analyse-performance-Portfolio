@@ -12,7 +12,7 @@ export default function HandshakeList({ handshakes }: HandshakeListProps) {
         <Card key={h.id} className="border-border bg-card">
           <CardContent className="p-5">
             <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-3">
-              {h.id.toUpperCase()} — {h.name}
+              {h.id.toUpperCase()} · {h.name}
             </p>
             <div className="mb-2">
               <p className="text-sm text-foreground leading-snug">{h.from}</p>

@@ -35,7 +35,7 @@ export default function ArchitecturePage() {
           "How the six systems fit together."
         </p>
         <p
-          className="text-muted-foreground max-w-2xl leading-relaxed mb-16 animate-fade-up"
+          className="text-muted-foreground max-w-2xl leading-relaxed animate-fade-up"
           style={{ animationDelay: "0.15s" }}
         >
           {positioningStatement}
@@ -48,14 +48,17 @@ export default function ArchitecturePage() {
       {/* Light -- HORIZON and the architecture intro, in their original
           sequence right after DCIOM. */}
       <div className="theme-editorial bg-background text-foreground">
-        <section className="max-w-5xl mx-auto px-6 pt-16 pb-20">
+        {/* The timeline is a thin band of content, so its padding is kept
+            tighter than a text section's -- and the nodes are sized up to
+            carry the width they're given rather than floating in it. */}
+        <section className="max-w-5xl mx-auto px-6 pt-14 pb-14">
           <p className="section-label mb-1">{horizon.name}</p>
-          <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-12">
+          <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-8">
             {horizon.subtitle}
           </h2>
           <div className="relative flex items-start">
             <div
-              className="absolute left-0 right-0 top-3 h-px bg-border"
+              className="absolute left-0 right-0 top-5 h-px bg-border"
               aria-hidden="true"
             />
             {horizon.stages.map((stage, i) => (
@@ -63,7 +66,7 @@ export default function ArchitecturePage() {
                 key={stage.id}
                 className="relative z-10 flex-1 flex flex-col items-center text-center px-1"
               >
-                <span className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-accent bg-background font-mono text-[0.65rem] font-semibold text-accent mb-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-accent bg-background font-mono text-sm font-semibold text-accent mb-3">
                   {i + 1}
                 </span>
                 <span className="font-mono text-[0.65rem] uppercase tracking-wide text-muted-foreground leading-snug">
@@ -89,7 +92,7 @@ export default function ArchitecturePage() {
             <span className="font-semibold text-foreground">
               What's shown here vs. what stays controlled.
             </span>{" "}
-            This page shows what was designed and why — the pillars, the
+            This page shows what was designed and why: the pillars, the
             handshakes, the governing principles, and the existence and
             structure of the formal standard. The exact metric formulas, Health
             Score weighting, thresholds, routing and escalation logic, and
@@ -109,15 +112,15 @@ export default function ArchitecturePage() {
 
       {/* Light -- Three Pillars, Three Handshakes */}
       <div className="theme-editorial bg-background text-foreground">
-        <section className="max-w-5xl mx-auto px-6 py-16">
+        <section className="max-w-5xl mx-auto px-6 pt-16 pb-12">
           <p className="section-label mb-3">Three Pillars</p>
           <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-6">
-            What the architecture governs — and what it doesn't
+            What the architecture governs, and what it doesn't
           </h2>
           <PillarGrid pillars={pillars} />
         </section>
 
-        <section className="max-w-5xl mx-auto px-6 py-16 border-t border-border">
+        <section className="max-w-5xl mx-auto px-6 pt-12 pb-16 border-t border-border">
           <p className="section-label mb-3">Three Handshakes</p>
           <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-6">
             Where the pillars formally connect
@@ -139,7 +142,7 @@ export default function ArchitecturePage() {
       <div className="theme-editorial bg-background text-foreground">
         {/* Formal Specification -- a real artifact (cover + thematic bands),
             not a 14-entry table of contents. */}
-        <section className="max-w-5xl mx-auto px-6 pb-24 pt-16">
+        <section className="max-w-5xl mx-auto px-6 pb-16 pt-16">
           <p className="section-label mb-3">Formal Specification</p>
           <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-4">
             DCIOM Framework Standard
@@ -186,12 +189,12 @@ export default function ArchitecturePage() {
             ))}
           </ul>
           <p className="text-sm text-muted-foreground max-w-2xl">
-            Structure shown as evidence of formal specification — implementation
+            Structure shown as evidence of formal specification. Implementation
             detail remains controlled.
           </p>
         </section>
 
-        <section className="max-w-5xl mx-auto px-6 pb-24 border-t border-border pt-12">
+        <section className="max-w-5xl mx-auto px-6 pb-24 border-t border-border pt-10">
           <p className="font-serif text-xl md:text-2xl text-foreground leading-relaxed max-w-2xl">
             The six systems are the visible products. DCIOM is the architecture
             that makes them one governed system.

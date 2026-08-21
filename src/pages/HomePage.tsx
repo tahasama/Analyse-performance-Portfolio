@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { COMPONENT_NUMBER, projects, type ProjectContent } from "@/data/projects";
+import {
+  COMPONENT_NUMBER,
+  projects,
+  type ProjectContent,
+} from "@/data/projects";
 import { experience } from "@/data/experience";
 import SystemLine from "@/components/project/SystemLine";
 import { cn } from "@/lib/utils";
@@ -25,9 +29,9 @@ const capabilitiesIndex = [
   { title: "Tools", items: "Power BI, SQL, Excel" },
 ];
 
-/** Cadence verb for the layer-tag -- first segment of "OBSERVATION — Weekly". */
+/** Cadence verb for the layer-tag -- first segment of "OBSERVATION · Weekly". */
 function cadenceVerb(label: string) {
-  const [verb] = label.split(" — ");
+  const [verb] = label.split(" · ");
   return verb.charAt(0) + verb.slice(1).toLowerCase();
 }
 
@@ -56,7 +60,7 @@ function FileCard({ project }: { project: ProjectContent }) {
           {cadenceVerb(project.typeCadenceLabel)}
         </span>
         <span className="inline-flex items-center font-mono text-[0.66rem] uppercase tracking-[0.1em] text-accent border-[1.5px] border-accent px-2.5 py-1.5 -rotate-[4deg] relative -top-3 left-2.5">
-          {project.status === "live" ? "Live — In Use" : "Deployment Ready"}
+          {project.status === "live" ? "Live · In Use" : "Deployment Ready"}
         </span>
       </div>
       <h3 className="font-serif text-xl text-foreground mb-2 group-hover:text-accent transition-colors">
@@ -65,7 +69,7 @@ function FileCard({ project }: { project: ProjectContent }) {
       <p className="text-[0.92rem] leading-relaxed text-foreground/80 mb-6">
         {project.roleOneLiner}
       </p>
-      <span className="text-xs italic text-accent/70 absolute bottom-5 flex items-center gap-1.5 group-hover:underline-offset-2 group-hover:underline">
+      <span className="text-xs italic text-accent absolute bottom-5 flex items-center gap-1.5 group-hover:underline-offset-2 group-hover:underline">
         See details <ArrowRight className="h-2.5 w-2.5" />
       </span>
     </Link>
@@ -90,7 +94,7 @@ function DashCard({
       className="group relative block bg-card border border-border p-6 transition-shadow duration-300 hover:shadow-lg"
     >
       <div className="flex items-center justify-between gap-3 mb-4">
-        <span className="font-mono text-[0.72rem] tracking-[0.05em] text-accent">
+        <span className="font-mono text-[0.78rem] tracking-[0.05em] text-accent">
           C{num} · {cadenceVerb(project.typeCadenceLabel)}
         </span>
         <span
@@ -106,14 +110,17 @@ function DashCard({
         </span>
       </div>
 
-      <h3 className="display-systems text-[1.08rem] text-foreground mb-2 group-hover:text-accent transition-colors">
+      {/* Sized to match FileCard's optical weight -- the serif/sans split is
+          the intended difference between the two card types, a quieter,
+          smaller card is not. */}
+      <h3 className="display-systems text-[1.25rem] text-foreground mb-2 group-hover:text-accent transition-colors">
         {project.title}
       </h3>
-      <p className="text-[0.86rem] leading-relaxed text-muted-foreground mb-7">
+      <p className="text-[0.92rem] leading-relaxed text-foreground/80 mb-7">
         {project.roleOneLiner}
       </p>
       <div className="absolute bottom-0 flex justify-between items-center w-5/6">
-        <span className="flex w-fit font-mono text-[0.55rem] uppercase tracking-[0.05em] text-muted-foreground border border-border px-2 py-1 group-hover:shadow-sm group-hover:shadow-accent/40 transition-shadow duration-300">
+        <span className="flex w-fit font-mono text-[0.55rem] uppercase tracking-[0.05em] text-foreground/75 gap-1.5  border border-muted-foreground/35 px-2 py-1 group-hover:shadow-sm group-hover:shadow-accent/40 transition-shadow duration-300 items-center">
           See details <ArrowRight className="h-2.5 w-2.5" />
         </span>
         <span
@@ -147,7 +154,7 @@ export default function HomePage() {
       <header className="pt-20 pb-16 md:pt-24 md:pb-24">
         <div className="max-w-5xl mx-auto px-6">
           <p className="section-label mb-4 animate-fade-in">
-            Portfolio — Document Control
+            Portfolio · Document Control
           </p>
           <h1 className="font-serif text-4xl md:text-6xl text-foreground mb-6 leading-[1.1] max-w-3xl animate-fade-up">
             Performance Systems for Document Control
@@ -240,7 +247,7 @@ export default function HomePage() {
           <div className="border-t border-border pt-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-8">
             <div className="max-w-xl">
               <p className="font-serif text-xl text-foreground leading-relaxed mb-3">
-                Behind these six systems is a broader architecture — and a
+                Behind these six systems is a broader architecture, and a
                 research reference mapping the wider documentation profession.
               </p>
               <div className="flex flex-wrap gap-x-6 gap-y-2">

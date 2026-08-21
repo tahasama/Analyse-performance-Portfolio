@@ -59,7 +59,7 @@ export interface DciomArchitecture {
 export const dciomArchitecture: DciomArchitecture = {
   fullName: "Document Control Intelligence & Operations Management",
   positioningStatement:
-    "An independently designed documentation-specific performance-governance framework — not an industry standard, not certified, not externally adopted. It turns existing document-control data into measured performance, diagnosis, and decision support, and and formally specified in a version-controlled Framework Standard rather than left as an informal set of practices.",
+    "An independently designed documentation-specific performance-governance framework, not an industry standard, not certified, not externally adopted. It turns existing document-control data into measured performance, diagnosis, and decision support, and is formally specified in a version-controlled Framework Standard rather than left as an informal set of practices.",
 
   pillars: [
     {
@@ -67,12 +67,12 @@ export const dciomArchitecture: DciomArchitecture = {
       name: "Document Management",
       description:
         "The governed document-management layer where documents are captured, stored, controlled, and moved.",
-      scopeNote: "Outside DCIOM scope — governed by the organization, not by this framework.",
+      scopeNote: "Outside DCIOM scope. Governed by the organization, not by this framework.",
       components: [
         {
           id: "edms",
           label: "EDMS / Aconex",
-          description: "The system of record DCIOM measures from — it doesn't replace or govern it.",
+          description: "The system of record DCIOM measures from. It doesn't replace or govern it.",
         },
       ],
     },
@@ -84,17 +84,17 @@ export const dciomArchitecture: DciomArchitecture = {
         {
           id: "c1-status",
           label: "Status Report",
-          description: "Observe stage — state, not judgment.",
+          description: "Observe stage: state, not judgment.",
         },
         {
           id: "c2-performance",
           label: "Performance Report",
-          description: "Measure stage — composite score, not impression.",
+          description: "Measure stage: composite score, not impression.",
         },
         {
           id: "c3-findings-advisory",
           label: "Findings & Advisory",
-          description: "Diagnose stage — classified cause, not opinion.",
+          description: "Diagnose stage: classified cause, not opinion.",
         },
       ],
     },
@@ -106,17 +106,17 @@ export const dciomArchitecture: DciomArchitecture = {
         {
           id: "c4-process-action",
           label: "Process & Action System",
-          description: "Act stage — what the movement justifies, not what was attempted.",
+          description: "Act stage: what the movement justifies, not what was attempted.",
         },
         {
           id: "c5-strategy-impact",
           label: "Strategy & Impact Simulation",
-          description: "Predict stage — modeled trajectory, not forecast.",
+          description: "Predict stage: modeled trajectory, not forecast.",
         },
         {
           id: "c6-questionnaire-tracking",
           label: "Questionnaire & Tracking",
-          description: "Verify stage — reconciled commitment, not memory.",
+          description: "Verify stage: reconciled commitment, not memory.",
         },
       ],
     },
@@ -129,7 +129,7 @@ export const dciomArchitecture: DciomArchitecture = {
       from: "EDMS / Aconex",
       to: ["C1 · Status Report"],
       description:
-        "Operational data enters the framework from the governed source system into the Status Report — the formal boundary where governed source data enters the framework's Reporting layer.",
+        "Operational data enters the framework from the governed source system into the Status Report, the formal boundary where governed source data enters the framework's Reporting layer.",
     },
     {
       id: "h2",
@@ -172,7 +172,7 @@ export const dciomArchitecture: DciomArchitecture = {
       id: "P4",
       name: "Intelligence Layering",
       definition:
-        "Six stages — Observe, Measure, Diagnose, Act, Predict, Verify — each produce an output the others cannot, and each is operationalized by exactly one component.",
+        "Six stages (Observe, Measure, Diagnose, Act, Predict, Verify) each produce an output the others cannot, and each is operationalized by exactly one component.",
       portfolioMeaning: "Each capability has a distinct job; observation, measurement, diagnosis, action, projection, and verification never collapse into one dashboard.",
     },
     {
@@ -185,17 +185,17 @@ export const dciomArchitecture: DciomArchitecture = {
       id: "P6",
       name: "Data Integrity as Governance Prerequisite",
       definition: "Data-quality failures are governance failures.",
-      portfolioMeaning: "Bad source data isn't a technical nuisance — it undermines every governance conclusion built on top of it.",
+      portfolioMeaning: "Bad source data isn't a technical nuisance. It undermines every governance conclusion built on top of it.",
     },
   ],
 
-  standardMeta: { version: "1.0", status: "Controlled document — amendments require formal review and approval." },
+  standardMeta: { version: "1.0", status: "Controlled document. Amendments require formal review and approval." },
 
   standardOutline: [
     { section: "1", title: "Authority & Purpose", gloss: "Why DCIOM exists, its authority, scope, and governance role." },
     { section: "2", title: "System Foundations", gloss: "The six principles and rules the framework operates on." },
     { section: "3", title: "Governance Model", gloss: "Who owns decisions, and how escalation operates." },
-    { section: "4", title: "Governance Instruments", gloss: "The six components and three handshakes — the operational core." },
+    { section: "4", title: "Governance Instruments", gloss: "The six components and three handshakes, the operational core." },
     { section: "5", title: "Health Score Governance", gloss: "The composite Health Score, its governance rules, and non-adjustability." },
     { section: "6", title: "Roles & Governance Accountability", gloss: "Standing responsibilities attached to each role." },
     { section: "7", title: "Data Governance", gloss: "Requirements for the data the framework depends on." },

@@ -167,6 +167,28 @@
     font-family: 'Source Serif 4', Georgia, "Iowan Old Style", "Times New Roman", serif;
   }
 
+  /* SystemLine's number-badge and arrow glyph are sized off their own text
+     content (padding-based circle, scale-150 arrow) -- fine on the dark base
+     where they inherit the sans body font, but the serif font-family forced
+     above renders those same glyphs wider, squishing the circle and wrapping
+     the row. Scoped to .theme-editorial only (where ProjectPageShell renders
+     SystemLine) so the dark rendering on Home is completely untouched. */
+  .theme-editorial .system-line-ring,
+  .theme-editorial .system-line-arrow {
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  }
+
+  /* Dark keeps the ring's default (unthemed) blue -- .theme-editorial gets
+     its own themed ring + a matching hover fill instead of the generic blue
+     hover, so the ring color and its hover state always agree with each
+     other within a given theme. */
+  .theme-editorial .system-line-ring {
+    --tw-ring-color: hsl(var(--ring));
+  }
+  .theme-editorial .system-line-ring:hover {
+    background-color: hsl(var(--accent) / 0.15);
+  }
+
   /* Small tracked-uppercase eyebrow labels are mono everywhere in the
      reference mockups (file-sub, dash-code, lead-in, panel-label, comp-code) --
      mono is reserved for this system/meta register, never body text. */

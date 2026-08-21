@@ -85,7 +85,7 @@ export const experience: ExperienceContent = {
   education: [
     {
       credential: "DUT (University Degree in Technology)",
-      focus: "Electrical Engineering & Industrial Computing — Automated Systems and Industrial Networks",
+      focus: "Electrical Engineering & Industrial Computing: Automated Systems and Industrial Networks",
       institution: "IUT of Nîmes, France",
     },
   ],
@@ -104,7 +104,7 @@ export const experience: ExperienceContent = {
     },
     {
       title: "Languages",
-      items: ["English — proficient", "French — proficient", "Arabic — native"],
+      items: ["English (proficient)", "French (proficient)", "Arabic (native)"],
     },
   ],
   contact: {

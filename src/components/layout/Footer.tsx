@@ -41,7 +41,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-border">
         <p className="max-w-5xl mx-auto px-6 py-6 text-xs text-muted-foreground text-center sm:text-left">
-          Maatof Taha — {new Date().getFullYear()}
+          Maatof Taha · {new Date().getFullYear()}
         </p>
       </div>
     </footer>

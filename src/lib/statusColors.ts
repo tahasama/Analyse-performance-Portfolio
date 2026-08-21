@@ -29,6 +29,6 @@ export const commitmentStatusClasses: Record<CommitmentStatus, string> = {
 };
 
 export const projectStatusLabels: Record<ProjectStatus, string> = {
-  live: "Live — In Use",
+  live: "Live · In Use",
   ready: "Ready for Deployment",
 };

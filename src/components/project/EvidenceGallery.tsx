@@ -37,7 +37,7 @@ export default function EvidenceGallery({ images, artifactName }: EvidenceGaller
           here reads as the real thing behind that earlier preview. */}
       <div className="relative w-full max-w-[50rem] mx-auto">
         <span className="absolute -top-3.5 left-0 z-10 bg-foreground text-background font-mono text-[0.68rem] tracking-[0.08em] px-2.5 py-1">
-          Artifact — {artifactName}
+          Artifact · {artifactName}
         </span>
         <Carousel plugins={hasMultiple ? [autoplay.current] : []} setApi={setApi}>
           <CarouselContent>
@@ -54,10 +54,13 @@ export default function EvidenceGallery({ images, artifactName }: EvidenceGaller
               </CarouselItem>
             ))}
           </CarouselContent>
+          {/* shadcn's defaults park these 48px outside the carousel, which
+              runs off-screen once the frame is full-width -- tuck them inside
+              the frame below sm, keep the outside placement from sm up. */}
           {hasMultiple && (
             <>
-              <CarouselPrevious />
-              <CarouselNext />
+              <CarouselPrevious className="left-2 sm:-left-12" />
+              <CarouselNext className="right-2 sm:-right-12" />
             </>
           )}
         </Carousel>

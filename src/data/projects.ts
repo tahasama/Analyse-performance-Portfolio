@@ -125,12 +125,12 @@ export const projects: ProjectContent[] = [
     status: "live",
     group: "reporting",
     title: "Status & Visibility",
-    typeCadenceLabel: "OBSERVATION — Weekly",
+    typeCadenceLabel: "OBSERVATION · Weekly",
     roleOneLiner:
-      "A live, consolidated picture of every document's current state — no scoring, no judgment, just what's true right now.",
+      "A live, consolidated picture of every document's current state. No scoring, no judgment, just what's true right now.",
     artifactName: "Status Report / operational snapshot",
     theProblem:
-      "Document status only existed at the transaction level — one record, one submission, one comment. No one had a consolidated view of where the full document set stood, so teams argued from different reconstructed pictures of the same reality.",
+      "Document status only existed at the transaction level: one record, one submission, one comment. No one had a consolidated view of where the full document set stood, so teams argued from different reconstructed pictures of the same reality.",
     whatIBuilt:
       "A weekly status layer built directly on the EDMS (Aconex): live counts, pending queues, and per-discipline pipeline position, refreshed on the same rhythm as the operational cycle.",
     whatItDelivers: [
@@ -140,7 +140,7 @@ export const projects: ProjectContent[] = [
       "Submission and review status split into completed, in-progress, and not-started shares",
     ],
     whyItMatters:
-      "Every later layer — performance measurement, diagnosis, decisions — depends on a shared, undisputed starting picture. This is that picture: an observation layer, not a verdict.",
+      "Every later layer (performance measurement, diagnosis, decisions) depends on a shared, undisputed starting picture. This is that picture: an observation layer, not a verdict.",
     images: [
       {
         src: c1,
@@ -173,22 +173,22 @@ export const projects: ProjectContent[] = [
     status: "live",
     group: "reporting",
     title: "Flow & Performance",
-    typeCadenceLabel: "MEASUREMENT — Monthly",
+    typeCadenceLabel: "MEASUREMENT · Monthly",
     roleOneLiner:
       "Converts operational state into one comparable performance signal per discipline, contractor, and reviewer.",
     artifactName: "Performance Report",
     theProblem:
-      "Performance was discussed by impression, not measured — no shared basis to compare suppliers, reviewers, or disciplines, and no single number showing whether things were actually improving.",
+      "Performance was discussed by impression, not measured. There was no shared basis to compare suppliers, reviewers, or disciplines, and no single number showing whether things were actually improving.",
     whatIBuilt:
-      "A monthly layer scoring submission and review activity — on-schedule rate, backlog, SLA breaches, first-time acceptance, revision rate — into one composite Health Score, attributable down to discipline, contractor, and reviewer.",
+      "A monthly layer scoring submission and review activity (on-schedule rate, backlog, SLA breaches, first-time acceptance, revision rate) into one composite Health Score, attributable down to discipline, contractor, and reviewer.",
     whatItDelivers: [
       "A composite Health Score (0–100) combining six performance dimensions into one comparable signal",
       "On-schedule and backlog percentages for both submissions and reviews",
-      "A breakdown of where cycle time is actually being lost — supplier delay vs. review duration",
+      "A breakdown of where cycle time is actually being lost: supplier delay vs. review duration",
       "Per-discipline SLA breach rates, per-reviewer performance, and submission quality/rework rates",
     ],
     whyItMatters:
-      "Within the designed system, this is the cycle's formal performance record — the number every other layer reacts to. The first image is the composite view. The second image is the detail breakdown, showing where supplier, discipline, and reviewer performance are driving the result.",
+      "Within the designed system, this is the cycle's formal performance record, the number every other layer reacts to. The first image is the composite view. The second image is the detail breakdown, showing where supplier, discipline, and reviewer performance are driving the result.",
     images: [
       {
         src: c2_1,
@@ -213,7 +213,7 @@ export const projects: ProjectContent[] = [
         { label: "Supply Backlog", value: "75.9%" },
       ],
       breakdownNote:
-        "The second image isn't a separate scorecard — it's the same Health Score broken down by discipline and reviewer, showing exactly where the composite number comes from.",
+        "The second image isn't a separate scorecard. It's the same Health Score broken down by discipline and reviewer, showing exactly where the composite number comes from.",
     },
   },
 
@@ -222,22 +222,22 @@ export const projects: ProjectContent[] = [
     status: "ready",
     group: "reporting",
     title: "Findings & Advisory",
-    typeCadenceLabel: "DIAGNOSIS — Monthly",
+    typeCadenceLabel: "DIAGNOSIS · Monthly",
     roleOneLiner:
-      "Diagnoses performance failures by type — capacity, execution, or control — and routes ranked findings to the function positioned to respond.",
+      "Diagnoses performance failures by type (capacity, execution, or control) and routes ranked findings to the function positioned to respond.",
     artifactName: "Findings & Advisory",
     theProblem:
       "Performance data showed what was failing, not why or what to do next. The same drop could have several causes, with no consistent way to tell a capacity shortage, an execution failure, and a control breakdown apart.",
     whatIBuilt:
-      "A monthly layer that turns performance data into ranked, severity-coded findings, classifies each against a constraint type — Capacity, Execution, or Control — and routes each finding to the function positioned to respond.",
+      "A monthly layer that turns performance data into ranked, severity-coded findings, classifies each against a constraint type (Capacity, Execution, or Control) and routes each finding to the function positioned to respond.",
     whatItDelivers: [
       "Ranked findings, severity-coded (critical / attention / healthy), with a concise explanation for each",
-      "Constraint classification — Capacity, Execution, or Control — for every finding not already on track",
+      "Constraint classification (Capacity, Execution, or Control) for every finding not already on track",
       "A defined routing to the function positioned to respond, such as Discipline Leads or Department Managers.",
       "A single headline statement naming the dominant constraint type for the period",
     ],
     whyItMatters:
-      "This is diagnosis plus response, not findings alone — every finding either resolves as healthy or comes with a classified cause and defined routing to the function positioned to respond.",
+      "This is diagnosis plus response, not findings alone. Every finding either resolves as healthy or comes with a classified cause and defined routing to the function positioned to respond.",
     images: [
       {
         src: c3,
@@ -295,28 +295,28 @@ export const projects: ProjectContent[] = [
     status: "ready",
     group: "decision",
     title: "Process & Action",
-    typeCadenceLabel: "ACTION — Quarterly",
+    typeCadenceLabel: "ACTION · Quarterly",
     roleOneLiner:
       "Compares this quarter against last, concludes what actually moved, and determines what that movement justifies.",
     artifactName: "Quarterly Performance Assessment",
     theProblem:
       "Performance metrics moved, stalled, or slipped from quarter to quarter, but that movement was rarely evaluated on its own terms. Whether a metric was genuinely stuck, recovering, or worsening across periods wasn't tracked consistently, so the same underlying problems could resurface unnoticed.",
     whatIBuilt:
-      "A quarterly assessment comparing current vs. previous-quarter performance per tracked area, classifying the movement — Resolved, Improving, Stagnant, Deteriorating — and stating in one line what it means and whether it justifies escalation.",
+      "A quarterly assessment comparing current vs. previous-quarter performance per tracked area, classifying the movement (Resolved, Improving, Stagnant, Deteriorating) and stating in one line what it means and whether it justifies escalation.",
     whatItDelivers: [
       "Current vs. previous quarter for each of five tracked dimensions (Process Health, Supplier Compliance, Intake Flow, Review Compliance, Throughput Capacity)",
-      "A concluded status per area — Resolved, Improving, Stagnant, or Deteriorating",
+      "A concluded status per area: Resolved, Improving, Stagnant, or Deteriorating",
       "A one-line diagnosis explaining what the movement means",
       "Escalation flagged when movement stays flat or worsens across consecutive periods",
     ],
     whyItMatters:
-      "This is a quarterly performance assessment, not a commitment tracker — it evaluates whether things actually moved and what that movement justifies. Verifying whether specific commitments were kept is a separate, later step (see Commitment & Tracking).",
+      "This is a quarterly performance assessment, not a commitment tracker. It evaluates whether things actually moved and what that movement justifies. Verifying whether specific commitments were kept is a separate, later step (see Commitment & Tracking).",
     images: [
       {
         src: c4,
         alt: "Quarterly Process and Action assessment showing current vs. previous quarter status for three tracked areas",
         caption:
-          "Three of the framework's five tracked dimensions this quarter: Process Health (46/100, stagnant — unchanged across periods), Intake Flow (39.4%, deteriorating — 262 planned submissions never received), and Throughput Capacity (83.7%, resolved — review throughput at target).",
+          "Three of the framework's five tracked dimensions this quarter: Process Health (46/100, stagnant, unchanged across periods), Intake Flow (39.4%, deteriorating, with 262 planned submissions never received), and Throughput Capacity (83.7%, resolved, review throughput at target).",
       },
     ],
     visual: {
@@ -356,14 +356,14 @@ export const projects: ProjectContent[] = [
     status: "ready",
     group: "decision",
     title: "Strategy & Impact",
-    typeCadenceLabel: "PROJECTION — Real-time / on demand",
+    typeCadenceLabel: "PROJECTION · Real-time / on demand",
     roleOneLiner:
       "Projects current trajectory forward and simulates what intervention would be required to hit a target.",
     artifactName: "Strategy & Impact / simulation",
     theProblem:
       "Resource and capacity decisions were made without a quantified view of where current trends were heading, or what it would concretely take to change that trajectory.",
     whatIBuilt:
-      "A modeling capability projecting current backlog trajectory forward and simulating the effect of intervention — required compliance and throughput — against a stated horizon, for both reviewer- and supplier-side dynamics.",
+      "A modeling capability projecting current backlog trajectory forward and simulating the effect of intervention (required compliance and throughput) against a stated horizon, for both reviewer- and supplier-side dynamics.",
     whatItDelivers: [
       "Forward projection of review and submission backlog under current, no-intervention trajectory",
       "An intervention scenario stating the compliance and throughput levels required to hit a target",
@@ -371,7 +371,7 @@ export const projects: ProjectContent[] = [
       "A stated horizon (e.g. 4 months) and explicit reachability against it",
     ],
     whyItMatters:
-      "This compares scenarios under stated assumptions — it doesn't claim certainty, forecast the future as fact, or make the final call. It's a decision-support input reviewed alongside quarterly governance decisions, not a prediction.",
+      "This compares scenarios under stated assumptions. It doesn't claim certainty, forecast the future as fact, or make the final call. It's a decision-support input reviewed alongside quarterly governance decisions, not a prediction.",
     images: [
       {
         src: c5,
@@ -385,22 +385,22 @@ export const projects: ProjectContent[] = [
       horizonLabel: "4-month projection",
       scenarios: [
         {
-          name: "Reviewers — no intervention",
+          name: "Reviewers, no intervention",
           assumption: "Current trajectory continues, +0.16%/month",
           projectedOutcome: "Backlog moves 7.2% → 7.8%",
         },
         {
-          name: "Reviewers — intervention",
+          name: "Reviewers, with intervention",
           assumption: "49% compliance + 1 review/day",
           projectedOutcome: "Backlog reduces 7.2% → 0.6%, target reachable in 4 months",
         },
         {
-          name: "Suppliers — no intervention",
+          name: "Suppliers, no intervention",
           assumption: "Current trajectory continues, +3.10%/month",
           projectedOutcome: "Backlog moves 75.9% → 88.3%",
         },
         {
-          name: "Suppliers — intervention",
+          name: "Suppliers, with intervention",
           assumption: "76% compliance + 2 submissions/day",
           projectedOutcome: "Backlog reduces 75.9% → 0.0%, target reachable in 4 months",
         },
@@ -415,14 +415,14 @@ export const projects: ProjectContent[] = [
     status: "ready",
     group: "decision",
     title: "Commitment & Tracking",
-    typeCadenceLabel: "VERIFICATION — Per governance meeting",
+    typeCadenceLabel: "VERIFICATION · Per governance meeting",
     roleOneLiner:
       "Turns governance meetings into binding, named commitments, then reconciles them against what actually happened.",
     artifactName: "Meeting Pack / working worksheet",
     theProblem:
-      "Commitments made in performance meetings were tracked informally, if at all, and rarely checked against what actually happened — so the same misses could repeat across cycles unnoticed.",
+      "Commitments made in performance meetings were tracked informally, if at all, and rarely checked against what actually happened, so the same misses could repeat across cycles unnoticed.",
     whatIBuilt:
-      "A two-part commitment layer: a Meeting Pack opening each governance meeting with the current health picture and prior-commitment status, and a working worksheet — filled in live — that captures new commitments with named owners and reconciles them next cycle.",
+      "A two-part commitment layer: a Meeting Pack opening each governance meeting with the current health picture and prior-commitment status, and a working worksheet, filled in live, that captures new commitments with named owners and reconciles them next cycle.",
     whatItDelivers: [
       "A Meeting Pack cover summarizing health score, review/supplier commitment status, and recovery figures at a glance",
       "A live worksheet completed during the meeting: metric, last month, this month, delta, status, and named owner",
@@ -430,19 +430,19 @@ export const projects: ProjectContent[] = [
       "A standing record that carries unresolved commitments forward instead of losing them between meetings",
     ],
     whyItMatters:
-      "The worksheet is filled in during the meeting, not assembled afterward — commitments get a named owner and a target in the room, and the next cycle's data is what actually verifies them.",
+      "The worksheet is filled in during the meeting, not assembled afterward. Commitments get a named owner and a target in the room, and the next cycle's data is what actually verifies them.",
     images: [
       {
         src: c6,
         alt: "Meeting Pack cover showing health score, commitment status, recovery figures, and an entry point into the full pack",
         caption:
-          "The Meeting Pack cover — the entry point into a governance meeting: health score (46/100), review and supplier commitment status (pending, no prior meeting yet), recovery figures, and a headline, with an export into the full pack of findings and commitment tracking.",
+          "The Meeting Pack cover, the entry point into a governance meeting: health score (46/100), review and supplier commitment status (pending, no prior meeting yet), recovery figures, and a headline, with an export into the full pack of findings and commitment tracking.",
       },
       {
         src: c6Worksheet,
         alt: "Working worksheet spreadsheet with one row per tracked metric: status, last/this month, delta, a standing question, a response field, and a named owner",
         caption:
-          "The working worksheet the Meeting Pack opens into — one row per tracked metric (Review Compliance, Supplier Compliance, Intake Flow, Throughput Capacity, and others), each with status, last/this month values, delta, a standing question for the room, a response field, and a named owner (Management or Discipline Lead).",
+          "The working worksheet the Meeting Pack opens into, with one row per tracked metric (Review Compliance, Supplier Compliance, Intake Flow, Throughput Capacity, and others), each with status, last/this month values, delta, a standing question for the room, a response field, and a named owner (Management or Discipline Lead).",
       },
     ],
     visual: {
@@ -455,7 +455,7 @@ export const projects: ProjectContent[] = [
       },
       worksheetFields: ["Metric", "Status", "Last Month", "This Month", "Delta", "Question", "Response", "Owner"],
       worksheetNote:
-        "Completed live during the meeting, not assembled afterward — the next cycle's data reconciles each row against the prior commitment.",
+        "Completed live during the meeting, not assembled afterward. The next cycle's data reconciles each row against the prior commitment.",
     },
   },
 ];

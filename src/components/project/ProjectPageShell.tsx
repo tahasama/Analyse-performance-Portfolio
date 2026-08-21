@@ -10,7 +10,11 @@ import { cn } from "@/lib/utils";
 // continuous situation rather than two separate Problem/Built beats.
 const DIAGNOSTIC_KINDS = new Set(["findings-advisory", "quarter-comparison"]);
 
-export default function ProjectPageShell({ project }: { project: ProjectContent }) {
+export default function ProjectPageShell({
+  project,
+}: {
+  project: ProjectContent;
+}) {
   const isReporting = project.group === "reporting";
   const componentNumber = projects.findIndex((p) => p.id === project.id) + 1;
   const isDiagnostic = DIAGNOSTIC_KINDS.has(project.visual.kind);
@@ -18,22 +22,30 @@ export default function ProjectPageShell({ project }: { project: ProjectContent 
   const problemBlock = (
     <div>
       <p className="section-label mb-2">The Problem</p>
-      <p className="text-lg text-muted-foreground leading-relaxed">{project.theProblem}</p>
+      <p className="text-lg text-muted-foreground leading-relaxed">
+        {project.theProblem}
+      </p>
     </div>
   );
 
   const builtBlock = (
     <div>
       <p className="section-label mb-2">What I Built</p>
-      <p className="text-lg text-foreground/90 leading-relaxed">{project.whatIBuilt}</p>
+      <p className="text-lg text-foreground/90 leading-relaxed">
+        {project.whatIBuilt}
+      </p>
     </div>
   );
 
   const situationBlock = (
     <div className="space-y-4">
       <p className="section-label mb-2">The Situation</p>
-      <p className="text-lg text-muted-foreground leading-relaxed">{project.theProblem}</p>
-      <p className="text-lg text-foreground/90 leading-relaxed">{project.whatIBuilt}</p>
+      <p className="text-lg text-muted-foreground leading-relaxed">
+        {project.theProblem}
+      </p>
+      <p className="text-lg text-foreground/90 leading-relaxed">
+        {project.whatIBuilt}
+      </p>
     </div>
   );
 
@@ -42,7 +54,10 @@ export default function ProjectPageShell({ project }: { project: ProjectContent 
       <p className="section-label mb-3">What It Delivers</p>
       <div className="grid sm:grid-cols-2 gap-3">
         {project.whatItDelivers.map((item, i) => (
-          <div key={i} className="border border-border bg-card p-4 text-sm text-foreground/85 leading-relaxed">
+          <div
+            key={i}
+            className="border border-border bg-card p-4 text-sm text-foreground/85 leading-relaxed"
+          >
             {item}
           </div>
         ))}
@@ -101,23 +116,32 @@ export default function ProjectPageShell({ project }: { project: ProjectContent 
       {/* Light for the rest: what it delivers, the real evidence, why it
           matters, and where it sits in the system. */}
       <div className="theme-editorial bg-background text-foreground">
-        <section className="max-w-4xl mx-auto px-6 pt-16 pb-16">{deliversBlock}</section>
+        <section className="max-w-4xl mx-auto px-6 pt-16 pb-16">
+          {deliversBlock}
+        </section>
 
         <section className="max-w-4xl mx-auto px-6 pb-16 pt-6">
-          <EvidenceGallery images={project.images} artifactName={project.artifactName} />
+          <EvidenceGallery
+            images={project.images}
+            artifactName={project.artifactName}
+          />
         </section>
 
         <section className="max-w-4xl mx-auto px-6 pb-16 border-t border-border pt-12">
           <p className="section-label mb-3">Why It Matters</p>
-          <p className="font-serif text-xl md:text-2xl text-foreground leading-relaxed">{project.whyItMatters}</p>
+          <p className="font-serif text-xl md:text-2xl text-foreground leading-relaxed">
+            {project.whyItMatters}
+          </p>
         </section>
 
         <section className="max-w-4xl mx-auto px-6 pb-8">
           <p className="section-label mb-3">The Full System</p>
-          <SystemLine currentId={project.id} />
         </section>
+        <div className="max-w-5xl mx-auto px-6 flex justify-center">
+          <SystemLine currentId={project.id} compact />
+        </div>
 
-        <section className="max-w-4xl mx-auto px-6 pb-20">
+        <section className="max-w-4xl mx-auto px-6 pt-10 pb-20">
           <NextProjectNav currentId={project.id} />
         </section>
       </div>

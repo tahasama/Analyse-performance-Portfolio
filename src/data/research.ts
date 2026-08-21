@@ -1,7 +1,10 @@
 export interface DbokChapter {
   number: string;
   title: string;
+  /** The scope list only. DbokDiagram turns this into one pill per item. */
   gloss: string;
+  /** Optional explanatory tail, shown as prose rather than as pills. */
+  note?: string;
 }
 
 export interface DbokKnowledgeType {
@@ -27,11 +30,11 @@ export interface DbokReference {
 export const dbok: DbokReference = {
   name: "Documentation Body of Knowledge (DBoK)",
   positioningStatement:
-    "An independently authored architectural reference mapping the wider documentation and information-governance landscape — rom enterprise governance through document control and performance governance — as a structured map of disciplines, frameworks, concepts, artifacts, technologies, standards, and roles, not a single-discipline manual.",
+    "An independently authored architectural reference mapping the wider documentation and information-governance landscape, from enterprise governance through document control and performance governance, as a structured map of disciplines, frameworks, concepts, artifacts, technologies, standards, and roles, not a single-discipline manual.",
   orientation: [
     {
       label: "Why",
-      text: "The map connecting the documentation disciplines — showing why they exist, where they sit, and when to reach for one over another.",
+      text: "The map connecting the documentation disciplines, showing why they exist, where they sit, and when to reach for one over another.",
     },
     {
       label: "For Who",
@@ -39,48 +42,48 @@ export const dbok: DbokReference = {
     },
     {
       label: "Where It Fits",
-      text: "SO 19650, ISO 15489 and the relevant certifications remain the implementation authorities; this book explains why that detail matters and where it fits.",
+      text: "ISO 19650, ISO 15489 and the relevant certifications remain the implementation authorities; this book explains why that detail matters and where it fits.",
     },
   ],
   knowledgeTypes: [
     {
       name: "Discipline",
-      description: "A named field of practice within the landscape — e.g. Records Management, Document Control.",
+      description: "A named field of practice within the landscape (e.g. Records Management, Document Control).",
     },
     {
       name: "Framework",
-      description: "A structured methodology or model, external or independently designed — e.g. DCIOM.",
+      description: "A structured methodology or model, external or independently designed (e.g. DCIOM).",
     },
     {
       name: "Framework Component",
-      description: "A named working part of a framework — e.g. a pillar, a handshake, a principle.",
+      description: "A named working part of a framework (e.g. a pillar, a handshake, a principle).",
     },
     {
       name: "Concept",
-      description: "A recurring idea or distinction used to reason across disciplines — e.g. governance vs. management.",
+      description: "A recurring idea or distinction used to reason across disciplines (e.g. governance vs. management).",
     },
     {
       name: "Artifact",
-      description: "A specific document or record type, with its own fixed form and lifecycle — e.g. a register, transmittal, or report.",
+      description: "A specific document or record type, with its own fixed form and lifecycle (e.g. a register, transmittal, or report).",
     },
     {
       name: "Technology",
-      description: "A software category that executes a discipline's policy rather than setting it — e.g. EDMS, CDE.",
+      description: "A software category that executes a discipline's policy rather than setting it (e.g. EDMS, CDE).",
     },
     {
       name: "Standard",
-      description: "An external published reference the landscape maps against — e.g. ISO 19650.",
+      description: "An external published reference the landscape maps against (e.g. ISO 19650).",
     },
     {
       name: "Role",
-      description: "A named responsibility accountable for part of the work — e.g. Document Controller.",
+      description: "A named responsibility accountable for part of the work (e.g. Document Controller).",
     },
   ],
   architecturalPatterns: [
     {
       term: "Governance vs. management vs. operations",
       explanation:
-        "Who sets the rule, who manages compliance with it, and who actually performs the work — three different roles, easy to blur.",
+        "Who sets the rule, who manages compliance with it, and who actually performs the work. Three different roles, easy to blur.",
     },
     {
       term: "Enterprise vs. project",
@@ -94,7 +97,7 @@ export const dbok: DbokReference = {
     {
       term: "Information vs. document vs. data vs. record",
       explanation:
-        "Four related but distinct things — a document is a container, data is what's inside it, a record is what can't be changed once created.",
+        "Four related but distinct things: a document is a container, data is what's inside it, a record is what can't be changed once created.",
     },
     {
       term: "Lifecycle vs. workflow",
@@ -111,7 +114,8 @@ export const dbok: DbokReference = {
     {
       number: "1",
       title: "Enterprise Documentation Ecosystem",
-      gloss: "Enterprise governance, corporate governance, risk management, and compliance — the root authority everything else sits inside.",
+      gloss: "Enterprise governance, corporate governance, risk management, and compliance.",
+      note: "The root authority everything else sits inside.",
     },
     {
       number: "2",
@@ -141,7 +145,8 @@ export const dbok: DbokReference = {
     {
       number: "7",
       title: "Performance Governance",
-      gloss: "Verifying whether governance is actually working — where DCIOM itself is formally situated, including the Three Handshakes, six components, and Accountability & Escalation.",
+      gloss: "Verifying whether governance is actually working.",
+      note: "Where DCIOM itself is formally situated, including the Three Handshakes, six components, and Accountability & Escalation.",
     },
     {
       number: "8",
@@ -161,7 +166,8 @@ export const dbok: DbokReference = {
     {
       number: "11",
       title: "Maturity",
-      gloss: "Maturity models across information governance, BIM/information management, data governance, and document control — measured per discipline, never once.",
+      gloss: "Maturity models across information governance, BIM/information management, data governance, and document control.",
+      note: "Measured per discipline, never once.",
     },
   ],
   appendices: [
