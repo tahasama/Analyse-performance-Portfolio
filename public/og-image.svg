@@ -9,17 +9,17 @@
   <rect x="1" y="1" width="1198" height="628" fill="none" stroke="#2a2d38" stroke-width="2"/>
 
   <text x="80" y="120" font-family="'IBM Plex Mono', monospace" font-weight="600" font-size="18"
-        letter-spacing="4" fill="#d99a3e">PORTFOLIO — DOCUMENT CONTROL</text>
+        letter-spacing="4" fill="#d99a3e">PORTFOLIO · DOCUMENT CONTROL</text>
 
   <text x="78" y="230" font-family="'Source Serif 4', Georgia, serif" font-weight="700" font-size="72"
         fill="#f4f5f7">Maatof Taha</text>
 
   <text x="80" y="300" font-family="'Source Serif 4', Georgia, serif" font-style="italic" font-size="34"
-        fill="#8f9bb3">Performance Systems for Document Control</text>
+        fill="#8f9bb3">Performance Systems, Standards &amp; Knowledge</text>
 
   <text x="80" y="360" font-family="Inter, sans-serif" font-size="20" fill="#8f9bb3">
-    <tspan x="80" dy="0">Six performance-reporting systems, the DCIOM governance</tspan>
-    <tspan x="80" dy="30">architecture behind them, and independent research.</tspan>
+    <tspan x="80" dy="0">Six Power BI systems, an independent governance architecture,</tspan>
+    <tspan x="80" dy="30">a document-management standard, and professional research.</tspan>
   </text>
 
   <!-- six-node system line motif, echoing the site's own C1-C6 navigation -->

@@ -252,8 +252,8 @@ export default function HomePage() {
             <p className="section-label mb-3">The Applied Work</p>
             <p className="text-foreground/80 leading-relaxed max-w-2xl mb-8">
               Six Power BI systems over the same document set, each answering
-              the question the one before it raises: observe, measure,
-              diagnose, act, project, verify.
+              the question the one before it raises: observe, measure, diagnose,
+              act, project, verify.
             </p>
             <div className="flex justify-center items-center">
               <SystemLine />

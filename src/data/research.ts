@@ -30,7 +30,7 @@ export interface DbokReference {
 export const dbok: DbokReference = {
   name: "Documentation Body of Knowledge (DBoK)",
   positioningStatement:
-    "An independently authored architectural reference mapping the wider documentation and information-governance landscape, from enterprise governance through document control and performance governance, as a structured map of disciplines, frameworks, concepts, artifacts, technologies, standards, and roles, not a single-discipline manual.",
+    "An independently authored reference mapping how documentation and information-governance disciplines, frameworks, standards, technologies, and roles connect. It spans enterprise governance, document control, and performance governance rather than focusing on one discipline.",
   orientation: [
     {
       label: "Why",

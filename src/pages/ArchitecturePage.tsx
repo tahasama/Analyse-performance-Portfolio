@@ -49,7 +49,7 @@ export default function ArchitecturePage() {
 
       {/* Light -- HORIZON and the architecture intro, in their original
           sequence right after DCIOM. */}
-      <div className="theme-editorial bg-background text-foreground">
+      <div className="theme-editorial bg-background text-foreground mt-20">
         {/* The timeline is a thin band of content, so its padding is kept
             tighter than a text section's -- and the nodes are sized up to
             carry the width they're given rather than floating in it. */}

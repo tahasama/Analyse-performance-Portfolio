@@ -59,7 +59,7 @@ export interface DciomArchitecture {
 export const dciomArchitecture: DciomArchitecture = {
   fullName: "Document Control Intelligence & Operations Management",
   positioningStatement:
-    "An independently designed documentation-specific performance-governance framework, not an industry standard, not certified, not externally adopted. It turns existing document-control data into measured performance, diagnosis, and decision support, and is formally specified in a version-controlled Framework Standard rather than left as an informal set of practices.",
+    "An independently designed documentation-specific performance-governance framework, not an industry standard, not certified, not externally adopted. It turns existing document-control data into measured performance, diagnosis, and decision support.",
 
   pillars: [
     {

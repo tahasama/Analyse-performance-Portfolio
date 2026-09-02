@@ -38,7 +38,7 @@ export default function ResearchPage() {
             transparent, so `divide-*` draws the hairlines instead of the
             gap-px/parent-background trick, which would otherwise show the
             gradient through the gaps instead of the border colour. */}
-        <div className="grid sm:grid-cols-3 border border-border divide-y sm:divide-y-0 sm:divide-x divide-border bg-gradient-to-b sm:bg-gradient-to-r from-cyan-900/[0.04] via-cyan-900/[0.15] to-transparent">
+        <div className="grid sm:grid-cols-3 border border-border divide-y sm:divide-y-0 sm:divide-x divide-border bg-gradient-to-b sm:bg-gradient-to-r from-cyan-900/[0.04] via-cyan-900/[0.15] to-transparent mt-5">
           {dbok.orientation.map((item) => (
             <div key={item.label} className="p-6">
               <p className="section-label mb-2">{item.label}</p>
@@ -131,7 +131,8 @@ export default function ResearchPage() {
           <p className="text-muted-foreground leading-relaxed max-w-2xl mb-4">
             The Document Management Standard takes the document-management
             portion of this reference and states it as normative requirements:
-            18 Parts, 140 clauses and 226 conformance checks, each traced to a published source.
+            18 Parts, 140 clauses and 226 conformance checks, each traced to a
+            published source.
           </p>
           <Link
             to="/standard"
