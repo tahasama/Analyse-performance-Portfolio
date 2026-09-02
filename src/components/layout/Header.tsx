@@ -14,6 +14,7 @@ import {
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/architecture", label: "Architecture" },
+  { to: "/standard", label: "Standard" },
   { to: "/research", label: "Research" },
   { to: "/experience", label: "Experience" },
 ];

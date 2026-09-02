@@ -42,7 +42,7 @@ export const dbok: DbokReference = {
     },
     {
       label: "Where It Fits",
-      text: "ISO 19650, ISO 15489 and the relevant certifications remain the implementation authorities; this book explains why that detail matters and where it fits.",
+      text: "ISO 19650, ISO 15489, and relevant certifications remain authoritative; this book provides the wider context.",
     },
   ],
   knowledgeTypes: [

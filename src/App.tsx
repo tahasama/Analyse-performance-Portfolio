@@ -8,6 +8,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import HomePage from "./pages/HomePage";
 import ArchitecturePage from "./pages/ArchitecturePage";
 import ResearchPage from "./pages/ResearchPage";
+import StandardPage from "./pages/StandardPage";
 import ExperiencePage from "./pages/ExperiencePage";
 import ProjectPage from "./pages/ProjectPage";
 import NotFound from "./pages/NotFound";
@@ -25,6 +26,7 @@ const App = () => (
           <Route element={<Layout />}>
             <Route path="/" element={<HomePage />} />
             <Route path="/architecture" element={<ArchitecturePage />} />
+            <Route path="/standard" element={<StandardPage />} />
             <Route path="/research" element={<ResearchPage />} />
             <Route path="/experience" element={<ExperiencePage />} />
             <Route path="/project/:projectId" element={<ProjectPage />} />

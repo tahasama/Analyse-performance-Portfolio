@@ -27,7 +27,7 @@ export default function ExperiencePage() {
           large h1, italic one-line quote, supporting paragraph. */}
       <section className="max-w-5xl mx-auto px-6 pt-24 pb-20">
         <p className="section-label mb-4 animate-fade-in">Experience</p>
-        <h1 className="font-serif text-4xl md:text-6xl text-foreground mb-6 leading-[1.1] max-w-3xl animate-fade-up">
+        <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl text-foreground mb-6 leading-[1.1] max-w-3xl animate-fade-up">
           Document Control, Practiced and Built
         </h1>
         <p

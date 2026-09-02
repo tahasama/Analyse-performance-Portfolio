@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <section className="max-w-5xl mx-auto px-6 pt-24 pb-32">
       <p className="section-label mb-4">Error 404</p>
-      <h1 className="font-serif text-4xl md:text-6xl text-foreground mb-6 leading-[1.1] max-w-3xl">
+      <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl text-foreground mb-6 leading-[1.1] max-w-3xl">
         This page doesn&rsquo;t exist
       </h1>
       <p className="text-muted-foreground max-w-2xl leading-relaxed mb-8">

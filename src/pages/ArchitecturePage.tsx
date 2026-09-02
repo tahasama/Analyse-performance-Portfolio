@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import { horizon } from "@/data/views";
 import { dciomArchitecture } from "@/data/architecture";
 import PillarGrid from "@/components/diagrams/PillarGrid";
@@ -25,7 +27,7 @@ export default function ArchitecturePage() {
           so it doesn't stack a second section's padding on top of the hero. */}
       <section className="max-w-5xl mx-auto px-6 pt-24 pb-20">
         <p className="section-label mb-4 animate-fade-in">DCIOM</p>
-        <h1 className="font-serif text-4xl md:text-6xl text-foreground mb-6 leading-[1.1] max-w-5xl animate-fade-up">
+        <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl text-foreground mb-6 leading-[1.1] max-w-5xl animate-fade-up">
           {fullName}
         </h1>
         <p
@@ -195,10 +197,21 @@ export default function ArchitecturePage() {
         </section>
 
         <section className="max-w-5xl mx-auto px-6 pb-24 border-t border-border pt-10">
-          <p className="font-serif text-xl md:text-2xl text-foreground leading-relaxed max-w-2xl">
+          <p className="font-serif text-xl md:text-2xl text-foreground leading-relaxed max-w-2xl mb-6">
             The six systems are the visible products. DCIOM is the architecture
             that makes them one governed system.
           </p>
+          <p className="text-muted-foreground leading-relaxed max-w-2xl mb-4">
+            DCIOM measures from the register. What the register has to contain,
+            and what makes it trustworthy, is specified separately in the
+            Document Management Standard.
+          </p>
+          <Link
+            to="/standard"
+            className="text-sm font-medium text-accent hover:underline hover:underline-offset-2 inline-flex items-center gap-1.5"
+          >
+            Read the standard <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
         </section>
       </div>
     </div>

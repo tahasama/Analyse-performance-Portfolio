@@ -3,6 +3,7 @@ import { NavLink } from "@/components/NavLink";
 
 const navItems = [
   { to: "/architecture", label: "Architecture" },
+  { to: "/standard", label: "Standard" },
   { to: "/research", label: "Research" },
   { to: "/experience", label: "Experience" },
 ];
@@ -20,7 +21,9 @@ export default function Footer() {
           </p>
         </div>
 
-        <nav className="flex items-center gap-6">
+        {/* Wraps: the link set outgrew a single 375px row once Standard was
+            added, and would otherwise push the page into horizontal scroll. */}
+        <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
           {navItems.map((item) => (
             <NavLink
               key={item.to}

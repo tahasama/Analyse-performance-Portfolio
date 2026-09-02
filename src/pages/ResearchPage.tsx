@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import { dbok } from "@/data/research";
 import DbokDiagram from "@/components/diagrams/DbokDiagram";
 
@@ -10,16 +12,14 @@ export default function ResearchPage() {
           h1, italic one-line quote, supporting paragraph. */}
       <section className="max-w-5xl mx-auto px-6 pt-24 pb-20">
         <p className="section-label mb-4 animate-fade-in">Research</p>
-        <h1 className="font-serif text-4xl md:text-6xl text-foreground mb-6 leading-[1.1] max-w-3xl animate-fade-up">
+        <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl text-foreground mb-6 leading-[1.1] max-w-3xl animate-fade-up">
           {dbok.name}
         </h1>
         <p
           className="font-serif italic text-lg md:text-xl text-foreground/80 max-w-2xl mb-4 animate-fade-up"
           style={{ animationDelay: "0.1s" }}
         >
-          &ldquo;The broader architectural / research work that maps the
-          documentation profession and its surrounding governance
-          disciplines.&rdquo;
+          &ldquo;The architectural map of the documentation profession.&rdquo;
         </p>
         <p
           className="text-muted-foreground max-w-2xl leading-relaxed animate-fade-up"
@@ -109,7 +109,7 @@ export default function ResearchPage() {
           </div>
         </section>
 
-        <section className="max-w-5xl mx-auto px-6 pb-24 border-t border-border pt-10">
+        <section className="max-w-5xl mx-auto px-6 pb-16 border-t border-border pt-10">
           <p className="section-label mb-4">Worked Examples</p>
           <div className="grid gap-4 sm:grid-cols-3">
             {dbok.appendices.map((a) => (
@@ -119,6 +119,26 @@ export default function ResearchPage() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* The reference maps the disciplines; the Standard is the first of
+            them written up as enforceable requirements. */}
+        <section className="max-w-5xl mx-auto px-6 pb-24 border-t border-border pt-10">
+          <p className="section-label mb-3">The Standard</p>
+          <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-4 max-w-2xl">
+            Where the map becomes a requirement
+          </h2>
+          <p className="text-muted-foreground leading-relaxed max-w-2xl mb-4">
+            The Document Management Standard takes the document-management
+            portion of this reference and states it as normative requirements:
+            18 Parts, 140 clauses and 226 conformance checks, each traced to a published source.
+          </p>
+          <Link
+            to="/standard"
+            className="text-sm font-medium text-accent hover:underline hover:underline-offset-2 inline-flex items-center gap-1.5"
+          >
+            Read the standard <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
         </section>
       </div>
     </div>

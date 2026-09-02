@@ -40,7 +40,7 @@ export interface ExperienceContent {
 
 export const experience: ExperienceContent = {
   positioningStatement:
-    "A hands-on Document Control professional combining EDMS operations, reporting and analytics, practical systems development, and independently authored governance research.",
+    "A hands-on Document Control professional combining operations, reporting, analytics, and systems development with independently authored work in governance, document management, and research.",
   summary:
     "5+ years in document control across multi-project building construction, wastewater treatment, and thermal power environments, based in Morocco. Hands-on with Aconex/EDMS operations, Power BI/DAX reporting, and developing practical tools where no formal system was available.",
   roles: [
