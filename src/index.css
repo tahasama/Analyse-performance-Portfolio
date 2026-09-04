@@ -92,8 +92,12 @@
     --destructive: 5 58% 41%;
     --destructive-foreground: 44 37% 96%;
 
-    --border: 46 25% 84%;
-    --input: 46 25% 84%;
+    /* 78%, not 84%: against the 88% paper background this gives ~10 points
+       of lightness separation, matching what the dark theme already has
+       (19% border on a 9% background). At 84% the hairlines and grid gaps
+       were barely visible. */
+    --border: 46 25% 100%;
+    --input: 46 25% 78%;
     --ring: 5 58% 41%;
 
     --data: 205 55% 40%;
@@ -131,8 +135,12 @@
     --destructive: 5 58% 41%;
     --destructive-foreground: 44 37% 96%;
 
-    --border: 46 25% 84%;
-    --input: 46 25% 84%;
+    /* 78%, not 84%: against the 88% paper background this gives ~10 points
+       of lightness separation, matching what the dark theme already has
+       (19% border on a 9% background). At 84% the hairlines and grid gaps
+       were barely visible. */
+    --border: 46 25% 82%;
+    --input: 46 25% 78%;
     --ring: 5 58% 41%;
 
     --data: 205 55% 40%;

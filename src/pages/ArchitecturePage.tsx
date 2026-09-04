@@ -25,7 +25,7 @@ export default function ArchitecturePage() {
           follow read as parts of a named framework, not a build-up to it.
           "Behind The Work" rides as a compact kicker above it, same section,
           so it doesn't stack a second section's padding on top of the hero. */}
-      <section className="max-w-5xl mx-auto px-6 pt-24 pb-20">
+      <section className="max-w-5xl mx-auto px-6 pt-24 pb-28">
         <p className="section-label mb-4 animate-fade-in">DCIOM</p>
         <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl text-foreground mb-6 leading-[1.1] max-w-5xl animate-fade-up">
           {fullName}
@@ -41,6 +41,21 @@ export default function ArchitecturePage() {
           style={{ animationDelay: "0.15s" }}
         >
           {positioningStatement}
+        </p>
+      </section>
+
+      {/* Dark -- the framework's shape as one line, the same treatment the
+          Standard page gives its own figures. Counts come from §1.6: three
+          pillars define scope, six components and three handshakes define
+          operation, six principles govern behaviour. */}
+      <section className="max-w-5xl mx-auto px-6">
+        <p className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground border-t border-border pt-4">
+          {[
+            `${pillars.length} Pillars`,
+            `${handshakes.length} Handshakes`,
+            `${principles.length} Principles`,
+            "6 Components",
+          ].join("  ·  ")}
         </p>
       </section>
 
