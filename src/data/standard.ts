@@ -21,6 +21,9 @@ export interface StandardContent {
   positioningStatement: string;
   /** Headline figures. Structure and scale only, no clause text. */
   scale: Array<{ figure: string; label: string }>;
+  /** The document's own three-layer structure (v1.0 cover: "Rules · Routes
+   * · Checks, synchronized through traceability"). */
+  layers: Array<{ name: string; text: string }>;
   /** What it does better than an in-house procedure. The counterpart to
    * `excludes` -- a boundary only reads well next to a claim. */
   strengths: Array<{ title: string; text: string }>;
@@ -32,24 +35,39 @@ export interface StandardContent {
 
 export const documentManagementStandard: StandardContent = {
   name: "Document Management Standard",
-  version: "0.9",
+  version: "1.0",
   subtitle:
-    "Requirements for identifying, describing, controlling, issuing and retaining project information",
+    "An executable standard for controlled project information",
   positioningStatement:
     "It states what controlled information must satisfy, not how an organization should work. Each organization publishes its own numbering, codes and retention periods, so it can be adopted without replacing an existing way of working.",
 
   scale: [
     { figure: "18", label: "Parts" },
-    { figure: "140", label: "Numbered clauses" },
-    { figure: "226", label: "Conformance checks" },
-    { figure: "7", label: "Annexes" },
+    { figure: "141", label: "Numbered clauses" },
+    { figure: "275", label: "Conformance checks" },
+    { figure: "8", label: "Annexes" },
   ],
 
+
+  layers: [
+    {
+      name: "Rules",
+      text: "Defines what controlled information must be, and how it is configured.",
+    },
+    {
+      name: "Routes",
+      text: "Sequences recurring document-control work from trigger to evidence.",
+    },
+    {
+      name: "Checks",
+      text: "Verifies the evidence, exposes defects and measures integrity.",
+    },
+  ],
 
   strengths: [
     {
       title: "It can be tested",
-      text: "226 checks, each carrying a severity and a named owner for the fix. Conformance is measured against the register rather than declared.",
+      text: "275 checks, each carrying a severity and a named owner for the fix. Conformance is measured against the register rather than declared.",
     },
     {
       title: "It can be adopted",
@@ -73,7 +91,7 @@ export const documentManagementStandard: StandardContent = {
     {
       letter: "A",
       title: "External Party Requirements",
-      status: "Normative on invocation",
+      status: "Normative when invoked",
       purpose: "Requirements to place on contractors, vendors and third parties.",
     },
     {
@@ -92,28 +110,35 @@ export const documentManagementStandard: StandardContent = {
     },
     {
       letter: "D",
-      title: "Catalogue of Checks",
-      status: "Normative",
-      purpose:
-        "The conformance tests of this Standard, with severity and who fixes what.",
+      title: "Reference Sets",
+      status: "Informative",
+      purpose: "Suggested code lists an organization can adopt or replace.",
     },
     {
       letter: "E",
-      title: "Reference Sets and Sources",
+      title: "Relationship to Adjacent Work",
       status: "Informative",
-      purpose: "Suggested code lists, and where each requirement comes from.",
+      purpose: "Where this sits against DBoK and DCIOM, and the publication map.",
     },
     {
       letter: "F",
-      title: "Relationship to Adjacent Work",
-      status: "Informative",
-      purpose: "How this Standard relates to the wider research and to DCIOM.",
+      title: "Traceability Spine",
+      status: "Normative",
+      purpose:
+        "The thread that ties every rule to the route that applies it and the check that tests it.",
     },
     {
       letter: "G",
-      title: "Paths",
+      title: "Routes",
       status: "Informative",
-      purpose: "The requirements, sequenced by task.",
+      purpose: "Recurring document-control work, sequenced from trigger to evidence.",
+    },
+    {
+      letter: "H",
+      title: "Catalogue of Checks",
+      status: "Normative",
+      purpose:
+        "Every defect this Standard can produce, with the check that detects it, its severity, and the party accountable for the fix.",
     },
   ],
 

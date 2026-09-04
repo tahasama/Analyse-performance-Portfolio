@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import type { Pillar } from "@/data/architecture";
 import { COMPONENT_NUMBER } from "@/data/projects";
@@ -27,15 +28,30 @@ export default function PillarGrid({ pillars }: PillarGridProps) {
               {pillar.components.map((c) => {
                 const num =
                   COMPONENT_NUMBER[c.id as keyof typeof COMPONENT_NUMBER];
-                return (
-                  <div key={c.id}>
-                    <p className="text-sm font-medium text-foreground">
-                      {num ? `C${num} · ${c.label}` : c.label}
+                const label = num ? `C${num} · ${c.label}` : c.label;
+                const body = (
+                  <>
+                    <p className="text-sm font-medium text-foreground group-hover:text-accent transition-colors">
+                      {label}
                     </p>
                     <p className="text-xs text-muted-foreground">
                       {c.description}
                     </p>
-                  </div>
+                  </>
+                );
+                // The six numbered components have their own pages; EDMS is
+                // the external source system and has none, so it stays static
+                // rather than becoming a dead-looking link.
+                return num ? (
+                  <Link
+                    key={c.id}
+                    to={`/project/${c.id}`}
+                    className="group block -mx-2 px-2 py-1 rounded-sm hover:bg-accent/[0.06] transition-colors"
+                  >
+                    {body}
+                  </Link>
+                ) : (
+                  <div key={c.id}>{body}</div>
                 );
               })}
             </div>

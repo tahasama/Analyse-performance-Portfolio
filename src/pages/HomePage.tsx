@@ -44,9 +44,9 @@ const portfolioIndex = [
     to: "/standard",
     kind: "Independent standard",
     title: "Document Management Standard",
-    subtitle: "Version 0.9",
+    subtitle: "Version 1.0",
     body: "Requirements for identifying, describing, controlling, issuing and retaining project information. It states what controlled information must satisfy, and leaves each organization to publish its own code lists.",
-    facts: ["18 parts", "140 clauses", "226 checks"],
+    facts: ["18 parts", "141 clauses", "275 checks"],
   },
   {
     to: "/research",

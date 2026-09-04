@@ -131,8 +131,8 @@ export default function ResearchPage() {
           <p className="text-muted-foreground leading-relaxed max-w-2xl mb-4">
             The Document Management Standard takes the document-management
             portion of this reference and states it as normative requirements:
-            18 Parts, 140 clauses and 226 conformance checks, each traced to a
-            published source.
+            18 Parts, 141 clauses and 275 conformance checks, each tied to the
+            route that applies it.
           </p>
           <Link
             to="/standard"
