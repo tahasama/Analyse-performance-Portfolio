@@ -39,7 +39,7 @@ export const documentManagementStandard: StandardContent = {
   subtitle:
     "An executable standard for controlled project information",
   positioningStatement:
-    "It states what controlled information must satisfy, not how an organization should work. Each organization publishes its own numbering, codes and retention periods, so it can be adopted without replacing an existing way of working.",
+    "An independently defined standard for controlled project information. It sets what information must satisfy, without prescribing how an organization works.\nEach organization retains its own numbering, codes, and implementation approach.",
 
   scale: [
     { figure: "18", label: "Parts" },

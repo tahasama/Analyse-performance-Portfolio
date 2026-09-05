@@ -139,7 +139,7 @@
        of lightness separation, matching what the dark theme already has
        (19% border on a 9% background). At 84% the hairlines and grid gaps
        were barely visible. */
-    --border: 46 25% 82%;
+    --border: 46 25% 82 %;
     --input: 46 25% 78%;
     --ring: 5 58% 41%;
 

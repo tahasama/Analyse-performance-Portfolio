@@ -42,6 +42,9 @@ export default function ArchitecturePage() {
         >
           {positioningStatement}
         </p>
+        <p className="text-slate-400/50 text-sm mt-4 animate-fade-up">
+          Not an industry standard, not certified, not externally adopted.
+        </p>
       </section>
 
       {/* Dark -- the framework's shape as one line, the same treatment the

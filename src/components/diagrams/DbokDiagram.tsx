@@ -65,7 +65,7 @@ function ChapterNode({
         ))}
       </div>
       {chapter.note && (
-        <p className="text-xs text-muted-foreground/80 leading-relaxed mt-2 max-w-md">
+        <p className="text-xs text-muted-foreground/80 leading-relaxed mt-2 max-w-lg">
           {chapter.note}
         </p>
       )}
@@ -118,6 +118,26 @@ export default function DbokDiagram() {
           </div>
           <div className="border-l-2 border-border pl-3 sm:pl-6 mt-[0.7676rem]">
             <ChapterNode chapter={documentManagement} />
+            {/* The Standard specifies this discipline, so it hangs off
+                Document Management the way DCIOM hangs off Performance
+                Governance -- green rather than amber, since it is a
+                published requirement set, not part of the framework. */}
+            <div className="border-l-2 border-status-healthy/75 pl-3 sm:pl-6 mt-[0.7676rem]">
+              <Link
+                to="/standard"
+                className="inline-flex items-center gap-2 border border-status-healthy/30 bg-status-healthy/[0.06] px-4 py-[0.3613rem] hover:border-status-healthy transition-colors"
+              >
+                <span className="font-mono text-xs font-semibold text-status-healthy">
+                  Document Management Standard
+                </span>
+                {/* Describes what it is, matching the DCIOM box below. Its
+                    placement under Document Management already says where it
+                    applies, so the label does not need to restate that. */}
+                <span className="text-xs text-muted-foreground">
+                  requirements for controlled project information →
+                </span>
+              </Link>
+            </div>
             <div className="border-l-2 border-border pl-3 sm:pl-6 mt-[0.7676rem]">
               <ChapterNode chapter={projectInformationManagement} />
               <div className="border-l-2 border-border pl-3 sm:pl-6 mt-[0.7676rem]">

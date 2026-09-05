@@ -24,7 +24,7 @@ function LayerTag({ y, label }: { y: number; label: string }) {
     <text
       x="40"
       y={y}
-      className="fill-accent font-mono"
+      className="fill-status-healthy font-mono"
       fontSize="14"
       letterSpacing="0.16em"
     >
@@ -39,7 +39,7 @@ export default function StandardDiagram() {
       viewBox="0 0 1200 700"
       width={1200}
       height={700}
-      className="w-auto h-auto max-w-full max-h-[80vh] mx-auto block"
+      className="w-full h-auto max-w-full max-h-[90vh] mx-auto block"
       role="img"
       aria-label="The Standard's three layers: Rules define the information, Routes sequence the work, the Register holds the evidence, and Checks test it"
     >
@@ -60,11 +60,32 @@ export default function StandardDiagram() {
       {/* LAYER I -- RULES: what controlled information must be */}
       <LayerTag y={26} label="LAYER I · RULES" />
 
-      <rect x="40" y="44" width="1120" height="52" className="fill-none stroke-border" strokeWidth="1.5" strokeDasharray="5 4" />
-      <text x={MID} y="68" textAnchor="middle" className="fill-muted-foreground font-mono" fontSize="15" letterSpacing="0.1em">
+      <rect
+        x="40"
+        y="44"
+        width="1120"
+        height="52"
+        className="fill-none stroke-border"
+        strokeWidth="1.5"
+        strokeDasharray="5 4"
+      />
+      <text
+        x={MID}
+        y="68"
+        textAnchor="middle"
+        className="fill-muted-foreground font-mono"
+        fontSize="15"
+        letterSpacing="0.1em"
+      >
         PLANNING
       </text>
-      <text x={MID} y="88" textAnchor="middle" className="fill-muted-foreground font-mono" fontSize="14">
+      <text
+        x={MID}
+        y="88"
+        textAnchor="middle"
+        className="fill-muted-foreground font-mono"
+        fontSize="14"
+      >
         What must be ready before work proceeds, and what is delivered together
       </text>
 
@@ -72,14 +93,39 @@ export default function StandardDiagram() {
         const x = X0 + i * (BOX_W + GAP);
         return (
           <g key={s.n}>
-            <rect x={x} y="126" width={BOX_W} height="140" className="fill-card stroke-border" strokeWidth="1.5" />
-            <text x={x + 20} y="156" className="fill-accent font-mono" fontSize="15" letterSpacing="0.08em">
+            <rect
+              x={x}
+              y="126"
+              width={BOX_W}
+              height="140"
+              className="fill-card stroke-border"
+              strokeWidth="1.5"
+            />
+            <text
+              x={x + 20}
+              y="156"
+              className="fill-status-attention font-mono"
+              fontSize="15"
+              letterSpacing="0.08em"
+            >
               {s.n}
             </text>
-            <text x={x + BOX_W / 2} y="198" textAnchor="middle" className="fill-foreground font-serif" fontSize="26">
+            <text
+              x={x + BOX_W / 2}
+              y="198"
+              textAnchor="middle"
+              className="fill-foreground font-serif"
+              fontSize="26"
+            >
               {s.title}
             </text>
-            <text x={x + BOX_W / 2} y="226" textAnchor="middle" className="fill-muted-foreground font-mono" fontSize="14">
+            <text
+              x={x + BOX_W / 2}
+              y="226"
+              textAnchor="middle"
+              className="fill-muted-foreground font-mono"
+              fontSize="14"
+            >
               {s.sub}
             </text>
             {i < stages.length - 1 && (
@@ -97,45 +143,138 @@ export default function StandardDiagram() {
         );
       })}
 
-      <line x1={MID} y1="266" x2={MID} y2="316" className="stroke-border" strokeWidth="1" strokeDasharray="3 3" />
+      <line
+        x1={MID}
+        y1="266"
+        x2={MID}
+        y2="316"
+        className="stroke-border"
+        strokeWidth="1"
+        strokeDasharray="3 3"
+      />
 
       {/* LAYER II -- ROUTES: the work that turns rules into evidence */}
       <LayerTag y={306} label="LAYER II · ROUTES" />
 
-      <rect x="40" y="322" width="1120" height="76" className="fill-card stroke-border" strokeWidth="1.5" />
-      <text x={MID} y="352" textAnchor="middle" className="fill-foreground font-serif" fontSize="24">
+      <rect
+        x="40"
+        y="322"
+        width="1120"
+        height="76"
+        className="fill-card stroke-border"
+        strokeWidth="1.5"
+      />
+      <text
+        x={MID}
+        y="352"
+        textAnchor="middle"
+        className="fill-foreground font-serif"
+        fontSize="24"
+      >
         Recurring work, sequenced from trigger to evidence
       </text>
-      <text x={MID} y="378" textAnchor="middle" className="fill-muted-foreground font-mono" fontSize="14">
+      <text
+        x={MID}
+        y="378"
+        textAnchor="middle"
+        className="fill-muted-foreground font-mono"
+        fontSize="14"
+      >
         Create · Revise · Review · Issue · Receive · Withdraw · Close
       </text>
 
-      <line x1={MID} y1="398" x2={MID} y2="440" className="stroke-border" strokeWidth="1" strokeDasharray="3 3" />
+      <line
+        x1={MID}
+        y1="398"
+        x2={MID}
+        y2="440"
+        className="stroke-border"
+        strokeWidth="1"
+        strokeDasharray="3 3"
+      />
 
       {/* The register: where the evidence lands */}
-      <rect x="40" y="446" width="1120" height="80" className="fill-none stroke-accent" strokeWidth="1.5" />
-      <text x={MID} y="478" textAnchor="middle" className="fill-accent font-serif" fontSize="26">
+      <rect
+        x="40"
+        y="446"
+        width="1120"
+        height="80"
+        className="fill-none stroke-accent"
+        strokeWidth="1.5"
+      />
+      <text
+        x={MID}
+        y="478"
+        textAnchor="middle"
+        className="fill-accent font-serif"
+        fontSize="26"
+      >
         The Register
       </text>
-      <text x={MID} y="504" textAnchor="middle" className="fill-muted-foreground font-mono" fontSize="14">
-        One record of what exists, which revision is current, and what it may be used for
+      <text
+        x={MID}
+        y="504"
+        textAnchor="middle"
+        className="fill-muted-foreground font-mono"
+        fontSize="14"
+      >
+        One record of what exists, which revision is current, and what it may be
+        used for
       </text>
 
-      <line x1={MID} y1="526" x2={MID} y2="568" className="stroke-border" strokeWidth="1" strokeDasharray="3 3" />
+      <line
+        x1={MID}
+        y1="526"
+        x2={MID}
+        y2="568"
+        className="stroke-border"
+        strokeWidth="1"
+        strokeDasharray="3 3"
+      />
 
       {/* LAYER III -- CHECKS: what tests the evidence */}
       <LayerTag y={558} label="LAYER III · CHECKS" />
 
-      <rect x="40" y="574" width="1120" height="72" className="fill-foreground" />
-      <text x={MID} y="607" textAnchor="middle" className="fill-background font-mono" fontSize="17" letterSpacing="0.1em">
+      <rect
+        x="40"
+        y="574"
+        width="1120"
+        height="72"
+        className="fill-foreground"
+      />
+      <text
+        x={MID}
+        y="607"
+        textAnchor="middle"
+        className="fill-background font-mono"
+        fontSize="17"
+        letterSpacing="0.1em"
+      >
         275 CONFORMANCE CHECKS
       </text>
-      <text x={MID} y="631" textAnchor="middle" className="fill-background font-mono" fontSize="14" opacity="0.7">
-        Measured against the register, by severity, with a named owner for each defect
+      <text
+        x={MID}
+        y="631"
+        textAnchor="middle"
+        className="fill-background font-mono"
+        fontSize="14"
+        opacity="0.7"
+      >
+        Measured against the register, by severity, with a named owner for each
+        defect
       </text>
 
       {/* The traceability spine: every rule threaded to its route and its check */}
-      <line x1="20" y1="126" x2="20" y2="646" className="stroke-accent" strokeWidth="1" strokeDasharray="4 4" opacity="0.55" />
+      <line
+        x1="20"
+        y1="126"
+        x2="20"
+        y2="646"
+        className="stroke-accent"
+        strokeWidth="1"
+        strokeDasharray="4 4"
+        opacity="0.55"
+      />
       <text
         x="14"
         y="386"

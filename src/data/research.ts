@@ -30,7 +30,7 @@ export interface DbokReference {
 export const dbok: DbokReference = {
   name: "Documentation Body of Knowledge (DBoK)",
   positioningStatement:
-    "An independently authored reference mapping how documentation and information-governance disciplines, frameworks, standards, technologies, and roles connect. It spans enterprise governance, document control, and performance governance rather than focusing on one discipline.",
+    "An independently authored reference mapping established documentation and information-governance disciplines, their relationships and cross-cutting dimensions. It connects the field from enterprise governance through document control and extends into performance governance.",
   orientation: [
     {
       label: "Why",
@@ -136,6 +136,7 @@ export const dbok: DbokReference = {
       number: "5",
       title: "Document Management",
       gloss: "EDMS, metadata, taxonomy & classification, version control, workflows, distribution, controlled records.",
+      note: "Where the independently authored Document Management Standard is formally situated.",
     },
     {
       number: "6",
@@ -145,8 +146,10 @@ export const dbok: DbokReference = {
     {
       number: "7",
       title: "Performance Governance",
-      gloss: "Verifying whether governance is actually working.",
-      note: "Where DCIOM itself is formally situated, including the Three Handshakes, six components, and Accountability & Escalation.",
+      // Pills name what sits inside the discipline, same as every other
+      // chapter; the purpose line moved to `note` so it reads as prose.
+      gloss: "Performance reporting, measurement, diagnosis, decision support, accountability, escalation.",
+      note: "Verifying whether governance is actually working. Where independently authored DCIOM is formally situated.",
     },
     {
       number: "8",

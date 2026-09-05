@@ -27,6 +27,10 @@ export default function ResearchPage() {
         >
           {dbok.positioningStatement}
         </p>
+        <p className="text-slate-400/50 text-sm mt-4 animate-fade-up">
+          Established disciplines; independently authored structure and
+          synthesis.
+        </p>
       </section>
 
       {/* Dark -- why it exists, for who, where it fits: three short answers,

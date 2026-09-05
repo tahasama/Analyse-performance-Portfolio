@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Documentation Body of Knowledge (DBoK) - containment tree.
+
+  Structure follows src/data/research.ts, not a linear 1-6 chain:
+    Enterprise Documentation Ecosystem
+      |- Information Governance
+      |    |- Records Management
+      |    |- Document Management
+      |         |- Document Management Standard   (published requirement set)
+      |         |- Project Information Management
+      |              |- Document Control
+      |- Performance Governance                   (emphasized)
+           |- DCIOM                               (framework)
+    + Cross-cutting dimensions 08-11, which apply across every branch.
+
+  Sub-item pills are parsed from each chapter's gloss - nothing invented.
+  Everything below is live text and shapes: edit the <style> block to
+  restyle globally, or any <text> node to change wording.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1445" height="1342"
+     viewBox="0 0 1445 1342" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTowZDRjNTcyOC0zZDBjLTRjOGMtYWJhZS1iOTgzN2QwMDE2YTcAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaKHUoMRw30D7RQH2AQMPPWMAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDozNTg1ZjIwYi0wOTc2LTQ5ZGQtYjhmYS1hOGFmNzY5OWQ1ZGVscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoh0CUHYJtKsWL5mxT078aRwAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgg9mgHRhUXic5Zrl4ISdCVRnwgVEcL7+R99JY36Gju1EakZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaKRwP/i21OvwVCuHsUgvFpoAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIDFsZWpLM5m/yCC2ZSQ4f/Q+5gIVoZAYWiU729dveWAAZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GQRMZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjBkNGM1NzI4LTNkMGMtNGM4Yy1hYmFlLWI5ODM3ZDAwMTZhNy9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjA5YzFhNDgwLTk2OTUtNDhiZS1iMjE0LTA2MmVjYjk4YTFlOHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCD2aAdGFReJzlmuXghJ0JVGfCBURwvv5H30ljfoaO7URqJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFgg0uizzQynU5+TtJCY9jvT+f/98UWv8VkzC+glC9iqZUqiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgg838edH3kmYxN0VxEJFLstqG3yAL1gJEnokc/rSgYbDB0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQIeomOjo2t4tPQaoQsjy3Ryvchw2waZeg2MNWwcqdUm+SWJffsSvfBANvfot2v7PflhaK4D0PHf3/JTd/uVusEI=</c2pa:manifest></metadata>
+  <style>
+    /* ---- palette: change these to restyle the whole diagram ---- */
+    .bg      { fill: #ffffff; }
+    .box     { fill: #1D4E5F; stroke: none; }
+    .box-accent { fill: #1D4E5F; stroke: #C58F3D; stroke-width: 2; }
+    .box-green  { fill: #1D4E5F; stroke: #4E9C7B; stroke-width: 2; }
+    .box-amber  { fill: #1D4E5F; stroke: #C58F3D; stroke-width: 2; }
+    .pill    { fill: #ffffff; stroke: #C3D0D4; stroke-width: 1.2; }
+    .link    { fill: none; stroke: #B7C6CB; stroke-width: 1.5; }
+    .sep     { stroke: #CFD9DC; stroke-width: 1; stroke-dasharray: 6 6; }
+    .badge   { fill: #EDF4F1; stroke: #B7D5C6; stroke-width: 1; }
+
+    /* ---- type ---- */
+    .title   { fill: #ffffff; font-size: 18.5px; font-weight: 700; }
+    .num     { fill: #9FC2CC; font-size: 14.5px; font-weight: 700;
+                font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+                letter-spacing: .04em; }
+    .num-alt { fill: #3E7F63; font-size: 14.5px; font-weight: 700;
+                font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+                text-anchor: middle; }
+    .pill-t  { fill: #33474D; font-size: 16.5px; text-anchor: middle; }
+    .sub     { fill: #7A8B90; font-size: 15.5px; }
+    .note    { fill: #8A999E; font-size: 15.5px; font-style: italic; }
+    .section { fill: #7A8B90; font-size: 14px; font-weight: 700;
+                letter-spacing: .16em; text-anchor: middle;
+                font-family: "SFMono-Regular", Menlo, Consolas, monospace; }
+    .cross-name { fill: #1D4E5F; font-size: 17.5px; font-weight: 700; }
+    .cross-t { fill: #7A8B90; font-size: 16px; text-anchor: middle; }
+  </style>
+
+  <rect class="bg" x="0" y="0" width="1445" height="1342"/>
+
+  <g id="connectors">
+    <path class="link" d="M47.0 76.0 V100.5 Q47.0 109.5 56.0 109.5 H66.0"/>
+    <line class="link" x1="285.4" y1="109.5" x2="301.4" y2="109.5"/>
+    <line class="link" x1="518.3" y1="109.5" x2="534.3" y2="109.5"/>
+    <line class="link" x1="716.8" y1="109.5" x2="732.8" y2="109.5"/>
+    <path class="link" d="M47.0 76.0 V190.5 Q47.0 199.5 56.0 199.5 H84.0"/>
+    <path class="link" d="M103.0 221.5 V246.0 Q103.0 255.0 112.0 255.0 H122.0"/>
+    <line class="link" x1="322.8" y1="255.0" x2="338.8" y2="255.0"/>
+    <line class="link" x1="537.7" y1="255.0" x2="553.7" y2="255.0"/>
+    <line class="link" x1="705.4" y1="255.0" x2="721.4" y2="255.0"/>
+    <line class="link" x1="895.8" y1="255.0" x2="911.8" y2="255.0"/>
+    <path class="link" d="M103.0 221.5 V305.5 Q103.0 314.5 112.0 314.5 H140.0"/>
+    <path class="link" d="M159.0 336.5 V361.0 Q159.0 370.0 168.0 370.0 H178.0"/>
+    <line class="link" x1="447.4" y1="370.0" x2="463.4" y2="370.0"/>
+    <line class="link" x1="687.4" y1="370.0" x2="703.4" y2="370.0"/>
+    <line class="link" x1="821.6" y1="370.0" x2="837.6" y2="370.0"/>
+    <line class="link" x1="941.2" y1="370.0" x2="957.2" y2="370.0"/>
+    <path class="link" d="M103.0 221.5 V426.5 Q103.0 435.5 112.0 435.5 H140.0"/>
+    <path class="link" d="M159.0 457.5 V482.0 Q159.0 491.0 168.0 491.0 H178.0"/>
+    <line class="link" x1="259.3" y1="491.0" x2="275.3" y2="491.0"/>
+    <line class="link" x1="386.7" y1="491.0" x2="402.7" y2="491.0"/>
+    <line class="link" x1="647.8" y1="491.0" x2="663.8" y2="491.0"/>
+    <line class="link" x1="819.6" y1="491.0" x2="835.6" y2="491.0"/>
+    <line class="link" x1="953.1" y1="491.0" x2="969.1" y2="491.0"/>
+    <line class="link" x1="1098.4" y1="491.0" x2="1114.4" y2="491.0"/>
+    <path class="link" d="M159.0 457.5 V572.0 Q159.0 581.0 168.0 581.0 H196.0"/>
+    <path class="link" d="M159.0 457.5 V642.0 Q159.0 651.0 168.0 651.0 H196.0"/>
+    <path class="link" d="M215.0 673.0 V697.5 Q215.0 706.5 224.0 706.5 H234.0"/>
+    <line class="link" x1="421.6" y1="706.5" x2="437.6" y2="706.5"/>
+    <line class="link" x1="770.2" y1="706.5" x2="786.2" y2="706.5"/>
+    <line class="link" x1="921.5" y1="706.5" x2="937.5" y2="706.5"/>
+    <line class="link" x1="1108.6" y1="706.5" x2="1124.6" y2="706.5"/>
+    <path class="link" d="M215.0 673.0 V757.0 Q215.0 766.0 224.0 766.0 H252.0"/>
+    <path class="link" d="M271.0 788.0 V812.5 Q271.0 821.5 280.0 821.5 H290.0"/>
+    <line class="link" x1="505.8" y1="821.5" x2="521.8" y2="821.5"/>
+    <line class="link" x1="728.6" y1="821.5" x2="744.6" y2="821.5"/>
+    <line class="link" x1="866.0" y1="821.5" x2="882.0" y2="821.5"/>
+    <line class="link" x1="1015.5" y1="821.5" x2="1031.5" y2="821.5"/>
+    <line class="link" x1="1167.1" y1="821.5" x2="1183.1" y2="821.5"/>
+    //line xxx
+    <line class="link" x1="585" y1="867.5" x2="605" y2="867.5"/>
+    <line class="link" x1="595" y1="867.5" x2="615" y2="867.5"/>
+    ////
+    <path class="link" d="M271.0 788.0 V858.5 Q271.0 867.5 280.0 867.5 H290.0"/>
+    <line class="link" x1="358.5" y1="867.5" x2="374.5" y2="867.5"/>
+    <path class="link" d="M47.0 76.0 V924.0 Q47.0 933.0 56.0 933.0 H84.0"/>
+    <path class="link" d="M103.0 955.0 V979.5 Q103.0 988.5 112.0 988.5 H122.0"/>
+    <line class="link" x1="268.1" y1="988.5" x2="284.1" y2="988.5"/>
+    <line class="link" x1="501.9" y1="988.5" x2="517.9" y2="988.5"/>
+    <line class="link" x1="631.2" y1="988.5" x2="647.2" y2="988.5"/>
+    <line class="link" x1="818.6" y1="988.5" x2="834.6" y2="988.5"/>
+    <line class="link" x1="984.6" y1="988.5" x2="1000.6" y2="988.5"/>
+    <path class="link" d="M103.0 955.0 V1090.5 Q103.0 1099.5 112.0 1099.5 H140.0"/>
+  </g>
+
+  <g id="tree">
+    <g id="enterprise-documentation-ecosystem">
+      <rect class="box" x="28.0" y="32.0" width="458.0" height="44" rx="9"/>
+      <text class="num" x="47.0" y="58.0">01</text>
+      <text class="title" x="77.9" y="59.0">Enterprise Documentation Ecosystem</text>
+    </g>
+    <rect class="pill" x="66.0" y="92.0" width="219.4" height="35" rx="17.5"/>
+    <text class="pill-t" x="175.7" y="114.0">Enterprise governance</text>
+    <rect class="pill" x="301.4" y="92.0" width="217.0" height="35" rx="17.5"/>
+    <text class="pill-t" x="409.9" y="114.0">Corporate governance</text>
+    <rect class="pill" x="534.3" y="92.0" width="182.4" height="35" rx="17.5"/>
+    <text class="pill-t" x="625.6" y="114.0">Risk management</text>
+    <rect class="pill" x="732.8" y="92.0" width="130.1" height="35" rx="17.5"/>
+    <text class="pill-t" x="797.8" y="114.0">Compliance</text>
+    <text class="note" x="66.0" y="153.5">The root authority everything else sits inside.</text>
+    <g id="information-governance">
+      <rect class="box" x="84.0" y="177.5" width="320.1" height="44" rx="9"/>
+      <text class="num" x="103.0" y="203.5">02</text>
+      <text class="title" x="133.9" y="204.5">Information Governance</text>
+    </g>
+    <rect class="pill" x="122.0" y="237.5" width="200.8" height="35" rx="17.5"/>
+    <text class="pill-t" x="222.4" y="259.5">Information lifecycle</text>
+    <rect class="pill" x="338.8" y="237.5" width="198.9" height="35" rx="17.5"/>
+    <text class="pill-t" x="438.2" y="259.5">Information security</text>
+    <rect class="pill" x="553.7" y="237.5" width="151.7" height="35" rx="17.5"/>
+    <text class="pill-t" x="629.5" y="259.5">Access control</text>
+    <rect class="pill" x="721.4" y="237.5" width="174.4" height="35" rx="17.5"/>
+    <text class="pill-t" x="808.6" y="259.5">Data governance</text>
+    <rect class="pill" x="911.8" y="237.5" width="238.3" height="35" rx="17.5"/>
+    <text class="pill-t" x="1030.9" y="259.5">Knowledge management</text>
+    <g id="records-management">
+      <rect class="box" x="140.0" y="292.5" width="293.6" height="44" rx="9"/>
+      <text class="num" x="159.0" y="318.5">03</text>
+      <text class="title" x="189.9" y="319.5">Records Management</text>
+    </g>
+    <rect class="pill" x="178.0" y="352.5" width="269.4" height="35" rx="17.5"/>
+    <text class="pill-t" x="312.7" y="374.5">Recordkeeping requirements</text>
+    <rect class="pill" x="463.4" y="352.5" width="224.0" height="35" rx="17.5"/>
+    <text class="pill-t" x="575.4" y="374.5">Retention &amp; disposition</text>
+    <rect class="pill" x="703.4" y="352.5" width="118.2" height="35" rx="17.5"/>
+    <text class="pill-t" x="762.5" y="374.5">Legal hold</text>
+    <rect class="pill" x="837.6" y="352.5" width="103.6" height="35" rx="17.5"/>
+    <text class="pill-t" x="889.4" y="374.5">Archives</text>
+    <rect class="pill" x="957.2" y="352.5" width="195.1" height="35" rx="17.5"/>
+    <text class="pill-t" x="1054.7" y="374.5">Digital preservation</text>
+    <g id="document-management">
+      <rect class="box" x="140.0" y="413.5" width="315.6" height="44" rx="9"/>
+      <text class="num" x="159.0" y="439.5">05</text>
+      <text class="title" x="189.9" y="440.5">Document Management</text>
+    </g>
+    <rect class="pill" x="178.0" y="473.5" width="81.3" height="35" rx="17.5"/>
+    <text class="pill-t" x="218.7" y="495.5">EDMS</text>
+    <rect class="pill" x="275.3" y="473.5" width="111.3" height="35" rx="17.5"/>
+    <text class="pill-t" x="331.0" y="495.5">Metadata</text>
+    <rect class="pill" x="402.7" y="473.5" width="245.1" height="35" rx="17.5"/>
+    <text class="pill-t" x="525.2" y="495.5">Taxonomy &amp; classification</text>
+    <rect class="pill" x="663.8" y="473.5" width="155.9" height="35" rx="17.5"/>
+    <text class="pill-t" x="741.7" y="495.5">Version control</text>
+    <rect class="pill" x="835.6" y="473.5" width="117.5" height="35" rx="17.5"/>
+    <text class="pill-t" x="894.4" y="495.5">Workflows</text>
+    <rect class="pill" x="969.1" y="473.5" width="129.3" height="35" rx="17.5"/>
+    <text class="pill-t" x="1033.7" y="495.5">Distribution</text>
+    <rect class="pill" x="1114.4" y="473.5" width="183.8" height="35" rx="17.5"/>
+    <text class="pill-t" x="1206.3" y="495.5">Controlled records</text>
+    <text class="note" x="178.0" y="535.0">Where the independently authored Document Management Standard is formally situated.</text>
+    <g id="document-management-standard">
+      <rect class="box box-green" x="196.0" y="559.0" width="386.3" height="44" rx="9"/>
+      <text class="title" x="215.0" y="586.0">Document Management Standard</text>
+      <text class="sub" x="596.3" y="585.5">requirements for controlled project information &#8594;</text>
+    </g>
+    <g id="project-information-management">
+      <rect class="box" x="196.0" y="629.0" width="412.1" height="44" rx="9"/>
+      <text class="num" x="215.0" y="655.0">04</text>
+      <text class="title" x="245.9" y="656.0">Project Information Management</text>
+    </g>
+    <rect class="pill" x="234.0" y="689.0" width="187.6" height="35" rx="17.5"/>
+    <text class="pill-t" x="327.8" y="711.0">Data management</text>
+    <rect class="pill" x="437.6" y="689.0" width="332.6" height="35" rx="17.5"/>
+    <text class="pill-t" x="603.9" y="711.0">Model/BIM information management</text>
+    <rect class="pill" x="786.2" y="689.0" width="135.3" height="35" rx="17.5"/>
+    <text class="pill-t" x="853.9" y="711.0">Digital twins</text>
+    <rect class="pill" x="937.5" y="689.0" width="171.1" height="35" rx="17.5"/>
+    <text class="pill-t" x="1023.1" y="711.0">Meeting minutes</text>
+    <rect class="pill" x="1124.6" y="689.0" width="123.7" height="35" rx="17.5"/>
+    <text class="pill-t" x="1186.5" y="711.0">Action logs</text>
+    <g id="document-control">
+      <rect class="box" x="252.0" y="744.0" width="256.3" height="44" rx="9"/>
+      <text class="num" x="271.0" y="770.0">06</text>
+      <text class="title" x="301.9" y="771.0">Document Control</text>
+    </g>
+    <rect class="pill" x="290.0" y="804.0" width="215.8" height="35" rx="17.5"/>
+    <text class="pill-t" x="397.9" y="826.0">Supplier management</text>
+    <rect class="pill" x="521.8" y="804.0" width="206.8" height="35" rx="17.5"/>
+    <text class="pill-t" x="625.2" y="826.0">Review management</text>
+    <rect class="pill" x="744.6" y="804.0" width="121.4" height="35" rx="17.5"/>
+    <text class="pill-t" x="805.3" y="826.0">Submittals</text>
+    <rect class="pill" x="882.0" y="804.0" width="133.5" height="35" rx="17.5"/>
+    <text class="pill-t" x="948.8" y="826.0">Transmittals</text>
+    <rect class="pill" x="1031.5" y="804.0" width="135.6" height="35" rx="17.5"/>
+    <text class="pill-t" x="1099.3" y="826.0">Deliverables</text>
+    <rect class="pill" x="1183.1" y="804.0" width="72.0" height="35" rx="17.5"/>
+    <text class="pill-t" x="1219.1" y="826.0">MDR</text>
+
+    <rect class="pill" x="471.1" y="850.0" width="60.3" height="35" rx="17.5"/>
+    <text class="pill-t" x="371.2" y="872.0">RFI</text>
+
+    <rect class="pill" x="374.5" y="850.0" width="69.4" height="35" rx="17.5"/>
+    <text class="pill-t" x="479.5" y="872.0">NCR</text>
+
+    <rect class="pill" x="550.0" y="850.0" width="68.5" height="35" rx="17.5"/>
+    <text class="pill-t" x="554.2" y="872.0">CAR</text>
+
+    <rect class="pill" x="655.5" y="850.0" width="210.1" height="35" rx="17.5"/>
+    <text class="pill-t" x="759.5" y="872.0">Operational reporting</text>
+
+    <g id="performance-governance">
+      <rect class="box box-accent" x="84.0" y="911.0" width="330.8" height="44" rx="9"/>
+      <text class="num" x="103.0" y="937.0">07</text>
+      <text class="title" x="133.9" y="938.0">Performance Governance</text>
+    </g>
+    <rect class="pill" x="122.0" y="971.0" width="146.1" height="35" rx="17.5"/>
+    <text class="pill-t" x="195.0" y="993.0">Measurement</text>
+    <rect class="pill" x="284.1" y="971.0" width="217.8" height="35" rx="17.5"/>
+    <text class="pill-t" x="393.0" y="993.0">Performance reporting</text>
+    <rect class="pill" x="517.9" y="971.0" width="113.4" height="35" rx="17.5"/>
+    <text class="pill-t" x="574.6" y="993.0">Diagnosis</text>
+    <rect class="pill" x="647.2" y="971.0" width="171.4" height="35" rx="17.5"/>
+    <text class="pill-t" x="732.9" y="993.0">Decision support</text>
+    <rect class="pill" x="834.6" y="971.0" width="150.0" height="35" rx="17.5"/>
+    <text class="pill-t" x="909.6" y="993.0">Accountability</text>
+    <rect class="pill" x="1000.6" y="971.0" width="117.6" height="35" rx="17.5"/>
+    <text class="pill-t" x="1059.4" y="993.0">Escalation</text>
+    <text class="note" x="122.0" y="1032.5">Verifying whether governance is actually working. Where</text>
+    <text class="note" x="122.0" y="1053.5">independently authored DCIOM is formally situated.</text>
+    <g id="dciom">
+      <rect class="box box-amber" x="140.0" y="1077.5" width="107.4" height="44" rx="9"/>
+      <text class="title" x="159.0" y="1104.5">DCIOM</text>
+      <text class="sub" x="261.4" y="1104.0">documentation-specific performance-governance framework &#8594;</text>
+    </g>
+    <line class="sep" x1="28" y1="1171.5" x2="1416.7671875" y2="1171.5"/>
+    <text class="section" x="722.4" y="1211.5">CROSS-CUTTING DIMENSIONS</text>
+    <g id="cross-standards">
+      <rect class="badge" x="124.6" y="1238.0" width="37.9" height="27" rx="5"/>
+      <text class="num-alt" x="143.5" y="1255.5">08</text>
+      <text class="cross-name" x="172.5" y="1256.5">Standards</text>
+      <text class="cross-t" x="201.6" y="1287.5">Say whether a discipline</text>
+      <text class="cross-t" x="201.6" y="1309.5">is being done correctly.</text>
+    </g>
+    <g id="cross-technologies">
+      <rect class="badge" x="457.9" y="1238.0" width="37.9" height="27" rx="5"/>
+      <text class="num-alt" x="476.8" y="1255.5">09</text>
+      <text class="cross-name" x="505.8" y="1256.5">Technologies</text>
+      <text class="cross-t" x="548.8" y="1287.5">Execute it.</text>
+    </g>
+    <g id="cross-roles">
+      <rect class="badge" x="843.8" y="1238.0" width="37.9" height="27" rx="5"/>
+      <text class="num-alt" x="862.8" y="1255.5">10</text>
+      <text class="cross-name" x="891.7" y="1256.5">Roles</text>
+      <text class="cross-t" x="896.0" y="1287.5">Are the people accountable for it.</text>
+    </g>
+    <g id="cross-maturity">
+      <rect class="badge" x="1174.9" y="1238.0" width="37.9" height="27" rx="5"/>
+      <text class="num-alt" x="1193.9" y="1255.5">11</text>
+      <text class="cross-name" x="1222.8" y="1256.5">Maturity</text>
+      <text class="cross-t" x="1243.2" y="1287.5">Measures how well it is done.</text>
+    </g>
+  </g>
+</svg>

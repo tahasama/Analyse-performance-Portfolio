@@ -24,10 +24,13 @@ export default function StandardPage() {
           &ldquo;{std.subtitle}.&rdquo;
         </p>
         <p
-          className="text-muted-foreground max-w-2xl leading-relaxed animate-fade-up"
+          className="text-muted-foreground max-w-2xl leading-relaxed animate-fade-up whitespace-pre-line"
           style={{ animationDelay: "0.15s" }}
         >
           {std.positioningStatement}
+        </p>
+        <p className="text-slate-400/50 text-sm mt-4 animate-fade-up">
+          Not an industry standard, not certified, not externally adopted.
         </p>
       </section>
 
@@ -71,8 +74,8 @@ export default function StandardPage() {
 
       {/* Dark -- the diagram as its own moment, the way the Architecture page
           treats its own. Large screens only. */}
-      <section className="hidden lg:flex items-center justify-center px-6 py-20">
-        <div className="max-w-6xl w-full mx-auto">
+      <section className="hidden lg:flex items-center justify-center px-4 py-20">
+        <div className="max-w-[86rem] w-full mx-auto">
           <StandardDiagram />
         </div>
       </section>
