@@ -6,6 +6,8 @@ import {
   type ProjectContent,
 } from "@/data/projects";
 import SystemLine from "@/components/project/SystemLine";
+import EvidenceGallery from "@/components/project/EvidenceGallery";
+import { homeEvidence } from "@/data/evidence";
 import { cn } from "@/lib/utils";
 
 const reportingProjects = projects.filter((p) => p.group === "reporting");
@@ -25,7 +27,7 @@ const capabilitiesIndex = [
     title: "Decision Support",
     items: "Information governance, performance reporting, corrective action",
   },
-  { title: "Tools", items: "Power BI, SQL, Excel" },
+  { title: "Analysis Tools", items: "Power BI, SQL, Excel" },
 ];
 
 // The three authored bodies of work, as homepage entrances. Figures are the
@@ -53,7 +55,7 @@ const portfolioIndex = [
     kind: "Independent research",
     title: "DBoK",
     subtitle: "Documentation Body of Knowledge",
-    body: "The architectural map of the documentation profession: how the disciplines relate, where each sits, and when to reach for one over another. Both the architecture and the standard are drawn from it.",
+    body: "The architectural map of the documentation profession: how the disciplines relate, where each sits, and when to reach for one over another. It positions the architecture and the standard within the wider practice.",
     facts: ["12 chapters", "8 knowledge types", "5 patterns"],
   },
 ];
@@ -251,7 +253,8 @@ export default function HomePage() {
                 them, or the arrows mean nothing. */}
             <p className="section-label mb-3">The Applied Work</p>
             <p className="text-foreground/80 leading-relaxed max-w-2xl mb-8">
-              Six Power BI systems over the same document set, each answering
+              Six connected performance systems over the same document set,
+              each answering
               the question the one before it raises: observe, measure, diagnose,
               act, project, verify.
             </p>
@@ -263,7 +266,10 @@ export default function HomePage() {
       </header>
 
       {/* Light band -- Reporting (C1-C3) */}
-      <section className="mode-reporting bg-background text-foreground border-y border-border">
+      <section
+        id="reporting"
+        className="mode-reporting bg-background text-foreground border-y border-border scroll-mt-16"
+      >
         <div className="max-w-5xl mx-auto px-6 py-20">
           <p className="section-label mb-3">Reporting</p>
           <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-4 max-w-2xl">
@@ -282,7 +288,7 @@ export default function HomePage() {
       </section>
 
       {/* Dark band -- Decision (C4-C6) */}
-      <section>
+      <section id="decision" className="scroll-mt-16">
         <div className="max-w-5xl mx-auto px-6 py-20">
           <p className="section-label mb-3">Decision</p>
           <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-4 max-w-2xl">
@@ -318,15 +324,22 @@ export default function HomePage() {
             ))}
           </div>
           <IndexCard item={portfolioIndex[2]} />
+
+          <div className="pt-14">
+            <EvidenceGallery
+              images={homeEvidence}
+              artifactName="Portfolio preview"
+            />
+          </div>
         </div>
       </section>
 
       {/* Light outro -- editorial */}
       <section className="theme-editorial bg-background text-foreground border-t border-border">
         <div className="max-w-5xl mx-auto px-6 py-20">
-          <p className="font-mono text-[0.7rem] uppercase tracking-[0.16em] text-muted-foreground mb-8">
+          <h2 className="font-mono text-[0.7rem] uppercase tracking-[0.16em] text-muted-foreground mb-8">
             Capabilities Index
-          </p>
+          </h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 mb-16">
             {capabilitiesIndex.map((group) => (

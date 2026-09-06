@@ -6,6 +6,8 @@ import PillarGrid from "@/components/diagrams/PillarGrid";
 import HandshakeList from "@/components/diagrams/HandshakeList";
 import PrincipleGrid from "@/components/diagrams/PrincipleGrid";
 import ArchitectureDiagram from "@/components/diagrams/ArchitectureDiagram";
+import DocumentReader from "@/components/project/DocumentReader";
+import { dciomReaderPages } from "@/data/dciomReader";
 
 export default function ArchitecturePage() {
   const {
@@ -25,7 +27,7 @@ export default function ArchitecturePage() {
           follow read as parts of a named framework, not a build-up to it.
           "Behind The Work" rides as a compact kicker above it, same section,
           so it doesn't stack a second section's padding on top of the hero. */}
-      <section className="max-w-5xl mx-auto px-6 pt-24 pb-28">
+      <section className="max-w-5xl mx-auto px-6 pt-16 pb-16 md:pt-24 md:pb-28">
         <p className="section-label mb-4 animate-fade-in">DCIOM</p>
         <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl text-foreground mb-6 leading-[1.1] max-w-5xl animate-fade-up">
           {fullName}
@@ -42,7 +44,7 @@ export default function ArchitecturePage() {
         >
           {positioningStatement}
         </p>
-        <p className="text-slate-400/50 text-sm mt-4 animate-fade-up">
+        <p className="text-sm text-muted-foreground mt-4 animate-fade-up">
           Not an industry standard, not certified, not externally adopted.
         </p>
       </section>
@@ -65,13 +67,13 @@ export default function ArchitecturePage() {
       {/* From here down the page rolls dark/light/dark/light, same rhythm
           as Home -- not one hard dark-then-light split. */}
 
-      {/* Light -- HORIZON and the architecture intro, in their original
-          sequence right after DCIOM. */}
-      <div className="theme-editorial bg-background text-foreground mt-20">
+      {/* Light -- HORIZON, the architecture introduction and the standard
+          sample. */}
+      <div className="theme-editorial bg-background text-foreground mt-4">
         {/* The timeline is a thin band of content, so its padding is kept
             tighter than a text section's -- and the nodes are sized up to
             carry the width they're given rather than floating in it. */}
-        <section className="max-w-5xl mx-auto px-6 pt-14 pb-14">
+        <section className="max-w-5xl mx-auto px-6 pt-14 pb-14 border-t border-border">
           <p className="section-label mb-1">{horizon.name}</p>
           <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-8">
             {horizon.subtitle}
@@ -119,14 +121,38 @@ export default function ArchitecturePage() {
             simulation mechanics stay in the controlled specification.
           </p>
         </section>
+
+        <section
+          className="max-w-5xl mx-auto px-6 pb-16"
+          aria-label="DCIOM Framework Standard sample"
+        >
+          <div className="mb-8">
+            <h3 className="font-serif text-xl text-foreground mb-1">
+              DCIOM Framework Standard Sample
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              5 page sample from Authority &amp; Purpose and System Foundations
+            </p>
+          </div>
+          <DocumentReader
+            title="DCIOM Framework Standard · Authority, Purpose & System Foundations"
+            pages={dciomReaderPages}
+          />
+        </section>
       </div>
 
-      {/* Dark -- the full spatial diagram follows the intro, its own big
-          immersive moment. Large screens only; the card grids below are the
-          complete, responsive detail on every screen size. */}
+      {/* Dark -- the spatial diagram. */}
       <section className="hidden lg:flex items-center justify-center min-h-screen px-6 py-8">
         <div className="max-w-[90rem] w-full mx-auto">
-          <ArchitectureDiagram />
+          <div
+            className="w-full mx-auto"
+            style={{ maxWidth: "min(100%, calc(91vh * 1640 / 950))" }}
+          >
+            <p className="section-label mb-4 pl-[2.44%]">
+              Framework Architecture
+            </p>
+            <ArchitectureDiagram />
+          </div>
         </div>
       </section>
 
@@ -160,8 +186,6 @@ export default function ArchitecturePage() {
 
       {/* Light -- Formal Specification and the closing statement */}
       <div className="theme-editorial bg-background text-foreground">
-        {/* Formal Specification -- a real artifact (cover + thematic bands),
-            not a 14-entry table of contents. */}
         <section className="max-w-5xl mx-auto px-6 pb-16 pt-16">
           <p className="section-label mb-3">Formal Specification</p>
           <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-4">

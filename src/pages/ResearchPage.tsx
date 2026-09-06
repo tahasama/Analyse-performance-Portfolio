@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { dbok } from "@/data/research";
 import DbokDiagram from "@/components/diagrams/DbokDiagram";
+import DocumentReader from "@/components/project/DocumentReader";
+import { dbokReaderPages } from "@/data/dbokReader";
 
 const chapter0 = dbok.chapters.find((c) => c.number === "0")!;
 
@@ -10,7 +12,7 @@ export default function ResearchPage() {
     <div>
       {/* Dark -- hero, same treatment as Home/Architecture: eyebrow, large
           h1, italic one-line quote, supporting paragraph. */}
-      <section className="max-w-5xl mx-auto px-6 pt-24 pb-20">
+      <section className="max-w-5xl mx-auto px-6 pt-16 pb-14 md:pt-24 md:pb-20">
         <p className="section-label mb-4 animate-fade-in">Research</p>
         <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl text-foreground mb-6 leading-[1.1] max-w-3xl animate-fade-up">
           {dbok.name}
@@ -27,7 +29,7 @@ export default function ResearchPage() {
         >
           {dbok.positioningStatement}
         </p>
-        <p className="text-slate-400/50 text-sm mt-4 animate-fade-up">
+        <p className="text-sm text-muted-foreground mt-4 animate-fade-up">
           Established disciplines; independently authored structure and
           synthesis.
         </p>
@@ -35,7 +37,7 @@ export default function ResearchPage() {
 
       {/* Dark -- why it exists, for who, where it fits: three short answers,
           not another restatement of the positioning paragraph above */}
-      <section className="max-w-5xl mx-auto px-6 pb-20">
+      <section className="max-w-5xl mx-auto px-6 pb-14">
         {/* A faint accent wash runs left-to-right across the three cells so
             the block reads as one surface rather than three empty boxes.
             The gradient sits on the grid itself and the cells stay
@@ -44,12 +46,13 @@ export default function ResearchPage() {
             gradient through the gaps instead of the border colour. */}
         <div className="grid sm:grid-cols-3 border border-border divide-y sm:divide-y-0 sm:divide-x divide-border bg-gradient-to-b sm:bg-gradient-to-r from-cyan-900/[0.04] via-cyan-900/[0.15] to-transparent mt-5">
           {dbok.orientation.map((item) => (
-            <div key={item.label} className="p-6">
+            <div key={item.label} className="p-5">
               <p className="section-label mb-2">{item.label}</p>
               <p className="text-foreground/90 leading-relaxed">{item.text}</p>
             </div>
           ))}
         </div>
+
       </section>
 
       {/* Light -- Chapter 0's patterns */}
@@ -81,19 +84,37 @@ export default function ResearchPage() {
               </li>
             ))}
           </ul>
+
+          <div className="mt-12">
+            <div className="mb-8">
+              <h3 className="font-serif text-xl text-foreground mb-1">
+                Documentation Body of Knowledge Sample
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                4 page sample from Chapter 6 Document Control
+              </p>
+            </div>
+            <DocumentReader
+              title="Documentation Body of Knowledge · Document Control"
+              pages={dbokReaderPages}
+            />
+          </div>
         </section>
       </div>
 
       {/* Dark -- the real structural diagram: a nested containment tree
           built from each chapter's actual gloss data, not a summary of it */}
       <section className="px-6 py-20">
-        <DbokDiagram />
+        <div className="max-w-3xl mx-auto">
+          <p className="section-label mb-4">Knowledge Map</p>
+          <DbokDiagram />
+        </div>
       </section>
 
       {/* Light -- the knowledge-type vocabulary every chapter is built from */}
       <div className="theme-editorial bg-background text-foreground">
-        <section className="max-w-5xl mx-auto px-6 pb-16 pt-16">
-          <p className="section-label mb-3">Eight Recurring Knowledge Types</p>
+        <section className="max-w-5xl mx-auto px-6 pb-12 pt-14">
+          <h2 className="section-label mb-3">Eight Recurring Knowledge Types</h2>
           <p className="text-muted-foreground leading-relaxed max-w-2xl mb-8">
             Every chapter is decomposed into the same eight kinds of entity, so
             disciplines stay comparable instead of each reading like its own
@@ -113,21 +134,9 @@ export default function ResearchPage() {
           </div>
         </section>
 
-        <section className="max-w-5xl mx-auto px-6 pb-16 border-t border-border pt-10">
-          <p className="section-label mb-4">Worked Examples</p>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {dbok.appendices.map((a) => (
-              <div key={a.label}>
-                <p className="text-sm font-medium text-foreground">{a.label}</p>
-                <p className="text-sm text-muted-foreground">{a.description}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* The reference maps the disciplines; the Standard is the first of
             them written up as enforceable requirements. */}
-        <section className="max-w-5xl mx-auto px-6 pb-24 border-t border-border pt-10">
+        <section className="max-w-5xl mx-auto px-6 pb-12 border-t border-border pt-8">
           <p className="section-label mb-3">The Standard</p>
           <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-4 max-w-2xl">
             Where the map becomes a requirement
@@ -135,8 +144,8 @@ export default function ResearchPage() {
           <p className="text-muted-foreground leading-relaxed max-w-2xl mb-4">
             The Document Management Standard takes the document-management
             portion of this reference and states it as normative requirements:
-            18 Parts, 141 clauses and 275 conformance checks, each tied to the
-            route that applies it.
+            18 Parts, 141 clauses and 275 conformance checks. Its normative
+            Traceability Spine links Rules to applicable Routes and Checks.
           </p>
           <Link
             to="/standard"

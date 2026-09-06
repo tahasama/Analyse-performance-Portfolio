@@ -21,7 +21,7 @@ export default function ProjectPageShell({
 
   const problemBlock = (
     <div>
-      <p className="section-label mb-2">The Problem</p>
+      <h2 className="section-label mb-2">The Problem</h2>
       <p className="text-lg text-muted-foreground leading-relaxed">
         {project.theProblem}
       </p>
@@ -30,7 +30,7 @@ export default function ProjectPageShell({
 
   const builtBlock = (
     <div>
-      <p className="section-label mb-2">What I Built</p>
+      <h2 className="section-label mb-2">What I Built</h2>
       <p className="text-lg text-foreground/90 leading-relaxed">
         {project.whatIBuilt}
       </p>
@@ -39,7 +39,7 @@ export default function ProjectPageShell({
 
   const situationBlock = (
     <div className="space-y-4">
-      <p className="section-label mb-2">The Situation</p>
+      <h2 className="section-label mb-2">The Situation</h2>
       <p className="text-lg text-muted-foreground leading-relaxed">
         {project.theProblem}
       </p>
@@ -51,7 +51,7 @@ export default function ProjectPageShell({
 
   const deliversBlock = (
     <div>
-      <p className="section-label mb-3">What It Delivers</p>
+      <h2 className="section-label mb-3">What It Delivers</h2>
       <div className="grid sm:grid-cols-2 gap-3">
         {project.whatItDelivers.map((item, i) => (
           <div
@@ -128,14 +128,14 @@ export default function ProjectPageShell({
         </section>
 
         <section className="max-w-4xl mx-auto px-6 pb-16 border-t border-border pt-12">
-          <p className="section-label mb-3">Why It Matters</p>
+          <h2 className="section-label mb-3">Why It Matters</h2>
           <p className="font-serif text-xl md:text-2xl text-foreground leading-relaxed">
             {project.whyItMatters}
           </p>
         </section>
 
         <section className="max-w-4xl mx-auto px-6 pb-8">
-          <p className="section-label mb-3">The Full System</p>
+          <h2 className="section-label mb-3">The Full System</h2>
         </section>
         <div className="max-w-5xl mx-auto px-6 flex justify-center">
           <SystemLine currentId={project.id} compact />

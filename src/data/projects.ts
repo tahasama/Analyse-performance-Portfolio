@@ -146,7 +146,7 @@ export const projects: ProjectContent[] = [
         src: c1,
         alt: "Weekly document status dashboard showing counters, discipline pipeline, reviewer workload, and submission status",
         caption:
-          "Weekly snapshot: total document counts, supplier/review pending queues, per-discipline pipeline (Electrical, Civil, QA/QC, Architectural, HVAC, Piping/Layouts), reviewer workload with days late, and review/submission status splits.",
+          "Dashboard · Power BI — Weekly snapshot: total document counts, supplier/review pending queues, per-discipline pipeline (Electrical, Civil, QA/QC, Architectural, HVAC, Piping/Layouts), reviewer workload with days late, and review/submission status splits.",
       },
     ],
     visual: {
@@ -194,13 +194,13 @@ export const projects: ProjectContent[] = [
         src: c2_1,
         alt: "Performance overview dashboard showing Health Score, on-schedule percentages, backlog, and weekly flow trend",
         caption:
-          "What the performance is: Health Score (46/100), submission/review on-schedule %, review and supply backlog %, a split of where cycle time is lost, supplier compliance against an 80% target, and the weekly documents flow trend.",
+          "Dashboard · Power BI — What the performance is: Health Score (46/100), submission/review on-schedule %, review and supply backlog %, a split of where cycle time is lost, supplier compliance against an 80% target, and the weekly documents flow trend.",
       },
       {
         src: c2_2,
         alt: "Performance detail dashboard showing discipline SLA breach, reviewer performance, and submission quality",
         caption:
-          "What's driving it: SLA breach % by discipline (submission vs. review), reviews completed and on-time rate per reviewer, and submission quality split into first-time acceptance vs. 1–2 vs. 3+ revisions.",
+          "Dashboard · Power BI — What's driving it: SLA breach % by discipline (submission vs. review), reviews completed and on-time rate per reviewer, and submission quality split into first-time acceptance vs. 1–2 vs. 3+ revisions.",
       },
     ],
     visual: {
@@ -243,7 +243,7 @@ export const projects: ProjectContent[] = [
         src: c3,
         alt: "Findings and Advisory dashboard with ranked findings and a Capacity, Execution, Control advisory breakdown",
         caption:
-          "Findings (left): four ranked, severity-coded findings, including 'Submission Backlog Critical' and 'Review Backlog Under Control'. Advisory (right): each open finding classified as Capacity, Execution, or Control, with a recommended action and named routing (Department Managers, Discipline Leads, Project Management).",
+          "Dashboard · Power BI — Findings (left): four ranked, severity-coded findings, including 'Submission Backlog Critical' and 'Review Backlog Under Control'. Advisory (right): each open finding classified as Capacity, Execution, or Control, with a recommended action and named routing (Department Managers, Discipline Leads, Project Management).",
       },
     ],
     visual: {
@@ -316,7 +316,7 @@ export const projects: ProjectContent[] = [
         src: c4,
         alt: "Quarterly Process and Action assessment showing current vs. previous quarter status for three tracked areas",
         caption:
-          "Three of the framework's five tracked dimensions this quarter: Process Health (46/100, stagnant, unchanged across periods), Intake Flow (39.4%, deteriorating, with 262 planned submissions never received), and Throughput Capacity (83.7%, resolved, review throughput at target).",
+          "Report · Power BI — Three of the framework's five tracked dimensions this quarter: Process Health (46/100, stagnant, unchanged across periods), Intake Flow (39.4%, deteriorating, with 262 planned submissions never received), and Throughput Capacity (83.7%, resolved, review throughput at target).",
       },
     ],
     visual: {
@@ -377,7 +377,7 @@ export const projects: ProjectContent[] = [
         src: c5,
         alt: "Strategy and Impact simulation showing backlog trajectories, reviewer and supplier scenarios, and target reachability",
         caption:
-          "A 4-month projection: historical, simulated, and projected backlog curves for reviews and submissions; reviewer backlog trending toward 7.8% (deteriorating) against a 0.7% target reachable at 49% compliance; supplier backlog trending toward 88.3% (deteriorating) against a 7.6% target reachable at 76% compliance.",
+          "Dashboard · Power BI — A 4-month projection: historical, simulated, and projected backlog curves for reviews and submissions; reviewer backlog trending toward 7.8% (deteriorating) against a 0.7% target reachable at 49% compliance; supplier backlog trending toward 88.3% (deteriorating) against a 7.6% target reachable at 76% compliance.",
       },
     ],
     visual: {
@@ -436,13 +436,13 @@ export const projects: ProjectContent[] = [
         src: c6,
         alt: "Meeting Pack cover showing health score, commitment status, recovery figures, and an entry point into the full pack",
         caption:
-          "The Meeting Pack cover, the entry point into a governance meeting: health score (46/100), review and supplier commitment status (pending, no prior meeting yet), recovery figures, and a headline, with an export into the full pack of findings and commitment tracking.",
+          "Report · Power BI — The Meeting Pack cover, the entry point into a governance meeting: health score (46/100), review and supplier commitment status (pending, no prior meeting yet), recovery figures, and a headline, with an export into the full pack of findings and commitment tracking.",
       },
       {
         src: c6Worksheet,
         alt: "Working worksheet spreadsheet with one row per tracked metric: status, last/this month, delta, a standing question, a response field, and a named owner",
         caption:
-          "The working worksheet the Meeting Pack opens into, with one row per tracked metric (Review Compliance, Supplier Compliance, Intake Flow, Throughput Capacity, and others), each with status, last/this month values, delta, a standing question for the room, a response field, and a named owner (Management or Discipline Lead).",
+          "Worksheet · Excel — The working worksheet the Meeting Pack opens into, with one row per tracked metric (Review Compliance, Supplier Compliance, Intake Flow, Throughput Capacity, and others), each with status, last/this month values, delta, a standing question for the room, a response field, and a named owner (Management or Discipline Lead).",
       },
     ],
     visual: {

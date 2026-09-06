@@ -24,8 +24,7 @@ export interface StandardContent {
   /** The document's own three-layer structure (v1.0 cover: "Rules · Routes
    * · Checks, synchronized through traceability"). */
   layers: Array<{ name: string; text: string }>;
-  /** What it does better than an in-house procedure. The counterpart to
-   * `excludes` -- a boundary only reads well next to a claim. */
+  /** The structural qualities that make the Standard executable. */
   strengths: Array<{ title: string; text: string }>;
   /** What it explicitly does not cover (Part 0.2). */
   excludes: string[];
@@ -74,8 +73,8 @@ export const documentManagementStandard: StandardContent = {
       text: "It sets the properties each requirement must have and leaves the numbering, code lists and retention periods to the organization, so it does not fight an existing way of working.",
     },
     {
-      title: "It is traced",
-      text: "Every requirement maps to a published source across ten international standards, so nothing in it rests on one author's preference.",
+      title: "It is synchronized",
+      text: "It distinguishes sourced requirements from four authored additions—the register, issue-status codes, deliverable baseline and conformance checking—and synchronizes Rules, Routes and Checks through the Traceability Spine.",
     },
   ],
 
@@ -83,7 +82,7 @@ export const documentManagementStandard: StandardContent = {
     "It does not prescribe a numbering structure, a discipline list, a status code set, a review outcome set, or a retention period. These differ legitimately between organizations, sectors and jurisdictions.",
     "It does not govern the content of documents, engineering process, procurement, or quality management.",
     "It does not replace records management. Where a records management programme exists, that programme governs retention and disposition.",
-    "It does not describe how work is performed. Review sequence, escalation and judgement are shaped by contract and by circumstance.",
+    "It does not prescribe engineering, procurement or project-delivery methods. Annex G sequences document-management tasks only; contractual workflows and professional judgement remain organization-specific.",
   ],
 
 

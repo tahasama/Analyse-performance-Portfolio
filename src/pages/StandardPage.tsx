@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { documentManagementStandard as std } from "@/data/standard";
 import StandardDiagram from "@/components/diagrams/StandardDiagram";
+import DocumentReader from "@/components/project/DocumentReader";
+import { standardReaderPages } from "@/data/standardReader";
 
 // Six alternating bands, matching the Architecture page's rhythm: no band runs
 // much past one screen, and the diagram gets its own dark moment between the
@@ -10,7 +12,7 @@ export default function StandardPage() {
   return (
     <div>
       {/* Dark -- hero */}
-      <section className="max-w-5xl mx-auto px-6 pt-24 pb-16">
+      <section className="max-w-5xl mx-auto px-6 pt-16 pb-14 md:pt-24 md:pb-16">
         {/* No version here: DCIOM and DBoK carry none either, and versioning
             one product only would read as inconsistent. */}
         <p className="section-label mb-4 animate-fade-in">Standard</p>
@@ -29,7 +31,7 @@ export default function StandardPage() {
         >
           {std.positioningStatement}
         </p>
-        <p className="text-slate-400/50 text-sm mt-4 animate-fade-up">
+        <p className="text-sm text-muted-foreground mt-4 animate-fade-up">
           Not an industry standard, not certified, not externally adopted.
         </p>
       </section>
@@ -48,11 +50,10 @@ export default function StandardPage() {
             Rules, routes and checks, tied together by traceability
           </h2>
           <p className="text-muted-foreground max-w-2xl mb-10 leading-relaxed">
-            Every rule is threaded to the route that applies it and the check
-            that tests it, so a requirement cannot exist without a way to verify
-            it. That thread is what makes the Standard executable rather than
-            advisory: conformance is something you run, not something you
-            assert.
+            Every normative Rule links to at least one Check, applicable Routes
+            show where recurring work uses it, and the organization&rsquo;s
+            configuration supplies local values. The Traceability Spine keeps
+            those elements synchronized, making conformance testable.
           </p>
           <div className="grid sm:grid-cols-3 gap-px bg-border border border-border">
             {std.layers.map((l, i) => (
@@ -69,6 +70,21 @@ export default function StandardPage() {
               </div>
             ))}
           </div>
+
+          <div className="mt-12">
+            <div className="mb-8">
+              <h3 className="font-serif text-xl text-foreground mb-1">
+                Document Management Standard Sample
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                5 page sample from Part 1 Scope, Accountability and Conformance
+              </p>
+            </div>
+            <DocumentReader
+              title="Document Management Standard · Part 1"
+              pages={standardReaderPages}
+            />
+          </div>
         </section>
       </div>
 
@@ -76,7 +92,15 @@ export default function StandardPage() {
           treats its own. Large screens only. */}
       <section className="hidden lg:flex items-center justify-center px-4 py-20">
         <div className="max-w-[86rem] w-full mx-auto">
-          <StandardDiagram />
+          <div
+            className="w-full mx-auto"
+            style={{ maxWidth: "min(100%, calc(90vh * 1200 / 700))" }}
+          >
+            <p className="section-label mb-4 pl-[3.34%]">
+              Standard Composition
+            </p>
+            <StandardDiagram />
+          </div>
         </div>
       </section>
 
@@ -85,7 +109,7 @@ export default function StandardPage() {
         <section className="max-w-5xl mx-auto px-6 pt-16 pb-12">
           <p className="section-label mb-3">What It Does</p>
           <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-8 max-w-2xl">
-            Three things an in-house procedure does not
+            What makes the Standard executable
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {std.strengths.map((s) => (
@@ -171,7 +195,7 @@ export default function StandardPage() {
           </h2>
           <div className="grid sm:grid-cols-2 gap-6">
             {std.annexes
-              .filter((a) => ["A", "B", "C", "H"].includes(a.letter))
+              .filter((a) => ["C", "F", "G", "H"].includes(a.letter))
               .map((a) => (
                 <div
                   key={a.letter}
@@ -196,7 +220,7 @@ export default function StandardPage() {
         {/* Named, not described. DBoK and DCIOM are what a reader should
             leave remembering. */}
         <section className="max-w-5xl mx-auto px-6 pt-12 pb-24 border-t border-border">
-          <p className="section-label mb-3">Where It Sits</p>
+          <h2 className="section-label mb-3">Where It Sits</h2>
           <p className="font-serif text-xl md:text-2xl text-foreground leading-relaxed max-w-2xl mb-6">
             <span className="text-accent">DBoK</span> maps the profession. This
             Standard states what controlled information must satisfy.{" "}

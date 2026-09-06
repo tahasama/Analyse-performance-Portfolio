@@ -62,9 +62,10 @@
     --status-healthy: 160 59% 56%;
   }
 
-  /* Reporting group (C1-C3) -- exact paper palette from tokensA:
+  /* Reporting group (C1-C3) -- paper palette from tokensA, with the muted
+     copy darkened slightly so normal-size text clears WCAG AA:
      bgPage #e9e5da / bgCard #faf8f1 / bgPanel #f2eee3 / textPrimary #1c1a16 /
-     textSecondary #5b5850 / textMuted #9a9584 / border #e0dbcb /
+     textSecondary #5b5850 / accessible textMuted #706b5c / border #e0dbcb /
      accent #a4362b. Applied via `.mode-reporting` on ProjectPageShell for
      the reporting group, and on Home's matching band. */
   .mode-reporting {
@@ -84,7 +85,7 @@
     --secondary-foreground: 44 6% 34%;
 
     --muted: 44 37% 92%;
-    --muted-foreground: 46 10% 46%;
+    --muted-foreground: 45 10% 40%;
 
     --accent: 5 58% 41%;
     --accent-foreground: 44 37% 96%;
@@ -127,7 +128,7 @@
     --secondary-foreground: 44 6% 34%;
 
     --muted: 44 37% 92%;
-    --muted-foreground: 46 10% 46%;
+    --muted-foreground: 45 10% 40%;
 
     --accent: 5 58% 41%;
     --accent-foreground: 44 37% 96%;
@@ -158,6 +159,17 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 
   h1, h2, h3 {

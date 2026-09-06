@@ -6,6 +6,7 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -56,6 +57,9 @@ export default function Header() {
           <SheetContent side="right" className="w-64">
             <SheetHeader>
               <SheetTitle className="text-left font-serif">Menu</SheetTitle>
+              <SheetDescription className="sr-only">
+                Primary site navigation
+              </SheetDescription>
             </SheetHeader>
             <nav className="mt-8 flex flex-col gap-6">
               {navItems.map((item) => (

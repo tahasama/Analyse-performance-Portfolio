@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Download, Mail } from "lucide-react";
 import { experience } from "@/data/experience";
 import { Button } from "@/components/ui/button";
 
@@ -25,7 +25,7 @@ export default function ExperiencePage() {
     <div>
       {/* Dark -- hero, same treatment as Home/Architecture/Research: eyebrow,
           large h1, italic one-line quote, supporting paragraph. */}
-      <section className="max-w-5xl mx-auto px-6 pt-24 pb-20">
+      <section className="max-w-5xl mx-auto px-6 pt-16 pb-14 md:pt-24 md:pb-20">
         <p className="section-label mb-4 animate-fade-in">Experience</p>
         <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl text-foreground mb-6 leading-[1.1] max-w-3xl animate-fade-up">
           Document Control, Practiced and Built
@@ -45,7 +45,7 @@ export default function ExperiencePage() {
       </section>
 
       <section className="max-w-5xl mx-auto px-6 pb-16">
-        <p className="section-label mb-6">Roles</p>
+        <h2 className="section-label mb-6">Roles</h2>
         <div className="relative pl-8">
           <div
             className="absolute left-0 top-1 bottom-1 w-px bg-border"
@@ -102,7 +102,7 @@ export default function ExperiencePage() {
       </section>
 
       <section className="max-w-5xl mx-auto px-6 pb-16 border-t border-border pt-12">
-        <p className="section-label mb-6">Education</p>
+        <h2 className="section-label mb-6">Education</h2>
         {education.map((e) => (
           <div key={e.credential}>
             <h3 className="font-serif text-xl text-foreground mb-1">
@@ -115,7 +115,7 @@ export default function ExperiencePage() {
       </section>
 
       <section className="max-w-5xl mx-auto px-6 pb-16 border-t border-border pt-12">
-        <p className="section-label mb-6">Skills</p>
+        <h2 className="section-label mb-6">Skills</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {skills.map((group) => (
             <div key={group.title}>
@@ -164,6 +164,12 @@ export default function ExperiencePage() {
               </a>
             </Button>
           )}
+          <Button asChild size="lg" variant="outline">
+            <a href="/taha-maatof-resume.pdf" download>
+              <Download className="h-4 w-4" />
+              Resume
+            </a>
+          </Button>
         </div>
         {contact.location && (
           <p className="text-sm text-muted-foreground mt-4">

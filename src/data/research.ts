@@ -34,15 +34,15 @@ export const dbok: DbokReference = {
   orientation: [
     {
       label: "Why",
-      text: "The map connecting the documentation disciplines, showing why they exist, where they sit, and when to reach for one over another.",
+      text: "Connects the documentation disciplines: why they exist, where they sit, and when to use each one.",
     },
     {
-      label: "For Who",
-      text: "Anyone whose job touches documentation without a name for the discipline they practice.",
+      label: "For Whom",
+      text: "People whose work touches documentation but who lack a clear map of the discipline behind it.",
     },
     {
       label: "Where It Fits",
-      text: "ISO 19650, ISO 15489, and relevant certifications remain authoritative; this book provides the wider context.",
+      text: "ISO 19650, ISO 15489, and relevant certifications remain authoritative; the DBoK provides the wider professional context.",
     },
   ],
   knowledgeTypes: [
