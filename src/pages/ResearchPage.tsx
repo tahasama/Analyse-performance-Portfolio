@@ -44,7 +44,7 @@ export default function ResearchPage() {
             transparent, so `divide-*` draws the hairlines instead of the
             gap-px/parent-background trick, which would otherwise show the
             gradient through the gaps instead of the border colour. */}
-        <div className="grid sm:grid-cols-3 border border-border divide-y sm:divide-y-0 sm:divide-x divide-border bg-gradient-to-b sm:bg-gradient-to-r from-cyan-900/[0.04] via-cyan-900/[0.15] to-transparent mt-5">
+        <div className="grid sm:grid-cols-3 border border-border divide-y sm:divide-y-0 sm:divide-x divide-border bg-gradient-to-b sm:bg-gradient-to-r from-cyan-900/[0.04] via-cyan-900/[0.08] to-transparent mt-5">
           {dbok.orientation.map((item) => (
             <div key={item.label} className="p-5">
               <p className="section-label mb-2">{item.label}</p>
@@ -52,7 +52,6 @@ export default function ResearchPage() {
             </div>
           ))}
         </div>
-
       </section>
 
       {/* Light -- Chapter 0's patterns */}
@@ -114,7 +113,9 @@ export default function ResearchPage() {
       {/* Light -- the knowledge-type vocabulary every chapter is built from */}
       <div className="theme-editorial bg-background text-foreground">
         <section className="max-w-5xl mx-auto px-6 pb-12 pt-14">
-          <h2 className="section-label mb-3">Eight Recurring Knowledge Types</h2>
+          <h2 className="section-label mb-3">
+            Eight Recurring Knowledge Types
+          </h2>
           <p className="text-muted-foreground leading-relaxed max-w-2xl mb-8">
             Every chapter is decomposed into the same eight kinds of entity, so
             disciplines stay comparable instead of each reading like its own
