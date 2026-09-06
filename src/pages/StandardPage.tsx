@@ -96,7 +96,7 @@ export default function StandardPage() {
             className="w-full mx-auto"
             style={{ maxWidth: "min(100%, calc(90vh * 1200 / 700))" }}
           >
-            <p className="section-label mb-4 pl-[3.34%]">
+            <p className="diagram-label mb-4 pl-[3.34%]">
               Standard Composition
             </p>
             <StandardDiagram />
@@ -194,26 +194,21 @@ export default function StandardPage() {
             What an organization picks up and uses
           </h2>
           <div className="grid sm:grid-cols-2 gap-6">
-            {std.annexes
-              .filter((a) => ["C", "F", "G", "H"].includes(a.letter))
-              .map((a) => (
-                <div
-                  key={a.letter}
-                  className="border border-border bg-card p-6"
-                >
-                  <div className="flex items-baseline gap-3 mb-2">
-                    <span className="font-mono text-sm text-accent">
-                      {a.letter}
-                    </span>
-                    <p className="font-serif text-lg text-foreground">
-                      {a.title}
-                    </p>
-                  </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {a.purpose}
+            {std.featuredInstruments.map((a) => (
+              <div key={a.letter} className="border border-border bg-card p-6">
+                <div className="flex items-baseline gap-3 mb-2">
+                  <span className="font-mono text-sm text-accent">
+                    {a.letter}
+                  </span>
+                  <p className="font-serif text-lg text-foreground">
+                    {a.title}
                   </p>
                 </div>
-              ))}
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {a.purpose}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 

@@ -1,8 +1,6 @@
-export interface StandardAnnex {
+export interface StandardInstrument {
   letter: string;
   title: string;
-  /** Normative or Informative, plus the qualifier the document gives. */
-  status: string;
   /** What a reader goes to this Annex for. */
   purpose: string;
 }
@@ -16,7 +14,6 @@ export interface ConformanceLevel {
 
 export interface StandardContent {
   name: string;
-  version: string;
   subtitle: string;
   positioningStatement: string;
   /** Headline figures. Structure and scale only, no clause text. */
@@ -28,13 +25,12 @@ export interface StandardContent {
   strengths: Array<{ title: string; text: string }>;
   /** What it explicitly does not cover (Part 0.2). */
   excludes: string[];
-  annexes: StandardAnnex[];
+  featuredInstruments: StandardInstrument[];
   conformanceLevels: ConformanceLevel[];
 }
 
 export const documentManagementStandard: StandardContent = {
   name: "Document Management Standard",
-  version: "1.0",
   subtitle:
     "An executable standard for controlled project information",
   positioningStatement:
@@ -46,8 +42,6 @@ export const documentManagementStandard: StandardContent = {
     { figure: "275", label: "Conformance checks" },
     { figure: "8", label: "Annexes" },
   ],
-
-
   layers: [
     {
       name: "Rules",
@@ -84,58 +78,27 @@ export const documentManagementStandard: StandardContent = {
     "It does not replace records management. Where a records management programme exists, that programme governs retention and disposition.",
     "It does not prescribe engineering, procurement or project-delivery methods. Annex G sequences document-management tasks only; contractual workflows and professional judgement remain organization-specific.",
   ],
-
-
-  annexes: [
-    {
-      letter: "A",
-      title: "External Party Requirements",
-      status: "Normative when invoked",
-      purpose: "Requirements to place on contractors, vendors and third parties.",
-    },
-    {
-      letter: "B",
-      title: "System Configuration Profile",
-      status: "Informative",
-      purpose:
-        "What a document management system needs to be able to do. Also usable as a procurement specification.",
-    },
+  featuredInstruments: [
     {
       letter: "C",
       title: "Organization Configuration Instrument",
-      status: "Normative",
       purpose:
         "What the organization must decide and publish before the Standard can be used.",
     },
     {
-      letter: "D",
-      title: "Reference Sets",
-      status: "Informative",
-      purpose: "Suggested code lists an organization can adopt or replace.",
-    },
-    {
-      letter: "E",
-      title: "Relationship to Adjacent Work",
-      status: "Informative",
-      purpose: "Where this sits against DBoK and DCIOM, and the publication map.",
-    },
-    {
       letter: "F",
       title: "Traceability Spine",
-      status: "Normative",
       purpose:
         "The thread that ties every rule to the route that applies it and the check that tests it.",
     },
     {
       letter: "G",
       title: "Routes",
-      status: "Informative",
       purpose: "Recurring document-control work, sequenced from trigger to evidence.",
     },
     {
       letter: "H",
       title: "Catalogue of Checks",
-      status: "Normative",
       purpose:
         "Every defect this Standard can produce, with the check that detects it, its severity, and the party accountable for the fix.",
     },

@@ -24,83 +24,6 @@ export interface ProjectImage {
   caption: string;
 }
 
-export interface StatusSnapshotData {
-  kind: "status-snapshot";
-  counters: Array<{ label: string; value: string; note?: string }>;
-  queue: Array<{ stage: string; share: number }>;
-}
-
-export interface PerformanceBreakdownData {
-  kind: "performance-breakdown";
-  healthScore: { value: number; label: string };
-  kpis: Array<{ label: string; value: string }>;
-  breakdownNote: string;
-}
-
-export interface FindingsAdvisoryData {
-  kind: "findings-advisory";
-  findings: Array<{
-    label: string;
-    severity: "critical" | "attention" | "healthy";
-    detail: string;
-  }>;
-  advisories: Array<{
-    classification: "Capacity" | "Execution" | "Control";
-    recommendedAction: string;
-    routedTo: string;
-  }>;
-}
-
-export interface QuarterComparisonData {
-  kind: "quarter-comparison";
-  areas: Array<{
-    name:
-      | "Process Health"
-      | "Supplier Compliance"
-      | "Intake Flow"
-      | "Review Compliance"
-      | "Throughput Capacity";
-    currentQ: string;
-    previousQ: string;
-    concludedStatus: "Resolved" | "Improving" | "Stagnant" | "Deteriorating";
-    diagnosis: string;
-    escalated: boolean;
-  }>;
-  note: string;
-}
-
-export interface ScenarioTrajectoryData {
-  kind: "scenario-trajectory";
-  horizonLabel: string;
-  scenarios: Array<{
-    name: string;
-    assumption: string;
-    projectedOutcome: string;
-  }>;
-  hedgeNote: string;
-}
-
-export interface MeetingWorksheetData {
-  kind: "meeting-worksheet";
-  packSummary: {
-    healthScore: string;
-    reviewCommitment: string;
-    supplierCommitment: string;
-    headline: string;
-  };
-  /** Field names the live worksheet captures -- schema only, no invented row data. */
-  worksheetFields: string[];
-  worksheetNote: string;
-}
-
-export type ProjectVisualData =
-  | StatusSnapshotData
-  | PerformanceBreakdownData
-  | FindingsAdvisoryData
-  | QuarterComparisonData
-  | ScenarioTrajectoryData
-  | MeetingWorksheetData;
-
 export interface ProjectContent {
   id: ProjectId;
   status: ProjectStatus;
@@ -116,7 +39,6 @@ export interface ProjectContent {
   whatItDelivers: string[];
   whyItMatters: string;
   images: ProjectImage[];
-  visual: ProjectVisualData;
 }
 
 export const projects: ProjectContent[] = [
@@ -149,23 +71,6 @@ export const projects: ProjectContent[] = [
           "Dashboard · Power BI — Weekly snapshot: total document counts, supplier/review pending queues, per-discipline pipeline (Electrical, Civil, QA/QC, Architectural, HVAC, Piping/Layouts), reviewer workload with days late, and review/submission status splits.",
       },
     ],
-    visual: {
-      kind: "status-snapshot",
-      counters: [
-        { label: "Total Documents", value: "1,999", note: "32% completed" },
-        { label: "Supplier Pending", value: "1,188", note: "97% overdue" },
-        { label: "Review Pending", value: "124", note: "100% overdue" },
-        { label: "Received This Week", value: "0", note: "of 1 planned" },
-      ],
-      queue: [
-        { stage: "Electrical", share: 681 },
-        { stage: "Civil", share: 258 },
-        { stage: "QA/QC", share: 198 },
-        { stage: "Architectural", share: 196 },
-        { stage: "HVAC", share: 171 },
-        { stage: "Piping/Layouts", share: 137 },
-      ],
-    },
   },
 
   {
@@ -203,18 +108,6 @@ export const projects: ProjectContent[] = [
           "Dashboard · Power BI — What's driving it: SLA breach % by discipline (submission vs. review), reviews completed and on-time rate per reviewer, and submission quality split into first-time acceptance vs. 1–2 vs. 3+ revisions.",
       },
     ],
-    visual: {
-      kind: "performance-breakdown",
-      healthScore: { value: 46, label: "Health Score" },
-      kpis: [
-        { label: "Submission On-Schedule", value: "3.5%" },
-        { label: "Review On-Schedule", value: "41.7%" },
-        { label: "Reviews Backlog", value: "7.2%" },
-        { label: "Supply Backlog", value: "75.9%" },
-      ],
-      breakdownNote:
-        "The second image isn't a separate scorecard. It's the same Health Score broken down by discipline and reviewer, showing exactly where the composite number comes from.",
-    },
   },
 
   {
@@ -246,48 +139,6 @@ export const projects: ProjectContent[] = [
           "Dashboard · Power BI — Findings (left): four ranked, severity-coded findings, including 'Submission Backlog Critical' and 'Review Backlog Under Control'. Advisory (right): each open finding classified as Capacity, Execution, or Control, with a recommended action and named routing (Department Managers, Discipline Leads, Project Management).",
       },
     ],
-    visual: {
-      kind: "findings-advisory",
-      findings: [
-        {
-          label: "Supplier Delays Contributing to Cycle Time",
-          severity: "attention",
-          detail: "Supplier delay accounts for 94% of cycle time; 68 submissions received late.",
-        },
-        {
-          label: "Review Backlog Under Control",
-          severity: "healthy",
-          detail: "Backlog within acceptable limits at 7.2%.",
-        },
-        {
-          label: "Submission Backlog Critical",
-          severity: "critical",
-          detail: "75.9% of planned submissions not yet received, trending up.",
-        },
-        {
-          label: "Discipline SLA Breach",
-          severity: "critical",
-          detail: "Review breach at 58.8% of documents, concentrated in specific disciplines.",
-        },
-      ],
-      advisories: [
-        {
-          classification: "Capacity",
-          recommendedAction: "Rebalance reviewer throughput against the active document pipeline.",
-          routedTo: "Management & Department Managers",
-        },
-        {
-          classification: "Execution",
-          recommendedAction: "Address non-compliant suppliers in the coordination meeting.",
-          routedTo: "Discipline Leads",
-        },
-        {
-          classification: "Control",
-          recommendedAction: "Enforce SLA compliance with discipline counterparts.",
-          routedTo: "Discipline Leads & Project Management",
-        },
-      ],
-    },
   },
 
   {
@@ -319,36 +170,6 @@ export const projects: ProjectContent[] = [
           "Report · Power BI — Three of the framework's five tracked dimensions this quarter: Process Health (46/100, stagnant, unchanged across periods), Intake Flow (39.4%, deteriorating, with 262 planned submissions never received), and Throughput Capacity (83.7%, resolved, review throughput at target).",
       },
     ],
-    visual: {
-      kind: "quarter-comparison",
-      areas: [
-        {
-          name: "Process Health",
-          currentQ: "46/100",
-          previousQ: "44/100",
-          concludedStatus: "Stagnant",
-          diagnosis: "Health score unchanged across consecutive periods; prior advisories haven't produced a measurable shift.",
-          escalated: true,
-        },
-        {
-          name: "Intake Flow",
-          currentQ: "39.4%",
-          previousQ: "45.5%",
-          concludedStatus: "Deteriorating",
-          diagnosis: "262 planned submissions never received this period; pipeline feed reducing.",
-          escalated: true,
-        },
-        {
-          name: "Throughput Capacity",
-          currentQ: "83.7%",
-          previousQ: "83.7%",
-          concludedStatus: "Resolved",
-          diagnosis: "Review throughput holding at target; pipeline processed at expected rate.",
-          escalated: false,
-        },
-      ],
-      note: "Shown here: 3 of the 5 dimensions this assessment tracks. Supplier Compliance and Review Compliance are part of the same quarterly assessment but aren't pictured in this evidence sample.",
-    },
   },
 
   {
@@ -380,34 +201,6 @@ export const projects: ProjectContent[] = [
           "Dashboard · Power BI — A 4-month projection: historical, simulated, and projected backlog curves for reviews and submissions; reviewer backlog trending toward 7.8% (deteriorating) against a 0.7% target reachable at 49% compliance; supplier backlog trending toward 88.3% (deteriorating) against a 7.6% target reachable at 76% compliance.",
       },
     ],
-    visual: {
-      kind: "scenario-trajectory",
-      horizonLabel: "4-month projection",
-      scenarios: [
-        {
-          name: "Reviewers, no intervention",
-          assumption: "Current trajectory continues, +0.16%/month",
-          projectedOutcome: "Backlog moves 7.2% → 7.8%",
-        },
-        {
-          name: "Reviewers, with intervention",
-          assumption: "49% compliance + 1 review/day",
-          projectedOutcome: "Backlog reduces 7.2% → 0.6%, target reachable in 4 months",
-        },
-        {
-          name: "Suppliers, no intervention",
-          assumption: "Current trajectory continues, +3.10%/month",
-          projectedOutcome: "Backlog moves 75.9% → 88.3%",
-        },
-        {
-          name: "Suppliers, with intervention",
-          assumption: "76% compliance + 2 submissions/day",
-          projectedOutcome: "Backlog reduces 75.9% → 0.0%, target reachable in 4 months",
-        },
-      ],
-      hedgeNote:
-        "Projections apply only forward and don't correct for past performance; the simulation is capped at maximum modeled capacity. These are scenarios under stated assumptions, not forecasts.",
-    },
   },
 
   {
@@ -445,18 +238,6 @@ export const projects: ProjectContent[] = [
           "Worksheet · Excel — The working worksheet the Meeting Pack opens into, with one row per tracked metric (Review Compliance, Supplier Compliance, Intake Flow, Throughput Capacity, and others), each with status, last/this month values, delta, a standing question for the room, a response field, and a named owner (Management or Discipline Lead).",
       },
     ],
-    visual: {
-      kind: "meeting-worksheet",
-      packSummary: {
-        healthScore: "46/100",
-        reviewCommitment: "Pending",
-        supplierCommitment: "Pending",
-        headline: "Insufficient prior data to assess commitment performance.",
-      },
-      worksheetFields: ["Metric", "Status", "Last Month", "This Month", "Delta", "Question", "Response", "Owner"],
-      worksheetNote:
-        "Completed live during the meeting, not assembled afterward. The next cycle's data reconciles each row against the prior commitment.",
-    },
   },
 ];
 

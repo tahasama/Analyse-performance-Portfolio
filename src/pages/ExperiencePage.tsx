@@ -171,11 +171,6 @@ export default function ExperiencePage() {
             </a>
           </Button>
         </div>
-        {contact.location && (
-          <p className="text-sm text-muted-foreground mt-4">
-            {contact.location}
-          </p>
-        )}
       </section>
     </div>
   );

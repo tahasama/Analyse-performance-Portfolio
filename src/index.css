@@ -43,21 +43,11 @@
 
     --radius: 0.375rem;
 
-    --sidebar-background: 225 17% 8%;
-    --sidebar-foreground: 220 16% 90%;
-    --sidebar-primary: 36 67% 55%;
-    --sidebar-primary-foreground: 225 17% 9%;
-    --sidebar-accent: 227 14% 16%;
-    --sidebar-accent-foreground: 220 16% 90%;
-    --sidebar-border: 227 14% 19%;
-    --sidebar-ring: 36 67% 55%;
-
     /* One cool data/analytics accent -- charts and trajectory moments only. */
     --data: 205 70% 58%;
 
     /* Semantic status colors. --status-healthy is the exact "live" teal
        (#4fd1a5) from the token set. */
-    --status-critical: 5 55% 52%;
     --status-attention: 22 75% 55%;
     --status-healthy: 160 59% 56%;
   }
@@ -103,8 +93,6 @@
 
     --data: 205 55% 40%;
 
-    --status-critical: 5 58% 41%;
-    --status-attention: 30 55% 35%;
     --status-healthy: 150 35% 30%;
   }
 
@@ -146,8 +134,6 @@
 
     --data: 205 55% 40%;
 
-    --status-critical: 5 58% 41%;
-    --status-attention: 30 55% 35%;
     --status-healthy: 150 35% 30%;
   }
 }
@@ -216,14 +202,14 @@
     @apply font-mono text-xs font-semibold uppercase tracking-[0.2em] text-accent;
   }
 
+  .diagram-label {
+    @apply font-mono text-xs font-semibold uppercase tracking-[0.2em] text-status-attention;
+  }
+
   .callout {
     @apply rounded-md border-l-[3px] px-4 py-3;
     border-left-color: hsl(var(--accent));
     background-color: hsl(var(--accent) / 0.07);
-  }
-
-  .status-badge {
-    @apply inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-semibold uppercase tracking-wide;
   }
 
   /* Light photo mat behind evidence screenshots so dashboard captures stay

@@ -105,7 +105,7 @@ export default function ResearchPage() {
           built from each chapter's actual gloss data, not a summary of it */}
       <section className="px-6 py-20">
         <div className="max-w-3xl mx-auto">
-          <p className="section-label mb-4">Knowledge Map</p>
+          <p className="diagram-label mb-4">Knowledge Map</p>
           <DbokDiagram />
         </div>
       </section>

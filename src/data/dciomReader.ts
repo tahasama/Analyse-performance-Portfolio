@@ -1,7 +1,7 @@
 import page05 from "@/assets/dciom-reader/dciom-page-05.png";
 import page06 from "@/assets/dciom-reader/dciom-page-06.png";
 import page07 from "@/assets/dciom-reader/dciom-page-07.png";
-import page08 from "@/assets/dciom-reader/dciom-page-08.png";
+import page08 from "@/assets/dciom-governance-architecture-page.png";
 import page09 from "@/assets/dciom-reader/dciom-page-09.png";
 import type { DocumentReaderPage } from "@/components/project/DocumentReader";
 

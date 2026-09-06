@@ -104,7 +104,8 @@ export default function StandardDiagram() {
             <text
               x={x + 20}
               y="156"
-              className="fill-status-attention font-mono"
+              // className="fill-cyan-300/50  font-mono"
+              className="fill-orange-300/70  font-mono"
               fontSize="15"
               letterSpacing="0.08em"
             >

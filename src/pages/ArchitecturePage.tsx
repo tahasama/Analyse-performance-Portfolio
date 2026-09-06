@@ -135,7 +135,7 @@ export default function ArchitecturePage() {
             className="w-full mx-auto"
             style={{ maxWidth: "min(100%, calc(91vh * 1640 / 950))" }}
           >
-            <p className="section-label mb-4 pl-[2.44%]">
+            <p className="diagram-label mb-4 pl-[2.44%]">
               Framework Architecture
             </p>
             <ArchitectureDiagram />

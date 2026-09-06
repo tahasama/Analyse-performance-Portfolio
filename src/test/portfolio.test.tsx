@@ -2,13 +2,14 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { describe, expect, it } from "vitest";
 import Breadcrumb from "@/components/project/Breadcrumb";
+import ArchitectureDiagram from "@/components/diagrams/ArchitectureDiagram";
 import DocumentReader from "@/components/project/DocumentReader";
 import { homeEvidence } from "@/data/evidence";
 import { projects } from "@/data/projects";
 
 describe("portfolio evidence", () => {
   it("keeps the home preview in the intended narrative order", () => {
-    expect(homeEvidence.map((image) => image.caption.split("—")[0].trim())).toEqual([
+    expect(homeEvidence.map((image) => image.caption.split(".")[0].trim())).toEqual([
       "Document · Standard",
       "Dashboard · Power BI",
       "Document · Standard",
@@ -63,6 +64,29 @@ describe("document reader", () => {
 });
 
 describe("project navigation", () => {
+  it("links all six architecture components to their detail pages", () => {
+    render(
+      <MemoryRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
+        <ArchitectureDiagram />
+      </MemoryRouter>,
+    );
+
+    const destinations = [
+      ["Open C1, Status and Visibility", "/project/c1-status"],
+      ["Open C2, Flow and Performance", "/project/c2-performance"],
+      ["Open C3, Findings and Advisory", "/project/c3-findings-advisory"],
+      ["Open C4, Process and Action", "/project/c4-process-action"],
+      ["Open C5, Strategy and Impact", "/project/c5-strategy-impact"],
+      ["Open C6, Commitment and Tracking", "/project/c6-questionnaire-tracking"],
+    ];
+
+    destinations.forEach(([name, href]) => {
+      expect(screen.getByRole("link", { name })).toHaveAttribute("href", href);
+    });
+  });
+
   it("links reporting projects back to the matching home section", () => {
     render(
       <MemoryRouter

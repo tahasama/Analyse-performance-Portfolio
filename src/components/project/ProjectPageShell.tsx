@@ -6,9 +6,12 @@ import SystemLine from "./SystemLine";
 import Breadcrumb from "./Breadcrumb";
 import { cn } from "@/lib/utils";
 
-// Diagnostic-shaped products (findings/quarter-comparison) read as one
+// Diagnostic-shaped products read as one
 // continuous situation rather than two separate Problem/Built beats.
-const DIAGNOSTIC_KINDS = new Set(["findings-advisory", "quarter-comparison"]);
+const DIAGNOSTIC_PROJECTS = new Set([
+  "c3-findings-advisory",
+  "c4-process-action",
+]);
 
 export default function ProjectPageShell({
   project,
@@ -17,7 +20,7 @@ export default function ProjectPageShell({
 }) {
   const isReporting = project.group === "reporting";
   const componentNumber = projects.findIndex((p) => p.id === project.id) + 1;
-  const isDiagnostic = DIAGNOSTIC_KINDS.has(project.visual.kind);
+  const isDiagnostic = DIAGNOSTIC_PROJECTS.has(project.id);
 
   const problemBlock = (
     <div>

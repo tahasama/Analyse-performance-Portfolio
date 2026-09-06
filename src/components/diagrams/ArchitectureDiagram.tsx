@@ -1,5 +1,7 @@
-// Adapted from src/assets/dciom_architecture.svg -- same structure (three
-// pillars, six components, three handshakes, principles strip) redrawn in
+import { Link } from "react-router-dom";
+
+// The standard's structure (three pillars, six components, three handshakes,
+// and the principles strip) is redrawn in
 // the site's own palette/type via Tailwind fill-*/stroke-* utilities
 // (which resolve against the same CSS-variable tokens as everything else).
 // Rendered on the dark base theme, not .theme-editorial -- the accent
@@ -19,8 +21,8 @@ export default function ArchitectureDiagram() {
       width={1640}
       height={950}
       className="w-auto h-auto max-w-full max-h-[91vh] mx-auto block"
-      role="img"
-      aria-label="DCIOM architecture diagram"
+      role="group"
+      aria-label="Interactive DCIOM architecture diagram"
     >
       <defs>
         <marker
@@ -203,116 +205,134 @@ export default function ArchitectureDiagram() {
           Reporting Pillar
         </text>
 
-        <rect
-          x="540"
-          y="190"
-          width="420"
-          height="150"
-          className="fill-background stroke-border"
-          strokeWidth="1"
-        />
-        <text
-          x="560"
-          y="222"
-          textAnchor="start"
-          className="fill-accent font-mono"
-          fontSize="16"
-          letterSpacing="0.08em"
+        <Link
+          to="/project/c1-status"
+          aria-label="Open C1, Status and Visibility"
+          className="group cursor-pointer focus:outline-none"
         >
-          C1
-        </text>
-        <text
-          x="750"
-          y="256"
-          textAnchor="middle"
-          className="fill-foreground font-serif"
-          fontSize="25"
-        >
-          Status Report
-        </text>
-        <text
-          x="750"
-          y="284"
-          textAnchor="middle"
-          className="fill-muted-foreground font-mono"
-          fontSize="20"
-        >
-          Current operational state
-        </text>
+          <rect
+            x="540"
+            y="190"
+            width="420"
+            height="150"
+            className="fill-background stroke-border transition-colors duration-150 motion-reduce:transition-none group-hover:fill-accent/10 group-hover:stroke-accent group-focus-visible:fill-accent/10 group-focus-visible:stroke-accent"
+            strokeWidth="1"
+          />
+          <text
+            x="560"
+            y="222"
+            textAnchor="start"
+            className="fill-accent font-mono"
+            fontSize="16"
+            letterSpacing="0.08em"
+          >
+            C1
+          </text>
+          <text
+            x="750"
+            y="256"
+            textAnchor="middle"
+            className="fill-foreground font-serif"
+            fontSize="25"
+          >
+            Status Report
+          </text>
+          <text
+            x="750"
+            y="284"
+            textAnchor="middle"
+            className="fill-muted-foreground font-mono"
+            fontSize="20"
+          >
+            Current operational state
+          </text>
+        </Link>
 
-        <rect
-          x="540"
-          y="366"
-          width="420"
-          height="150"
-          className="fill-background stroke-border"
-          strokeWidth="1"
-        />
-        <text
-          x="560"
-          y="398"
-          textAnchor="start"
-          className="fill-accent font-mono"
-          fontSize="16"
-          letterSpacing="0.08em"
+        <Link
+          to="/project/c2-performance"
+          aria-label="Open C2, Flow and Performance"
+          className="group cursor-pointer focus:outline-none"
         >
-          C2
-        </text>
-        <text
-          x="750"
-          y="432"
-          textAnchor="middle"
-          className="fill-foreground font-serif"
-          fontSize="25"
-        >
-          Performance Report
-        </text>
-        <text
-          x="750"
-          y="460"
-          textAnchor="middle"
-          className="fill-muted-foreground font-mono"
-          fontSize="20"
-        >
-          KPI measurement &amp; thresholds
-        </text>
+          <rect
+            x="540"
+            y="366"
+            width="420"
+            height="150"
+            className="fill-background stroke-border transition-colors duration-150 motion-reduce:transition-none group-hover:fill-accent/10 group-hover:stroke-accent group-focus-visible:fill-accent/10 group-focus-visible:stroke-accent"
+            strokeWidth="1"
+          />
+          <text
+            x="560"
+            y="398"
+            textAnchor="start"
+            className="fill-accent font-mono"
+            fontSize="16"
+            letterSpacing="0.08em"
+          >
+            C2
+          </text>
+          <text
+            x="750"
+            y="432"
+            textAnchor="middle"
+            className="fill-foreground font-serif"
+            fontSize="25"
+          >
+            Performance Report
+          </text>
+          <text
+            x="750"
+            y="460"
+            textAnchor="middle"
+            className="fill-muted-foreground font-mono"
+            fontSize="20"
+          >
+            KPI measurement &amp; thresholds
+          </text>
+        </Link>
 
-        <rect
-          x="540"
-          y="542"
-          width="420"
-          height="150"
-          className="fill-background stroke-border"
-          strokeWidth="1"
-        />
-        <text
-          x="560"
-          y="574"
-          textAnchor="start"
-          className="fill-accent font-mono"
-          fontSize="16"
-          letterSpacing="0.08em"
+        <Link
+          to="/project/c3-findings-advisory"
+          aria-label="Open C3, Findings and Advisory"
+          className="group cursor-pointer focus:outline-none"
         >
-          C3
-        </text>
-        <text
-          x="750"
-          y="608"
-          textAnchor="middle"
-          className="fill-foreground font-serif"
-          fontSize="25"
-        >
-          Findings &amp; Advisory
-        </text>
-        <text
-          x="750"
-          y="636"
-          textAnchor="middle"
-          className="fill-muted-foreground font-mono"
-          fontSize="20"
-        >
-          Constraint diagnosis
-        </text>
+          <rect
+            x="540"
+            y="542"
+            width="420"
+            height="150"
+            className="fill-background stroke-border transition-colors duration-150 motion-reduce:transition-none group-hover:fill-accent/10 group-hover:stroke-accent group-focus-visible:fill-accent/10 group-focus-visible:stroke-accent"
+            strokeWidth="1"
+          />
+          <text
+            x="560"
+            y="574"
+            textAnchor="start"
+            className="fill-accent font-mono"
+            fontSize="16"
+            letterSpacing="0.08em"
+          >
+            C3
+          </text>
+          <text
+            x="750"
+            y="608"
+            textAnchor="middle"
+            className="fill-foreground font-serif"
+            fontSize="25"
+          >
+            Findings &amp; Advisory
+          </text>
+          <text
+            x="750"
+            y="636"
+            textAnchor="middle"
+            className="fill-muted-foreground font-mono"
+            fontSize="20"
+          >
+            Constraint diagnosis
+          </text>
+        </Link>
       </g>
 
       {/* Pillar 3 -- Decision */}
@@ -327,116 +347,134 @@ export default function ArchitectureDiagram() {
           Decision Pillar
         </text>
 
-        <rect
-          x="1160"
-          y="190"
-          width="420"
-          height="150"
-          className="fill-background stroke-border"
-          strokeWidth="1"
-        />
-        <text
-          x="1180"
-          y="222"
-          textAnchor="start"
-          className="fill-accent font-mono"
-          fontSize="16"
-          letterSpacing="0.08em"
+        <Link
+          to="/project/c4-process-action"
+          aria-label="Open C4, Process and Action"
+          className="group cursor-pointer focus:outline-none"
         >
-          C4
-        </text>
-        <text
-          x="1370"
-          y="256"
-          textAnchor="middle"
-          className="fill-foreground font-serif"
-          fontSize="25"
-        >
-          Process &amp; Action
-        </text>
-        <text
-          x="1370"
-          y="284"
-          textAnchor="middle"
-          className="fill-muted-foreground font-mono"
-          fontSize="20"
-        >
-          Quarter-over-quarter governance
-        </text>
+          <rect
+            x="1160"
+            y="190"
+            width="420"
+            height="150"
+            className="fill-background stroke-border transition-colors duration-150 motion-reduce:transition-none group-hover:fill-accent/10 group-hover:stroke-accent group-focus-visible:fill-accent/10 group-focus-visible:stroke-accent"
+            strokeWidth="1"
+          />
+          <text
+            x="1180"
+            y="222"
+            textAnchor="start"
+            className="fill-accent font-mono"
+            fontSize="16"
+            letterSpacing="0.08em"
+          >
+            C4
+          </text>
+          <text
+            x="1370"
+            y="256"
+            textAnchor="middle"
+            className="fill-foreground font-serif"
+            fontSize="25"
+          >
+            Process &amp; Action
+          </text>
+          <text
+            x="1370"
+            y="284"
+            textAnchor="middle"
+            className="fill-muted-foreground font-mono"
+            fontSize="20"
+          >
+            Quarter-over-quarter governance
+          </text>
+        </Link>
 
-        <rect
-          x="1160"
-          y="366"
-          width="420"
-          height="150"
-          className="fill-background stroke-border"
-          strokeWidth="1"
-        />
-        <text
-          x="1180"
-          y="398"
-          textAnchor="start"
-          className="fill-accent font-mono"
-          fontSize="16"
-          letterSpacing="0.08em"
+        <Link
+          to="/project/c5-strategy-impact"
+          aria-label="Open C5, Strategy and Impact"
+          className="group cursor-pointer focus:outline-none"
         >
-          C5
-        </text>
-        <text
-          x="1370"
-          y="432"
-          textAnchor="middle"
-          className="fill-foreground font-serif"
-          fontSize="25"
-        >
-          Strategy &amp; Impact
-        </text>
-        <text
-          x="1370"
-          y="460"
-          textAnchor="middle"
-          className="fill-muted-foreground font-mono"
-          fontSize="20"
-        >
-          Trajectory &amp; scenario modeling
-        </text>
+          <rect
+            x="1160"
+            y="366"
+            width="420"
+            height="150"
+            className="fill-background stroke-border transition-colors duration-150 motion-reduce:transition-none group-hover:fill-accent/10 group-hover:stroke-accent group-focus-visible:fill-accent/10 group-focus-visible:stroke-accent"
+            strokeWidth="1"
+          />
+          <text
+            x="1180"
+            y="398"
+            textAnchor="start"
+            className="fill-accent font-mono"
+            fontSize="16"
+            letterSpacing="0.08em"
+          >
+            C5
+          </text>
+          <text
+            x="1370"
+            y="432"
+            textAnchor="middle"
+            className="fill-foreground font-serif"
+            fontSize="25"
+          >
+            Strategy &amp; Impact
+          </text>
+          <text
+            x="1370"
+            y="460"
+            textAnchor="middle"
+            className="fill-muted-foreground font-mono"
+            fontSize="20"
+          >
+            Trajectory &amp; scenario modeling
+          </text>
+        </Link>
 
-        <rect
-          x="1160"
-          y="542"
-          width="420"
-          height="150"
-          className="fill-background stroke-border"
-          strokeWidth="1"
-        />
-        <text
-          x="1180"
-          y="574"
-          textAnchor="start"
-          className="fill-accent font-mono"
-          fontSize="16"
-          letterSpacing="0.08em"
+        <Link
+          to="/project/c6-questionnaire-tracking"
+          aria-label="Open C6, Commitment and Tracking"
+          className="group cursor-pointer focus:outline-none"
         >
-          C6
-        </text>
-        <text
-          x="1370"
-          y="608"
-          textAnchor="middle"
-          className="fill-foreground font-serif"
-          fontSize="25"
-        >
-          Tracking
-        </text>
-        <text
-          x="1370"
-          y="636"
-          textAnchor="middle"
-          className="fill-muted-foreground font-mono"
-          fontSize="20"
-        >
-          Commitment verification
-        </text>
+          <rect
+            x="1160"
+            y="542"
+            width="420"
+            height="150"
+            className="fill-background stroke-border transition-colors duration-150 motion-reduce:transition-none group-hover:fill-accent/10 group-hover:stroke-accent group-focus-visible:fill-accent/10 group-focus-visible:stroke-accent"
+            strokeWidth="1"
+          />
+          <text
+            x="1180"
+            y="574"
+            textAnchor="start"
+            className="fill-accent font-mono"
+            fontSize="16"
+            letterSpacing="0.08em"
+          >
+            C6
+          </text>
+          <text
+            x="1370"
+            y="608"
+            textAnchor="middle"
+            className="fill-foreground font-serif"
+            fontSize="25"
+          >
+            Tracking
+          </text>
+          <text
+            x="1370"
+            y="636"
+            textAnchor="middle"
+            className="fill-muted-foreground font-mono"
+            fontSize="20"
+          >
+            Commitment verification
+          </text>
+        </Link>
       </g>
 
       {/* H1: EDMS -> Status Report */}

@@ -24,7 +24,6 @@ export interface DbokReference {
   knowledgeTypes: DbokKnowledgeType[];
   architecturalPatterns: DbokPattern[];
   chapters: DbokChapter[];
-  appendices: Array<{ label: string; description: string }>;
 }
 
 export const dbok: DbokReference = {
@@ -172,10 +171,5 @@ export const dbok: DbokReference = {
       gloss: "Maturity models across information governance, BIM/information management, data governance, and document control.",
       note: "Measured per discipline, never once.",
     },
-  ],
-  appendices: [
-    { label: "Appendix A", description: "One RFI, start to finish." },
-    { label: "Appendix B", description: "One record, creation to destruction." },
-    { label: "Appendix C", description: "One supplier document, tender to handover." },
   ],
 };

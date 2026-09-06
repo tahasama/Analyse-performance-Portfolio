@@ -25,8 +25,6 @@ export interface SkillGroup {
 export interface ContactInfo {
   email: string;
   linkedin?: string;
-  phone?: string;
-  location?: string;
 }
 
 export interface ExperienceContent {
