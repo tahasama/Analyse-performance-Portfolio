@@ -55,7 +55,8 @@
   /* Reporting group (C1-C3) -- paper palette from tokensA, with the muted
      copy darkened slightly so normal-size text clears WCAG AA:
      bgPage #e9e5da / bgCard #faf8f1 / bgPanel #f2eee3 / textPrimary #1c1a16 /
-     textSecondary #5b5850 / accessible textMuted #706b5c / border #e0dbcb /
+     textSecondary #5b5850 / textMuted #706b5c (AA alternative #6b6657) /
+     border #e0dbcb /
      accent #a4362b. Applied via `.mode-reporting` on ProjectPageShell for
      the reporting group, and on Home's matching band. */
   .mode-reporting {
@@ -76,6 +77,7 @@
 
     --muted: 44 37% 92%;
     --muted-foreground: 45 10% 40%;
+    /* WCAG AA alternative for normal text: #6b6657 (45 10% 38%). */
 
     --accent: 5 58% 41%;
     --accent-foreground: 44 37% 96%;

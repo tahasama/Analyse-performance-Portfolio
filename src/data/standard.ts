@@ -68,7 +68,7 @@ export const documentManagementStandard: StandardContent = {
     },
     {
       title: "It is synchronized",
-      text: "It distinguishes sourced requirements from four authored additions—the register, issue-status codes, deliverable baseline and conformance checking—and synchronizes Rules, Routes and Checks through the Traceability Spine.",
+      text: "It distinguishes sourced requirements from four authored additions: the register, issue-status codes, deliverable baseline and conformance checking. It synchronizes Rules, Routes and Checks through the Traceability Spine.",
     },
   ],
 

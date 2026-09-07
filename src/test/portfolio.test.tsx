@@ -1,9 +1,15 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
-import { describe, expect, it } from "vitest";
+import {
+  Link,
+  MemoryRouter,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
+import { describe, expect, it, vi } from "vitest";
 import Breadcrumb from "@/components/project/Breadcrumb";
 import ArchitectureDiagram from "@/components/diagrams/ArchitectureDiagram";
 import DocumentReader from "@/components/project/DocumentReader";
+import ScrollToTop from "@/components/ScrollToTop";
 import { homeEvidence } from "@/data/evidence";
 import { projects } from "@/data/projects";
 
@@ -100,5 +106,62 @@ describe("project navigation", () => {
       "href",
       "/#reporting",
     );
+  });
+});
+
+function ScrollHistoryHarness() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <ScrollToTop />
+      <span data-testid="location">{location.pathname}</span>
+      <Link to="/next">Next page</Link>
+      <button type="button" onClick={() => navigate(-1)}>
+        Back
+      </button>
+    </>
+  );
+}
+
+describe("scroll restoration", () => {
+  it("starts new pages at the top and restores the saved position on Back", async () => {
+    let currentScrollY = 420;
+    const scrollY = vi
+      .spyOn(window, "scrollY", "get")
+      .mockImplementation(() => currentScrollY);
+    const scrollTo = vi
+      .spyOn(window, "scrollTo")
+      .mockImplementation((x, y) => {
+        if (typeof y === "number") currentScrollY = y;
+      });
+
+    render(
+      <MemoryRouter
+        initialEntries={["/start"]}
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
+        <ScrollHistoryHarness />
+      </MemoryRouter>,
+    );
+
+    expect(scrollTo).not.toHaveBeenCalled();
+
+    fireEvent.click(screen.getByRole("link", { name: "Next page" }));
+    await waitFor(() =>
+      expect(screen.getByTestId("location")).toHaveTextContent("/next"),
+    );
+    expect(scrollTo).toHaveBeenCalledTimes(1);
+    expect(scrollTo).toHaveBeenCalledWith(0, 0);
+
+    fireEvent.click(screen.getByRole("button", { name: "Back" }));
+    await waitFor(() =>
+      expect(screen.getByTestId("location")).toHaveTextContent("/start"),
+    );
+    await waitFor(() => expect(scrollTo).toHaveBeenLastCalledWith(0, 420));
+
+    scrollY.mockRestore();
+    scrollTo.mockRestore();
   });
 });

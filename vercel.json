@@ -1,8 +1,17 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    { "source": "/architecture", "destination": "/architecture.html" },
+    { "source": "/standard", "destination": "/standard.html" },
+    { "source": "/research", "destination": "/research.html" },
+    { "source": "/experience", "destination": "/experience.html" },
+    { "source": "/project/c1-status", "destination": "/project/c1-status.html" },
+    { "source": "/project/c2-performance", "destination": "/project/c2-performance.html" },
+    { "source": "/project/c3-findings-advisory", "destination": "/project/c3-findings-advisory.html" },
+    { "source": "/project/c4-process-action", "destination": "/project/c4-process-action.html" },
+    { "source": "/project/c5-strategy-impact", "destination": "/project/c5-strategy-impact.html" },
+    { "source": "/project/c6-questionnaire-tracking", "destination": "/project/c6-questionnaire-tracking.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
