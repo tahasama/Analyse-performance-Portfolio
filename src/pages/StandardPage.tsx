@@ -98,9 +98,11 @@ export default function StandardPage() {
             ↻
           </span>
           <div>
-            <p className="font-serif text-lg text-foreground">View the full diagram</p>
+            <p className="font-serif text-lg text-foreground">
+              Standard Composition
+            </p>
             <p className="text-sm text-muted-foreground">
-              Turn your phone sideways.
+              Turn your phone sideways to view it.
             </p>
           </div>
         </div>

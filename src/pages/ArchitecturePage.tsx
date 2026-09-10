@@ -135,9 +135,11 @@ export default function ArchitecturePage() {
             ↻
           </span>
           <div>
-            <p className="font-serif text-lg text-foreground">View the full diagram</p>
+            <p className="font-serif text-lg text-foreground">
+              Framework Architecture
+            </p>
             <p className="text-sm text-muted-foreground">
-              Turn your phone sideways.
+              Turn your phone sideways to view it.
             </p>
           </div>
         </div>
