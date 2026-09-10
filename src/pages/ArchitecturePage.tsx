@@ -132,7 +132,7 @@ export default function ArchitecturePage() {
       <section className="px-6 py-10 lg:py-8">
         <div className="mobile-diagram-prompt mx-auto max-w-sm items-center justify-center gap-3 border-y border-border py-5 text-center">
           <span
-            className="shrink-0 font-mono text-xl leading-none text-accent"
+            className="shrink-0 font-mono text-2xl leading-none text-accent"
             aria-hidden="true"
           >
             ↻
