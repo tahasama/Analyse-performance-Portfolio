@@ -101,7 +101,7 @@ export default function DocumentReader({ title, pages }: DocumentReaderProps) {
             role="region"
             aria-label={`${title}, ${pageLabel.toLowerCase()}`}
             tabIndex={0}
-            className="h-[68vh] min-h-[430px] max-h-[740px] overflow-y-auto overscroll-contain px-3 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring sm:px-7 sm:py-7"
+            className="h-[68vh] min-h-[430px] max-h-[740px] overflow-auto overscroll-y-contain overscroll-x-auto px-3 py-4 [touch-action:pan-x_pan-y_pinch-zoom] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring sm:px-7 sm:py-7"
           >
             <div className="mx-auto flex max-w-[44rem] flex-col gap-4 sm:gap-6">
               {pages.map((page, index) => (

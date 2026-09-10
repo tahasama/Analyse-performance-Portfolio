@@ -39,7 +39,7 @@ export default function StandardDiagram() {
       viewBox="0 0 1200 700"
       width={1200}
       height={700}
-      className="w-full h-auto max-w-full max-h-[90vh] mx-auto block"
+      className="mx-auto block h-auto w-full max-w-full max-h-none lg:max-h-[90vh]"
       role="img"
       aria-label="The Standard's three layers: Rules define the information, Routes sequence the work, the Register holds the evidence, and Checks test it"
     >

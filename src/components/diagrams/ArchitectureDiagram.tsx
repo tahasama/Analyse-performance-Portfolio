@@ -10,17 +10,16 @@ import { Link } from "react-router-dom";
 // there's room to run wide -- widened repeatedly for legible caption/label
 // font sizes. Handshake labels are two-line (ID + name) so they stay
 // readable without needing huge horizontal gaps between columns.
-// Large-screen only (see the section wrapping this in ArchitecturePage.tsx)
-// -- HORIZON and the PillarGrid/HandshakeList/PrincipleGrid card grids in
-// the editorial section below remain the full responsive detail on every
-// screen size.
+// Shown at full width on desktop and when a phone is turned to landscape.
+// HORIZON and the PillarGrid/HandshakeList/PrincipleGrid card grids remain
+// the responsive detail available in every orientation.
 export default function ArchitectureDiagram() {
   return (
     <svg
       viewBox="0 0 1640 950"
       width={1640}
       height={950}
-      className="w-auto h-auto max-w-full max-h-[91vh] mx-auto block"
+      className="mx-auto block h-auto w-auto max-w-full max-h-none lg:max-h-[91vh]"
       role="group"
       aria-label="Interactive DCIOM architecture diagram"
     >

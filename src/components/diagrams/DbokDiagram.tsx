@@ -174,17 +174,17 @@ export default function DbokDiagram() {
         <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-muted-foreground text-center mt-[0.5rem] mb-[1.5rem]">
           Cross-Cutting Dimensions
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-[0.9212rem]">
+        <div className="grid grid-cols-2 gap-x-3 gap-y-[0.9212rem] sm:grid-cols-4 sm:gap-x-6">
           {crossCutting.map((item) => (
             <div
               key={item.name}
-              className="flex flex-col items-center text-center gap-1.5"
+              className="flex w-full flex-col items-center gap-1.5 text-center"
             >
-              <span className="inline-flex items-center gap-1.5">
+              <span className="mx-auto grid w-full max-w-[8rem] grid-cols-[1.75rem_minmax(0,1fr)] items-center gap-1 text-left sm:inline-flex sm:w-auto sm:max-w-none sm:gap-1.5">
                 <span className="font-mono text-xs text-status-healthy bg-status-healthy/10 border border-status-healthy/30 rounded px-1.5 py-0.5">
                   {item.number}
                 </span>
-                <span className="font-mono text-sm text-foreground">
+                <span className="font-mono text-[0.75rem] text-foreground sm:text-sm">
                   {item.name}
                 </span>
               </span>

@@ -91,13 +91,21 @@ export default function StandardPage() {
       </div>
 
       {/* Dark -- the diagram as its own moment, the way the Architecture page
-          treats its own. Large screens only. */}
-      <section className="hidden lg:flex items-center justify-center px-4 py-20">
-        <div className="max-w-[86rem] w-full mx-auto">
-          <div
-            className="w-full mx-auto"
-            style={{ maxWidth: "min(100%, calc(90vh * 1200 / 700))" }}
-          >
+          treats its own. Desktop and phone landscape show the full diagram. */}
+      <section className="px-6 py-10 lg:px-4 lg:py-20">
+        <div className="mobile-diagram-prompt mx-auto max-w-sm items-center justify-center gap-3 border-y border-border py-5 text-center">
+          <span className="font-mono text-xl text-accent" aria-hidden="true">
+            ↻
+          </span>
+          <div>
+            <p className="font-serif text-lg text-foreground">View the full diagram</p>
+            <p className="text-sm text-muted-foreground">
+              Turn your phone sideways.
+            </p>
+          </div>
+        </div>
+        <div className="responsive-diagram mx-auto w-full max-w-[86rem] items-center justify-center">
+          <div className="standard-diagram-frame mx-auto w-full">
             <p className="diagram-label mb-4 pl-[3.34%]">
               Standard Composition
             </p>

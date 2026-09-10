@@ -197,6 +197,42 @@
     background-color: hsl(var(--accent) / 0.15);
   }
 
+  /* The two wide system diagrams remain full compositions on phones. In
+     portrait, a compact prompt replaces an unreadably small rendering; the
+     actual diagram appears as soon as the phone is turned sideways. */
+  .mobile-diagram-prompt {
+    display: flex;
+  }
+
+  .responsive-diagram {
+    display: none;
+  }
+
+  .architecture-diagram-frame,
+  .standard-diagram-frame {
+    max-width: 100%;
+  }
+
+  @media (min-width: 1024px), (orientation: landscape) {
+    .mobile-diagram-prompt {
+      display: none;
+    }
+
+    .responsive-diagram {
+      display: flex;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .architecture-diagram-frame {
+      max-width: min(100%, calc(91vh * 1640 / 950));
+    }
+
+    .standard-diagram-frame {
+      max-width: min(100%, calc(90vh * 1200 / 700));
+    }
+  }
+
   /* Small tracked-uppercase eyebrow labels are mono everywhere in the
      reference mockups (file-sub, dash-code, lead-in, panel-label, comp-code) --
      mono is reserved for this system/meta register, never body text. */

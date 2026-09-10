@@ -63,20 +63,20 @@ export default function ArchitecturePage() {
           The capability ladder. Each level extends what can be understood and
           decided from the same data.
         </p>
-        <div className="relative flex items-start">
+        <div className="relative mx-auto flex max-w-[20rem] items-start sm:max-w-none">
           <div
-            className="absolute left-0 right-0 top-5 h-px bg-border"
+            className="absolute left-[10%] right-[10%] top-4 h-px bg-border sm:left-0 sm:right-0 sm:top-5"
             aria-hidden="true"
           />
           {horizon.stages.map((stage, i) => (
             <div
               key={stage.id}
-              className="relative z-10 flex-1 flex flex-col items-center text-center px-1"
+              className="relative z-10 flex min-w-0 flex-1 flex-col items-center px-0.5 text-center sm:px-1"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-data/60 bg-background font-mono text-sm font-medium text-data/80 mb-3">
+              <span className="mb-2.5 flex h-8 w-8 items-center justify-center rounded-full border border-data/60 bg-background font-mono text-[0.68rem] font-medium text-data/80 sm:mb-3 sm:h-10 sm:w-10 sm:text-sm">
                 {i + 1}
               </span>
-              <span className="font-mono text-[0.65rem] uppercase tracking-wide text-muted-foreground leading-snug">
+              <span className="w-full font-mono text-[0.56rem] uppercase leading-snug tracking-[0.03em] text-muted-foreground sm:text-[0.65rem] sm:tracking-wide">
                 {stage.label}
               </span>
             </div>
@@ -129,12 +129,20 @@ export default function ArchitecturePage() {
       </div>
 
       {/* Dark -- the spatial diagram. */}
-      <section className="hidden lg:flex items-center justify-center min-h-screen px-6 py-8">
-        <div className="max-w-[90rem] w-full mx-auto">
-          <div
-            className="w-full mx-auto"
-            style={{ maxWidth: "min(100%, calc(91vh * 1640 / 950))" }}
-          >
+      <section className="px-6 py-10 lg:py-8">
+        <div className="mobile-diagram-prompt mx-auto max-w-sm items-center justify-center gap-3 border-y border-border py-5 text-center">
+          <span className="font-mono text-xl text-accent" aria-hidden="true">
+            ↻
+          </span>
+          <div>
+            <p className="font-serif text-lg text-foreground">View the full diagram</p>
+            <p className="text-sm text-muted-foreground">
+              Turn your phone sideways.
+            </p>
+          </div>
+        </div>
+        <div className="responsive-diagram mx-auto w-full max-w-[90rem] items-center justify-center lg:min-h-screen">
+          <div className="architecture-diagram-frame mx-auto w-full">
             <p className="diagram-label mb-4 pl-[2.44%]">
               Framework Architecture
             </p>

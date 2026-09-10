@@ -18,20 +18,23 @@ export default function SystemLine({ currentId, compact = false }: SystemLinePro
     <nav
       aria-label="Six systems"
       className={cn(
-        "flex flex-wrap justify-center lg:justify-between items-center gap-y-6",
+        "grid grid-cols-2 items-start justify-items-center gap-y-6 sm:grid-cols-3 lg:flex lg:flex-wrap lg:items-center lg:justify-between",
         compact
-          ? "gap-x-5 lg:gap-x-1 text-[0.785rem]"
-          : "gap-x-6 lg:gap-x-2 text-sm",
+          ? "gap-x-4 text-[0.7rem] sm:gap-x-5 sm:text-[0.785rem] lg:gap-x-1"
+          : "gap-x-4 text-xs sm:gap-x-6 sm:text-sm lg:gap-x-2",
       )}
     >
       {projects.map((project, i) => {
         const isCurrent = project.id === currentId;
         return (
-          <span key={project.id} className="flex items-center gap-2">
+          <span
+            key={project.id}
+            className="flex w-full items-center justify-center gap-2 lg:w-auto"
+          >
             <Link
               to={`/project/${project.id}`}
               className={cn(
-                "whitespace-nowrap transition-colors",
+                "w-full text-center leading-snug transition-colors sm:whitespace-nowrap lg:w-auto",
                 isCurrent
                   ? "font-medium text-accent"
                   : "text-muted-foreground hover:text-foreground",
@@ -45,9 +48,8 @@ export default function SystemLine({ currentId, compact = false }: SystemLinePro
               </div>
             </Link>
             {/* The arrows only read correctly when all six sit on one line
-                (lg and up) -- below that the row wraps and any arrow landing
-                at a row's end points into empty space, so they're dropped and
-                the numbered items stand on their own. */}
+                (lg and up). Below that, the items use an aligned grid and the
+                numbered rings stand on their own. */}
             {i < projects.length - 1 && (
               <span className="system-line-arrow hidden lg:inline-block text-muted-foreground/40 scale-150 text-2xl mb-8">
                 →
