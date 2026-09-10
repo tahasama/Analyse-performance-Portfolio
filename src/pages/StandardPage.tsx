@@ -149,112 +149,117 @@ export default function StandardPage() {
         </section>
       </div>
 
-      {/* Dark -- what conformance to it actually asserts. */}
+      {/* Dark -- how conformance is checked, then what adoption asserts. */}
       <section className="max-w-5xl mx-auto px-6 py-20">
-        <p className="section-label mb-3">Conformance</p>
-        <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-3 max-w-2xl">
-          Two levels, and what each one lets you claim
+        <p className="section-label mb-3">Automation</p>
+        <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-4 max-w-2xl">
+          How checks become results
         </h2>
-        <p className="text-muted-foreground leading-relaxed max-w-2xl mb-8">
-          An organization adopts the Standard at one of two levels: Core for
-          identity and control, or Full for the complete set of requirements.
-        </p>
-        <ul className="divide-y divide-border border-y border-border">
-          {std.conformanceLevels.map((lvl) => (
-            <li
-              key={lvl.name}
-              className="flex flex-col md:flex-row gap-3 md:gap-10 py-8"
+
+        <div className="grid md:grid-cols-[minmax(0,1fr)_18rem] gap-8 md:gap-10 items-start mt-8">
+          <div className="max-w-2xl">
+            <p className="text-base text-foreground/90 leading-relaxed">
+              Checks use reported input, register and reporting data, or that
+              data evaluated against approved organization or project
+              configuration. Each check produces a result, with every exception
+              traceable to the affected record and its cause.
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed mt-4">
+              The Standard defines the universal conformance requirements while
+              each organization defines its own sets, values and local rules.
+              Those choices may vary, but they cannot contradict its clauses.
+              The examples show this model implemented in Excel and Power BI.
+            </p>
+
+            <div
+              className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1.2fr)_auto_minmax(0,0.8fr)_auto_minmax(0,1fr)] items-center gap-2 border-y border-border py-4 mt-7"
+              role="img"
+              aria-label="Register and reporting data plus organization and project configuration lead to automated checks, which produce results and exceptions"
             >
-              <div className="md:w-64 shrink-0">
-                <p className="font-serif text-2xl text-foreground mb-1">
-                  {lvl.name}
-                </p>
-                <p className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-accent">
-                  {lvl.parts}
-                </p>
-              </div>
-              <div>
-                <p className="text-base text-foreground/90 leading-relaxed">
-                  {lvl.establishes}
-                </p>
-                {lvl.silentOn && (
-                  <p className="text-sm text-muted-foreground leading-relaxed mt-3">
-                    <span className="font-medium text-foreground/70">
-                      Says nothing about:
-                    </span>{" "}
-                    {lvl.silentOn.charAt(0).toLowerCase()}
-                    {lvl.silentOn.slice(1)}
-                  </p>
-                )}
-              </div>
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-14 border-t border-border pt-12">
-          <p className="section-label mb-3">Automation</p>
-          <h3 className="font-serif text-xl md:text-2xl text-foreground mb-4">
-            How checks become results
-          </h3>
-
-          <div className="grid md:grid-cols-[minmax(0,1fr)_18rem] gap-8 md:gap-10 items-start mt-8">
-            <div className="max-w-2xl">
-              <p className="text-base text-foreground/90 leading-relaxed">
-                Checks use reported input, register and reporting data, or that
-                data evaluated against approved organization or project
-                configuration. Each check produces a result, with every
-                exception traceable to the affected record and its cause.
-              </p>
-              <p className="text-sm text-muted-foreground leading-relaxed mt-4">
-                The Standard defines the universal conformance requirements
-                while each organization defines its own sets, values and local
-                rules. Those choices may vary, but they cannot contradict its
-                clauses. The examples show this model implemented in Excel and
-                Power BI.
-              </p>
-
-              <div
-                className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1.2fr)_auto_minmax(0,0.8fr)_auto_minmax(0,1fr)] items-center gap-2 border-y border-border py-4 mt-7"
-                role="img"
-                aria-label="Register and reporting data plus organization and project configuration lead to automated checks, which produce results and exceptions"
-              >
-                {[
-                  "Register and reporting data",
-                  "Organization and project configuration",
-                  "Automated checks",
-                  "Results and exceptions",
-                ].map((label, index) => (
-                  <div key={label} className="contents">
-                    {index === 1 && (
-                      <span
-                        className="font-mono text-sm text-accent text-center"
-                        aria-hidden="true"
-                      >
-                        +
-                      </span>
-                    )}
-                    {index > 1 && (
-                      <ArrowRight
-                        className="h-3.5 w-3.5 text-accent mx-auto rotate-90 md:rotate-0"
-                        aria-hidden="true"
-                      />
-                    )}
-                    <span className="border border-border px-2 py-2 text-center font-mono text-[0.58rem] uppercase tracking-[0.06em] text-foreground/85 leading-relaxed">
-                      {label}
+              {[
+                "Register and reporting data",
+                "Organization and project configuration",
+                "Automated checks",
+                "Results and exceptions",
+              ].map((label, index) => (
+                <div key={label} className="contents">
+                  {index === 1 && (
+                    <span
+                      className="font-mono text-sm text-accent text-center"
+                      aria-hidden="true"
+                    >
+                      +
                     </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="md:-mt-8">
-              <EvidenceGallery
-                images={standardAutomationEvidence}
-                artifactName="Standard Checks"
-                compact
-              />
+                  )}
+                  {index > 1 && (
+                    <ArrowRight
+                      className="h-3.5 w-3.5 text-accent mx-auto rotate-90 md:rotate-0"
+                      aria-hidden="true"
+                    />
+                  )}
+                  <span
+                    className={`border px-2 py-2 text-center font-mono text-[0.58rem] uppercase tracking-[0.06em] leading-relaxed ${
+                      index === 2
+                        ? "border-status-healthy/50 bg-status-healthy/[0.06] text-status-healthy"
+                        : "border-border text-foreground/85"
+                    }`}
+                  >
+                    {label}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
+
+          <div className="md:-mt-8">
+            <EvidenceGallery
+              images={standardAutomationEvidence}
+              artifactName="Standard Checks"
+              compact
+            />
+          </div>
+        </div>
+
+        <div className="mt-14 border-t border-border pt-12">
+          <p className="section-label mb-3">Conformance</p>
+          <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-3 max-w-2xl">
+            Two levels, and what each one lets you claim
+          </h2>
+          <p className="text-muted-foreground leading-relaxed max-w-2xl mb-8">
+            An organization adopts the Standard at one of two levels: Core for
+            identity and control, or Full for the complete set of requirements.
+          </p>
+          <ul className="divide-y divide-border border-y border-border">
+            {std.conformanceLevels.map((lvl) => (
+              <li
+                key={lvl.name}
+                className="flex flex-col md:flex-row gap-3 md:gap-10 py-8"
+              >
+                <div className="md:w-64 shrink-0">
+                  <p className="font-serif text-2xl text-foreground mb-1">
+                    {lvl.name}
+                  </p>
+                  <p className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-accent">
+                    {lvl.parts}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-base text-foreground/90 leading-relaxed">
+                    {lvl.establishes}
+                  </p>
+                  {lvl.silentOn && (
+                    <p className="text-sm text-muted-foreground leading-relaxed mt-3">
+                      <span className="font-medium text-foreground/70">
+                        Says nothing about:
+                      </span>{" "}
+                      {lvl.silentOn.charAt(0).toLowerCase()}
+                      {lvl.silentOn.slice(1)}
+                    </p>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

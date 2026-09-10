@@ -127,7 +127,7 @@ export default function DbokDiagram() {
                 to="/standard"
                 className="inline-flex items-center gap-2 border border-status-healthy/30 bg-status-healthy/[0.06] px-4 py-[0.3613rem] hover:border-status-healthy transition-colors"
               >
-                <span className="font-mono text-xs font-semibold text-status-healthy">
+                <span className="font-mono text-xs font-semibold text-status-healthy/90">
                   Document Management Standard
                 </span>
                 {/* Describes what it is, matching the DCIOM box below. Its

@@ -51,7 +51,11 @@ export default function EvidenceGallery({
         }`}
       >
         <span
-          className="absolute -top-3.5 left-0 z-10 max-w-[calc(100%-1rem)] truncate whitespace-nowrap bg-foreground text-background font-mono text-[0.68rem] tracking-[0.08em] px-2.5 py-1"
+          className={`absolute -top-3.5 left-0 z-10 max-w-[calc(100%-1rem)] truncate whitespace-nowrap font-mono text-[0.68rem] tracking-[0.08em] px-2.5 py-1 ${
+            compact
+              ? "border border-border bg-card text-card-foreground"
+              : "bg-foreground text-background"
+          }`}
           title={`Artifact · ${artifactName}`}
         >
           Artifact · {artifactName}

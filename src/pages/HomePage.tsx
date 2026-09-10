@@ -117,7 +117,7 @@ function FileCard({ project }: { project: ProjectContent }) {
   return (
     <Link
       to={`/project/${project.id}`}
-      className="group relative block bg-card border border-border pt-8 pb-6 px-6 transition-shadow duration-300 hover:shadow-lg"
+      className="group relative block bg-card border border-border pt-8 pb-6 px-6 transition-shadow duration-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
     >
       <span className="absolute -top-[0.95rem] left-6 bg-foreground text-background font-mono text-[0.68rem] tracking-[0.08em] px-2.5 py-1">
         C{num}
@@ -187,7 +187,7 @@ function DashCard({
         {project.roleOneLiner}
       </p>
       <div className="absolute bottom-0 flex justify-between items-center w-5/6">
-        <span className="flex w-fit font-mono text-[0.55rem] uppercase tracking-[0.05em] text-foreground/75 gap-1.5  border border-muted-foreground/35 px-2 py-1 group-hover:shadow-sm group-hover:shadow-accent/40 transition-shadow duration-300 items-center">
+        <span className="flex w-fit font-mono text-[0.55rem] uppercase tracking-[0.05em] text-foreground/75 gap-1.5 border border-muted-foreground/35 px-2 py-1 group-hover:shadow-sm group-hover:shadow-accent/40 transition-shadow duration-300 items-center">
           See details <ArrowRight className="h-2.5 w-2.5" />
         </span>
         <span
