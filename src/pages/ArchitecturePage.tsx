@@ -131,13 +131,14 @@ export default function ArchitecturePage() {
       {/* Dark -- the spatial diagram. */}
       <section className="px-6 py-10 lg:py-8">
         <div className="mobile-diagram-prompt mx-auto max-w-sm items-center justify-center gap-3 border-y border-border py-5 text-center">
-          <span className="font-mono text-xl text-accent" aria-hidden="true">
+          <span
+            className="shrink-0 font-mono text-lg leading-none text-accent"
+            aria-hidden="true"
+          >
             ↻
           </span>
           <div>
-            <p className="font-serif text-lg text-foreground">
-              Framework Architecture
-            </p>
+            <p className="diagram-label mb-1">Framework Architecture</p>
             <p className="text-sm text-muted-foreground">
               Turn your phone sideways to view it.
             </p>
