@@ -10,7 +10,11 @@ import Breadcrumb from "@/components/project/Breadcrumb";
 import ArchitectureDiagram from "@/components/diagrams/ArchitectureDiagram";
 import DocumentReader from "@/components/project/DocumentReader";
 import ScrollToTop from "@/components/ScrollToTop";
-import { homeEvidence } from "@/data/evidence";
+import {
+  homeEvidence,
+  standardAutomationEvidence,
+  standardChecksEvidence,
+} from "@/data/evidence";
 import { projects } from "@/data/projects";
 
 describe("portfolio evidence", () => {
@@ -22,6 +26,24 @@ describe("portfolio evidence", () => {
       "Dashboard · Power BI",
       "Document · Body of Knowledge",
     ]);
+    expect(homeEvidence[0].alt).toContain("Page 17");
+    expect(homeEvidence[3]).toBe(standardChecksEvidence);
+  });
+
+  it("keeps three distinct automation examples", () => {
+    expect(standardAutomationEvidence).toHaveLength(3);
+    const descriptions = standardAutomationEvidence.map((image) => image.alt);
+    expect(
+      descriptions.some((description) =>
+        description.includes("Configuration Instrument"),
+      ),
+    ).toBe(true);
+    expect(
+      descriptions.some((description) => description.includes("Document Identity")),
+    ).toBe(true);
+    expect(
+      descriptions.some((description) => description.includes("diagnostic table")),
+    ).toBe(true);
   });
 });
 

@@ -13,11 +13,13 @@ import EvidenceDialog from "./EvidenceDialog";
 interface EvidenceGalleryProps {
   images: ProjectImage[];
   artifactName: string;
+  compact?: boolean;
 }
 
 export default function EvidenceGallery({
   images,
   artifactName,
+  compact = false,
 }: EvidenceGalleryProps) {
   const [activeImage, setActiveImage] = useState<ProjectImage | null>(null);
   const [api, setApi] = useState<CarouselApi>();
@@ -43,7 +45,11 @@ export default function EvidenceGallery({
       {/* Framed like an exhibited artifact, not a generic screenshot embed --
           same file-tab motif as Home's FileCard, so the object presented
           here reads as the real thing behind that earlier preview. */}
-      <div className="relative w-full max-w-[50rem] mx-auto">
+      <div
+        className={`relative w-full mx-auto ${
+          compact ? "max-w-[18rem]" : "max-w-[50rem]"
+        }`}
+      >
         <span
           className="absolute -top-3.5 left-0 z-10 max-w-[calc(100%-1rem)] truncate whitespace-nowrap bg-foreground text-background font-mono text-[0.68rem] tracking-[0.08em] px-2.5 py-1"
           title={`Artifact · ${artifactName}`}
@@ -63,7 +69,9 @@ export default function EvidenceGallery({
                 <button
                   type="button"
                   onClick={() => setActiveImage(image)}
-                  className="surface-light flex h-[300px] w-full items-center justify-center overflow-hidden border-2 border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring sm:h-[420px]"
+                  className={`surface-light flex h-[300px] w-full items-center justify-center overflow-hidden border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring ${
+                    compact ? "border sm:h-[340px]" : "border-2 sm:h-[420px]"
+                  }`}
                   aria-label={`Open full view: ${image.alt}`}
                 >
                   <img
@@ -82,21 +90,29 @@ export default function EvidenceGallery({
               the frame below sm, keep the outside placement from sm up. */}
           {hasMultiple && (
             <>
-              <CarouselPrevious className="left-2 h-10 w-10 sm:-left-12" />
-              <CarouselNext className="right-2 h-10 w-10 sm:-right-12" />
+              <CarouselPrevious
+                className={`left-2 h-10 w-10 ${compact ? "" : "sm:-left-12"}`}
+              />
+              <CarouselNext
+                className={`right-2 h-10 w-10 ${compact ? "" : "sm:-right-12"}`}
+              />
             </>
           )}
         </Carousel>
       </div>
 
       {hasMultiple && (
-        <div className="flex justify-center gap-2 mt-4">
+        <div
+          className={`flex justify-center gap-2 ${compact ? "mt-2" : "mt-4"}`}
+        >
           {images.map((_, index) => (
             <button
               key={index}
               onClick={() => api?.scrollTo(index)}
               type="button"
-              className="flex h-10 w-10 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className={`flex items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                compact ? "h-7 w-7" : "h-10 w-10"
+              }`}
               aria-label={`Go to image ${index + 1}`}
               aria-current={current === index ? "true" : undefined}
             >
@@ -113,7 +129,13 @@ export default function EvidenceGallery({
         </div>
       )}
 
-      <p className="text-sm text-muted-foreground text-center max-w-2xl mx-auto mt-4 leading-relaxed">
+      <p
+        className={`${
+          compact ? "text-xs max-w-sm" : "text-sm max-w-2xl"
+        } text-muted-foreground text-center mx-auto ${
+          compact ? "mt-2" : "mt-4"
+        } leading-relaxed`}
+      >
         {images[current]?.caption}
       </p>
 

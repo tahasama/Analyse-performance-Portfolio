@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const SITE_URL = "https://maatof-taha.vercel.app";
+const SITE_URL = __SITE_URL__;
 
 const setMeta = (selector: string, content: string) => {
   document.querySelector<HTMLMetaElement>(selector)?.setAttribute("content", content);

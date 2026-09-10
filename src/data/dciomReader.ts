@@ -29,6 +29,6 @@ export const dciomReaderPages: DocumentReaderPage[] = [
   {
     src: page09,
     pageNumber: 9,
-    alt: "DCIOM Framework Standard page 9 presenting the capability ladder and foundational principles",
+    alt: "DCIOM Framework Standard page 9 presenting the foundational principles and operating cycle",
   },
 ];

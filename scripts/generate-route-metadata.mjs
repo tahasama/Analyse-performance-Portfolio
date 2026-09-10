@@ -2,12 +2,19 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const SITE_URL = "https://maatof-taha.vercel.app";
-const SOCIAL_IMAGE = `${SITE_URL}/og-image.png`;
 const rootDir = fileURLToPath(new URL("../", import.meta.url));
 const outputDir = join(rootDir, "dist");
 const templatePath = join(outputDir, "index.html");
+const configPath = join(rootDir, "site.config.json");
 const markerPattern = /<!-- route-meta:start -->[\s\S]*?<!-- route-meta:end -->/;
+
+const siteConfig = JSON.parse(await readFile(configPath, "utf8"));
+const SITE_URL = siteConfig.siteUrl.replace(/\/$/, "");
+const SOCIAL_IMAGE = `${SITE_URL}/og-image.png`;
+
+if (!/^https?:\/\//.test(SITE_URL)) {
+  throw new Error("site.config.json must contain an absolute siteUrl.");
+}
 
 const routes = [
   {
@@ -228,4 +235,33 @@ for (const route of routes) {
   await writeFile(outputPath, html, "utf8");
 }
 
-console.log(`Generated crawler metadata for ${routes.length} public routes.`);
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${routes.map((route) => `  <url><loc>${canonicalUrl(route.path)}</loc></url>`).join("\n")}
+</urlset>
+`;
+
+const robots = `User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: ${SITE_URL}/sitemap.xml
+`;
+
+await writeFile(join(outputDir, "sitemap.xml"), sitemap, "utf8");
+await writeFile(join(outputDir, "robots.txt"), robots, "utf8");
+
+console.log(
+  `Generated crawler metadata, sitemap and robots.txt for ${routes.length} public routes.`,
+);
