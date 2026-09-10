@@ -35,7 +35,7 @@ const routes = [
     path: "/standard",
     title: "Document Management Standard · Maatof Taha",
     description:
-      "An independently authored, executable standard for controlled project information: Rules, Routes and Checks synchronized through traceability.",
+      "An independently authored document management standard for controlled project information, with traceable Rules, Routes and configurable conformance checks.",
     entity: { type: "CreativeWork", name: "Document Management Standard" },
   },
   {

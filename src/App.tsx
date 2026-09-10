@@ -46,7 +46,7 @@ const App = () => (
           element={
             <PageMeta
               title="Document Management Standard · Maatof Taha"
-              description="An independently authored, executable standard for controlled project information: Rules, Routes and Checks synchronized through traceability."
+              description="An independently authored document management standard for controlled project information, with traceable Rules, Routes and configurable conformance checks."
             >
               <StandardPage />
             </PageMeta>
